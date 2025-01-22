@@ -13,10 +13,10 @@ const App: React.FC = () => {
     <Router>
       <MainLayout>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/resources/*" element={<ResourcesPage/>}/>
-          <Route path="/research/*" element={<Research />} />
-          <Route path="/contact" element={<ContactForm />} />
+          <Route path="/Cognitive-Economics-Frontend/" element={<Home />} />
+          <Route path="/Cognitive-Economics-Frontend/resources/*" element={<ResourcesPage/>}/>
+          <Route path="/Cognitive-Economics-Frontend/research/*" element={<Research />} />
+          <Route path="/Cognitive-Economics-Frontend/contact" element={<ContactForm />} />
           {/* Add more routes as needed */}
         </Routes>
       </MainLayout>
