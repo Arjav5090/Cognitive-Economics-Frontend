@@ -17,38 +17,153 @@ interface ResearchCategory {
 
 const researchData: ResearchCategory[] = [
   {
-    title: "Cognitive Economics",
+    title: "Psychology of Learning: Anxiety and Prediction Errors",
     papers: [
       {
-        id: "cognitive-economics-intro",
+        id: "psychology-anxiety-prediction-errors",
         title:
-          "An Introduction to Cognitive Economics: The Science of Mistakes",
-        citation: "Palgrave Macmillan Press",
-        year: "2025",
-      },
-      {
-        id: "decision-making",
-        title: "The Science of Decision Making",
-        citation: "Journal of Economic Perspectives",
-        year: "2024",
+          "Psychological Expected Utility Theory and Anticipatory Feelings",
+        citation: "Quarterly Journal of Economics",
+        year: "2001",
       },
     ],
   },
   {
-    title: "Housing Finance and Market Design",
-    papers: [],
+    title:
+      "Data Engineering for Cognitive Economics: State Dependent Stochastic Choice and Choice Process Data",
+    papers: [
+      {
+        id: "cognitive-data-engineering",
+        title: "Cognitive Data Engineering for Stochastic Choice",
+        citation: "Palgrave Pivot",
+        year: "2025",
+      },
+    ],
   },
   {
-    title: "Career Dynamics and Earnings Over the Life Cycle",
-    papers: [],
+    title: "Cognitive Economic Modeling and Rational Inattention Theory",
+    papers: [
+      {
+        id: "cognitive-economic-modeling-and-rational-inattention-theory",
+        title: "Cognitive Economic Modeling and Rational Inattention Theory",
+        citation: "Journal of Economic Theory",
+        year: "2011",
+      },
+    ],
+  },
+
+  {
+    title: "Human-AI Interactions",
+    papers: [
+      {
+        id: "human-ai-interactions-paper",
+        title: "Advancements in Human-AI Interaction and Cognitive Economics",
+        citation: "Journal of Artificial Intelligence Research",
+        year: "2022",
+      },
+    ],
   },
   {
-    title: "Individualism, Data, Organizations, and Monetary Policy",
-    papers: [],
+    title:
+      "Life Cycle Savings, Strategic Survey Questions, and Contingent Beliefs",
+    papers: [
+      {
+        id: "life-cycle-savings-strategic-survey-questions",
+        title: "Strategic Survey Questions and Life Cycle Savings Behavior",
+        citation: "American Economic Review",
+        year: "2015",
+      },
+    ],
   },
   {
-    title: "Welfare and Social Policy",
-    papers: [],
+    title:
+      "Job Transitions, Career Dynamics, and Earnings in the Cognitive Economy",
+    papers: [
+      {
+        id: "job-transitions-career-dynamics",
+        title: "Job Transitions and Career Dynamics in the Cognitive Economy",
+        citation: "Journal of Labor Economics",
+        year: "2018",
+      },
+    ],
+  },
+  {
+    title: "Real Estate and Housing Finance",
+    papers: [
+      {
+        id: "real-estate-housing-finance",
+        title: "Housing Finance and Market Dynamics in the Cognitive Economy",
+        citation: "Journal of Real Estate Finance",
+        year: "2020",
+      },
+    ],
+  },
+  {
+    title: "Hidden Information, Social Learning, and Market Dynamics",
+    papers: [
+      {
+        id: "hidden-information-social-learning-market-dynamics",
+        title: "Business as Usual, Market Crashes, and Wisdom after the Fact",
+        citation: "American Economic Review",
+        year: "1994",
+      },
+    ],
+  },
+  {
+    title: "Industrial Organization and Markets",
+    papers: [
+      {
+        id: "industrial-organization-markets",
+        title: "Aggregation and Imperfect Competition",
+        citation: "Econometrica",
+        year: "1991",
+      },
+    ],
+  },
+  {
+    title: "State Dependence and Monetary Policy",
+    papers: [
+      {
+        id: "state-dependence-monetary-policy-paper",
+        title:
+          "The Variability of Aggregate Demand with (S,s) Inventory Policies",
+        citation: "Econometrica",
+        year: "1985",
+      },
+    ],
+  },
+  {
+    title: "Political Economy",
+    papers: [
+      {
+        id: "political-economy",
+        title: "Political Economy",
+        citation: "Econometrica",
+        year: "1988",
+      },
+    ],
+  },
+  {
+    title: "Social Welfare and Policy",
+    papers: [
+      {
+        id: "social-welfare-policy",
+        title: "The Social Discount Rate",
+        citation: "Journal of Political Economy",
+        year: "2004",
+      },
+    ],
+  },
+  {
+    title: "Operations Research",
+    papers: [
+      {
+        id: "operations-research-paper",
+        title: "Scarf's Algorithm and a Dual Simplex Algorithm",
+        citation: "Mathematics of Operations Research",
+        year: "1983",
+      },
+    ],
   },
 ];
 
@@ -56,7 +171,7 @@ export function ResearchAccordion() {
   const [openCategory, setOpenCategory] = useState<string | null>(null);
 
   return (
-    <div className="mx-10 px-4 py-6">
+    <div className="px-4 py-6">
       <div>
         <div className="flex items-center gap-2 mb-6">
           <h1 className="text-5xl text-[#000000] font-bold font-outfit">
@@ -73,14 +188,14 @@ export function ResearchAccordion() {
       </div>
       <div className="space-y-4">
         {researchData.map((category, index) => (
-          <div key={index} className="border-2 border-[#000000] rounded-lg">
+          <div key={index} className="border-2 border-solid border-[#000000] rounded-lg overflow-hidden">
             <button
               onClick={() =>
                 setOpenCategory(
                   openCategory === category.title ? null : category.title
                 )
               }
-              className={`w-full px-4 py-3 flex items-center justify-between text-left ${
+              className={`w-full px-4 py-3 flex items-center justify-between text-left font-outfit font-semibold  ${
                 openCategory === category.title
                   ? "bg-black text-white"
                   : "bg-white text-black"

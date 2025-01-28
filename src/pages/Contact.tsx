@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function ContactForm() {
   return (
-    <div className="mx-10 p-6 font-outfit">
+    <div className=" p-6 font-outfit">
       <div className="grid md:grid-cols-2 gap-12">
         {/* Left Column */}
         <div>

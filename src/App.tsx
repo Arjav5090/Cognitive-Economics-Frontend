@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import ResourcesPage from './pages/Resources';
 import Research from './pages/Research';
 import ContactForm from './pages/Contact';
+import UnderConstruction from './pages/Forum';
 
 
 
@@ -17,6 +18,8 @@ const App: React.FC = () => {
           <Route path="/resources/*" element={<ResourcesPage/>}/>
           <Route path="/research/*" element={<Research />} />
           <Route path="/contact" element={<ContactForm />} />
+          <Route path="/forum" element={<UnderConstruction/>} />
+          <Route path="/chatbot" element={<UnderConstruction />} />
           {/* Add more routes as needed */}
         </Routes>
       </MainLayout>

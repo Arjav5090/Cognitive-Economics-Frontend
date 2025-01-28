@@ -1,7 +1,7 @@
-import { Menu, X } from "lucide-react";
-import dropdown from "../../assets/media/dropdown.svg";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react"; // Import icons
+import dropdown from "../../assets/media/dropdown.svg"; // Dropdown arrow icon
 
 interface TopicItem {
   title: string;
@@ -15,36 +15,129 @@ interface TopicSection {
 
 const topics: TopicSection[] = [
   {
-    title: "Introduction to cognitive economics",
+    title: "Introduction to Cognitive Economics",
     items: [
-      { title: "Foundation of cognitive economics", href: "/resources/foundation" },
-      { title: "Application in finance and labor economics", href: "/resources/application" },
-      { title: "Housing finance and market design : equity", href: "/resources/housing" },
+      {
+        title: "Foundation of Cognitive Economics",
+        href: "/resources/foundation",
+      },
+      {
+        title: "Application in Finance and Labor Economics",
+        href: "/resources/application",
+      },
+      {
+        title: "Housing Finance and Market Design : Equity Sharing",
+        href: "/resources/housing",
+      },
+      {
+        title: "An Accelerator for Cognitive Economics",
+        href: "/resources/accelerator",
+      },
     ],
   },
   {
-    title: "Human AI Interactions and earnings in the cognitive economy",
+    title: "Housing Finance and Market Design: Equity Sharing",
     items: [
-      { title: 'Manufacturing "Ground truth"', href: "/resources/manufacturing" },
-      { title: "Training the AI", href: "/resources/training" },
-      { title: "Human-AI decision making protocols", href: "/resources/protocols" },
-      { title: "Training calibration", href: "/resources/calibration" },
-      { title: "Preparing workers for the cognitive economy", href: "/resources/workers" },
+      {
+        title: "Importance and Problems of Housing Finance",
+        href: "/resources/importanceandproblem",
+      },
+      {
+        title:
+          "The Case for Equity Sharing Mortgages and Lessons from the Journey",
+        href: "/resources/caseandlesson",
+      },
+      {
+        title: "Future Directions and Selected References",
+        href: "/resources/futureandreferences",
+      },
+    ],
+  },
+
+  {
+    title: "Teaching Humans and AIs to collaborate in Medical Decision-Making",
+    items: [
+      {
+        title: 'Cognitive Economics in Human-AI Decision-Making"',
+        href: "/resources/manufacturing",
+      },
+      {
+        title: "Training AI and Human-AI Collaboration",
+        href: "/resources/training",
+      },
+      {
+        title: "Training Calibration and References",
+        href: "/resources/caliberationandreferences",
+      },
+    ],
+  },
+  {
+    title:
+      "Building Resilient Careers for the Cognitive Economy: The Copenhagen Life Panel",
+    items: [
+      {
+        title: "Career Trajectories and the Copenhagen Life Panel",
+        href: "/resources/career",
+      },
+      {
+        title: "Preparing Workers for Careers in the Cognitive Economy",
+        href: "/resources/preparingworkers",
+      },
+
+      {
+        title: "Other Ongoing Projects and Lesson with Future Directions",
+        href: "/resources/projectsandfuture",
+      },
+    ],
+  },
+  {
+    title: "Clarity by Design for Business and Policy",
+    items: [
+      {
+        title:
+          "Understanding Decision-Making Through Cognitive Economic Curves",
+        href: "/resources/decision",
+      },
+      {
+        title: "Applications in Business and Policy",
+        href: "/resources/businessandpolicy",
+      },
     ],
   },
 ];
 
 export function ResourcesSidebar() {
-  const [expandedSections, setExpandedSections] = useState<string[]>([topics[0].title]);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const location = useLocation();
+  const [expandedSections, setExpandedSections] = useState<string[]>([]); // Start with no sections expanded
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Sidebar state
+  const location = useLocation(); // Get current location
+
+  // Automatically open the sidebar and expand the relevant topic when the route changes
+  useEffect(() => {
+    // Find the section whose item matches the current route
+    const sectionToExpand = topics
+      .map((section) =>
+        section.items.some((item) => item.href === location.pathname)
+          ? section.title
+          : null
+      )
+      .filter((section) => section !== null);
+
+    if (sectionToExpand.length > 0) {
+      setExpandedSections([sectionToExpand[0] as string]); // Expand only the matched section
+    } else {
+      setExpandedSections([]); // If no match, collapse all sections
+    }
+
+    setIsSidebarOpen(true); // Automatically open the sidebar when route changes
+  }, [location.pathname]); // Trigger when pathname changes
 
   const toggleSection = (title: string) => {
     setExpandedSections((prev) =>
-      prev.includes(title) ? prev.filter((t) => t !== title) : [...prev, title]
+      prev.includes(title) ? [] : [title] // Close the section if it's already open, otherwise open it
     );
   };
 
+  // Handle resize event to keep the sidebar open on large screens
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
@@ -95,7 +188,9 @@ export function ResourcesSidebar() {
                     src={dropdown}
                     alt="Toggle"
                     className={`w-4 h-4 transform transition-transform duration-300 ${
-                      expandedSections.includes(section.title) ? "rotate-0" : "rotate-180"
+                      expandedSections.includes(section.title)
+                        ? "rotate-0"
+                        : "rotate-180"
                     }`}
                   />
                   <span className="text-sm font-bold">{section.title}</span>
@@ -107,7 +202,9 @@ export function ResourcesSidebar() {
                         key={item.href}
                         href={item.href}
                         className={`block text-sm font-light py-1 px-3 hover:bg-gray-100 rounded ${
-                          location.pathname === item.href ? "bg-gray-100 font-medium" : ""
+                          location.pathname === item.href
+                            ? "bg-gray-100 font-medium"
+                            : ""
                         }`}
                         onClick={() => setIsSidebarOpen(false)}
                       >

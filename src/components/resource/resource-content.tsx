@@ -8,11 +8,9 @@ export function ResourcesContent() {
 
       <div className="prose font-outfit font-light max-w-none mb-8">
         <p>
-          This section highlights material from the Palgrave Macmillan Pivot book, *An Introduction to Cognitive
-          Economics: The Science of Mistakes*. Below, you will find concise summaries of selected chapters, grouped by
-          key themes, along with links to key sections hosted on the Springer website. We've also included bonus content
-          and podcasts for deeper engagement. Chapters not covered here are explored in greater detail in other sections
-          of this site. Enjoy your exploration.
+        This section has concise summaries of selected chapters from my Introduction to Cognitive Economics: The
+Science of Mistakes. You will find links to key sections hosted on the Springer website as well as a few
+podcasts for those who prefer learning that way.
         </p>
       </div>
 
