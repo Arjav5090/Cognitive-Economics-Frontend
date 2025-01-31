@@ -13,7 +13,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
       <main className="px-4 py-4 ">
         {children}
       </main>
-      <Footer />
+     <Footer/>
     </div>
   );
 };

@@ -171,7 +171,7 @@ export function ResearchAccordion() {
   const [openCategory, setOpenCategory] = useState<string | null>(null);
 
   return (
-    <div className="px-4 py-6">
+    <div className="max-w-7xl mx-auto px-4 py-6">
       <div>
         <div className="flex items-center gap-2 mb-6">
           <h1 className="text-5xl text-[#000000] font-bold font-outfit">

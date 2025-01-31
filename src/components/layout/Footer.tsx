@@ -1,15 +1,30 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
-  const resources = Array(6).fill("Intro to cognitive economics");
-  const discoverLinks = ["Home", "Resources", "Research papers", "Intro to cognitive economics", "Forum", "Contact"];
+  const resources = [
+    { name: "Application", path: "/resources/application" },
+    { name: "Calibration", path: "/resources/caliberationandreferences" },
+    { name: "Foundation", path: "/resources/foundation" },
+    { name: "Housing", path: "/resources/housing" },
+    { name: "Manufacturing", path: "/resources/manufacturing" },
+    { name: "Training", path: "/resources/training" },
+  ];
+  const discoverLinks = [
+    { name: "Home", path: "/" },
+    { name: "Resources", path: "/resources" },
+    { name: "Research papers", path: "/research" },
+    { name: "Questionnaire", path: "/questionnaire" }, // Adjust as needed
+  //  { name: "Forum", path: "/forum" },
+    { name: "Contact", path: "/contact" },
+ //   { name: "Chatbot", path: "/chatbot" }
+  ];
 
   return (
     <footer className="w-full border-t border-black py-12 px-4 md:px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+      <div className="max-w-7xl mx-auto  grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
         {/* Left Column - Stay Updated & Reach Out */}
         <div className="space-y-8">
-
           <div>
             <h1 className="font-bold text-2xl mb-4">Reach out</h1>
             <div className="flex gap-4">
@@ -67,9 +82,9 @@ const Footer: React.FC = () => {
           <ul className="space-y-2">
             {resources.map((resource, index) => (
               <li key={index}>
-                <a href="#" className="text-sm hover:underline">
-                  {resource}
-                </a>
+                <Link to={resource.path} className="text-sm hover:underline">
+                  {resource.name}
+                </Link>
               </li>
             ))}
           </ul>
@@ -81,9 +96,9 @@ const Footer: React.FC = () => {
           <ul className="space-y-2">
             {discoverLinks.map((link, index) => (
               <li key={index}>
-                <a href="#" className="text-sm hover:underline">
-                  {link}
-                </a>
+                <Link to={link.path} className="text-sm hover:underline">
+                  {link.name}
+                </Link>
               </li>
             ))}
           </ul>
