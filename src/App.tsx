@@ -11,7 +11,7 @@ import Chatbot from "./pages/Chatbot";
 
 const App: React.FC = () => {
   return (
-    <Router basename="/Cognitive-Economics-Frontend">
+    <Router basename="/">
       <MainLayout>
         <Routes>
           <Route path="/" element={<Home />} />
