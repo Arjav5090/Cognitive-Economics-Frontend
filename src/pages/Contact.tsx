@@ -1,6 +1,6 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import { Linkedin, Mail, TwitterIcon } from "lucide-react";
+import { Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function ContactForm() {
@@ -54,24 +54,13 @@ export default function ContactForm() {
           </p>
 
           {/* Social Links */}
-          <div className="flex flex-row flex-wrap gap-4 sm:gap-6 mb-6">
-            <div className="flex flex-col items-center">
-              <Link to="#" className="p-3 sm:p-4 rounded-full border border-black hover:bg-gray-100 flex items-center justify-center">
-                <TwitterIcon className="w-5 h-5 sm:w-6 sm:h-6" />
-              </Link>
-              <p className="text-black text-xs sm:text-sm font-outfit mt-2">@twitteracc</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <Link to="#" className="p-3 sm:p-4 rounded-full border border-black hover:bg-gray-100 flex items-center justify-center">
-                <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
-              </Link>
-              <p className="text-black text-xs sm:text-sm font-outfit mt-2">@linkedinacc</p>
-            </div>
-            <div className="flex flex-col items-center">
+          <div className="flex flex-row flex-wrap gap-4  sm:gap-6 mb-6">
+
+            <div className="flex flex-col sm:justify-items-center items-center">
               <Link to="mailto:ac1@nyu.edu" className="p-3 sm:p-4 rounded-full border border-black hover:bg-gray-100 flex items-center justify-center">
-                <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
+                <Mail className="w-10 h-10 sm:w-6 sm:h-6" />
               </Link>
-              <p className="text-black text-xs sm:text-sm font-outfit mt-2">sci@nyu.edu</p>
+              <p className="text-black text-md sm:text-sm font-outfit mt-2">ac1@nyu.edu</p>
             </div>
           </div>
 
