@@ -8,6 +8,8 @@ import AndrewCaplinImage from "../assets/media/Andrew_Caplin.jpg";
 import Book from "../assets/media/Book.webp";
 import download from "../assets/media/Download.svg";
 import redirect from "../assets/media/Redirect.svg";
+import { Quote } from "lucide-react";
+import Video from "../assets/media/Introductory.mp4";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -41,17 +43,74 @@ const researchCards = [
   },
 ];
 
-const resourceCards = Array.from({ length: 6 }, (_, i) => ({
-  number: String(i + 1).padStart(2, "0"),
-  title: "Intro to cognitive Economics",
-  description:
-    "Cognitive economics explores how human psychology and decision-making influence economic behavior.",
-}));
+const resourceCards = [
+  {
+    number: "01",
+    title: "Introduction to Cognitive Economics",
+    description:
+      "Discover the foundations of this transformative field and its relevance in the age of AI.",
+    link: "/resources/foundation",
+  },
+  {
+    number: "02",
+    title: "Housing Finance and Market Design: Equity Sharing",
+    description:
+      "Learn about the origins and current developments in equity sharing mortgages and their impact on housing markets.",
+    link: "/resources/importanceandproblem",
+  },
+  {
+    number: "03",
+    title: "Teaching Humans and AIs to collaborate in Medical Decision-Making",
+    description:
+      "Human-AI interactions are reshaping decision-making in all realms. Learn how cognitive economic can improve the quality of medical decision-making by better aligning AIs with human interests and better training humans to work with AIs.",
+    link: "/resources/manufacturing",
+  },
+  {
+    number: "04",
+    title:
+      "Building Resilient Careers for the Cognitive Economy: The Copenhagen Life Panel",
+    description:
+      "Dive into unique insights into job transitions and earnings across the life span and their implications for worker adaptation to the cognitive economy.",
+    link: "/resources/career",
+  },
+  {
+    number: "05",
+    title: "Clarity by Design for Business and Policy",
+    description:
+      "Understand how to measure and upgrade communication to drive better decision-making in complex environments.",
+    link: "/resources/decision",
+  },
+  {
+    number: "06",
+    title: "Participate and Connect",
+    description:
+      "Provides multiple options for those seeking an active role in advancing cognitive economics",
+    link: "/questionnaire",
+  },
+];
+
+const items = [
+  {
+    title: "Engage with Cognitive Economics",
+    description:
+      "Join the conversation and explore its impact on modern challenges.",
+  },
+  {
+    title: "Discover Equity-Sharing Mortgages",
+    description: "Innovative financial products launching in the U.S. in 2025.",
+    linkText: "(link)",
+  },
+  {
+    title: "Access My Research and Work",
+    description: "Stay updated on projects driving cognitive economics.",
+  },
+];
+
 const Home: React.FC = () => {
   return (
     <>
       <motion.section
-        className="px-4 py-8 md:py-16 max-w-7xl mx-auto"
+        className="px-4 py-2 md:py-16 max-w-7xl mx-auto"
         initial="initial"
         animate="animate"
         variants={stagger}
@@ -66,29 +125,40 @@ const Home: React.FC = () => {
               <br />
               in Cognitive Economics
             </h2>
-            <p className="text-base font-outfit md:text-lg text-gray-600 max-w-xl mx-auto lg:mx-0">
-              <span className="text-black font-semibold">
+            <p className="text-base font-outfit md:text-lg text-black max-w-xl mx-auto lg:mx-0">
+              <span className="text-black font-semibold font-outfit">
                 Professor Andrew Caplin
               </span>
-              <span className="text-[#0E0E0E]">
-                {" "}
-                is a pioneering researcher in Cognitive Economics, bridging
+              <span className="text-[#0E0E0E] font-outfit text-pretty">
+                {""}, Silver Professor of Economics at NYU and Leader of the
+                Sloan Foundation Program on Cognitive Economics at Work, is a
+                pioneering researcher in Cognitive Economics, bridging
                 psychology, neuroscience, and economics to revolutionize our
                 understanding of decision-making processes.
               </span>
+              <p className="text-[#0E0E0E] font-outfit text-pretty">
+                My book,{" "}
+                <i>
+                  An Introduction to Cognitive Economics: The Science of
+                  Mistakes
+                </i>
+                , offers the first comprehensive guide to this rapidly growing
+                interdisciplinary field.
+              </p>
             </p>
-            <p className="text-base font-outfit md:text-lg text-[#0E0E0E0] max-w-xl mx-auto lg:mx-0">
-              His work illuminates the intricate workings of the human mind in
-              economic contexts, reshaping our approach to markets, policy, and
-              real-world problem-solving.
-            </p>
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-              <button className="bg-[#0E0E0E] font-outfit text-white  rounded-2xl py-3 px-6">
-                Explore Research
-              </button>
-              <button className="rounded-2xl font-outfit border-2 bg-white border-[#0E0E0E] py-3 px-6">
-                Learning Resources
-              </button>
+              <Link to="/research">
+                <button className="bg-[#0E0E0E] border-2 border-black font-outfit text-white rounded-2xl py-3 px-8">
+                  Explore Research
+                </button>
+              </Link>
+
+              <Link to="/resources">
+                <button className="rounded-2xl font-outfit border-2 bg-white border-[#0E0E0E] py-3 px-6">
+                  Learning Resources
+                </button>
+              </Link>
             </div>
           </motion.div>
           <motion.div
@@ -105,10 +175,54 @@ const Home: React.FC = () => {
             </div>
           </motion.div>
         </div>
+        <motion.div
+          variants={fadeInUp}
+          className="mt-10 relative overflow-hidden"
+        >
+          <div className="absolute shadow-lg inset-0 border border-black rounded-xl bg-white z-0"></div>
+          <div className="relative z-10 py-4 px-4 sm:px-8 md:px-12 lg:px-20">
+            <Quote className="text-black w-6 h-6 mb-4 mx-auto" />
+            <blockquote className="text-sm sm:text-md md:text-lg font-orienta text-black italic text-center max-w-4xl mx-auto leading-relaxed">
+              "Cognitive economics explores how people learn, make decisions,
+              and earn their livings, aiming to guide better policies, uncover
+              business opportunities, and enhance well-being in an AI-driven
+              world."
+            </blockquote>
+            <div className="mt-4 flex items-center justify-center">
+              <div className="w-10 h-1 bg-black mr-4"></div>
+              <p className="font-outfit text-lg text-black font-semibold">
+                Professor Andrew Caplin
+              </p>
+            </div>
+          </div>
+        </motion.div>
+        <motion.div className="px-4 md:py-10 max-w-7xl mx-auto bg-white text-black font-outfit p-8 flex flex-col items-center">
+          <div className="w-full grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {items.map((item, index) => (
+              <div
+                key={index}
+                className="p-6 border border-black rounded-2xl min-w-[320px] flex flex-col items-center text-center"
+              >
+                <h2 className="text-2xl font-semibold mb-2">{item.title}</h2>
+                <p className="w-64">
+                  {item.description}
+                  {item.linkText && (
+                    <a
+                      href="https://mitpress.mit.edu/9780262527262/housing-partnerships/"
+                      className="text-black underline"
+                    >
+                      {item.linkText}
+                    </a>
+                  )}
+                </p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </motion.section>
 
       <motion.section
-        className="px-4 py-8 md:py-16 max-w-7xl mx-auto"
+        className="px-4 py-4 md:py-10 max-w-7xl mx-auto"
         initial="initial"
         animate="animate"
         variants={stagger}
@@ -117,13 +231,19 @@ const Home: React.FC = () => {
           variants={fadeInUp}
           className="relative aspect-video rounded-3xl overflow-hidden bg-[#E5E5E5]"
         >
-          <div className="absolute inset-0 flex items-center justify-center">
-            <h2 className="text-4xl md:text-6xl font-semibold text-[#1A1A1A]"></h2>
-          </div>
+          <video
+            className="absolute inset-0 w-full h-full object-cover"
+            src={Video}
+            controls
+            autoPlay
+            loop
+            muted
+          />
         </motion.div>
       </motion.section>
+
       <motion.section
-        className="px-4 py-8 md:py-16 max-w-7xl mx-auto "
+        className="px-4 py-4 md:py-16 max-w-7xl mx-auto "
         initial="initial"
         animate="animate"
         variants={stagger}
@@ -149,8 +269,8 @@ const Home: React.FC = () => {
               The Science of Mistakes
             </p>
             <p className="text-xl font-light text-[#0E0E0E] leading-relaxed max-w-2xl font-outfit">
-              This groundbreaking book introduces "cognitive economics", a rapidly
-              emerging interdisciplinary science built on economic,
+              This groundbreaking book introduces "cognitive economics", a
+              rapidly emerging interdisciplinary science built on economic,
               psychological, and data-scientific foundations.
             </p>
             <p className="text-xl font-light text-[#0E0E0E] font-outfit">
@@ -234,14 +354,15 @@ const Home: React.FC = () => {
           variants={fadeInUp}
         >
           {resourceCards.map((card, i) => (
-            <motion.div
-              key={i}
-              variants={fadeInUp}
-              whileHover={{ scale: 1.0 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <ResourceCard card={card} />
-            </motion.div>
+            <Link key={i} to={card.link}>
+              <motion.div
+                variants={fadeInUp}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <ResourceCard card={card} />
+              </motion.div>
+            </Link>
           ))}
         </motion.div>
       </motion.section>

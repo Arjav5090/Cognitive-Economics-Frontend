@@ -1,20 +1,20 @@
-import type React from "react"
-import { useState } from "react"
-import { Link, useLocation } from "react-router-dom"
+import type React from "react";
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Header: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const location = useLocation()
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const navigation = [
     { name: "Home", href: "/" },
     { name: "Resources", href: "/resources" },
     { name: "Research papers", href: "/research" },
-   // { name: "Forum", href: "/forum" },
+    // { name: "Forum", href: "/forum" },
     { name: "Contact", href: "/contact" },
     //{ name: "Chatbot", href: "/chatbot" },
-    {name: "Questionnaire", href:"/questionnaire"},
-  ]
+    { name: "Questionnaire", href: "/questionnaire" },
+  ];
 
   return (
     <header>
@@ -24,24 +24,26 @@ const Header: React.FC = () => {
           <Link to="/" className="text-3xl font-orienta font-light">
             Andrew Caplin
           </Link>
-         
+
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             {navigation.map((item) => (
-              <Link key={item.name} to={item.href} className="relative font-outfit group inline-flex items-center h-16 ">
+              <Link
+                key={item.name}
+                to={item.href}
+                className="relative font-outfit group inline-flex items-center h-16 "
+              >
                 <span
                   className={`${
-                    location.pathname === item.href ? "text-white bg-black rounded-md p-2" : "black"
+                    location.pathname === item.href
+                      ? "text-white bg-black rounded-md p-2"
+                      : "black"
                   } transition-colors`}
                 >
                   {item.name}
                 </span>
 
-           
                 {/* Active dot indicator */}
-            
-               
-                
               </Link>
             ))}
           </nav>
@@ -54,12 +56,32 @@ const Header: React.FC = () => {
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             ) : (
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
             )}
           </button>
@@ -71,12 +93,31 @@ const Header: React.FC = () => {
       {isMenuOpen && (
         <div className="fixed inset-0 z-50 bg-white md:hidden">
           <div className="pt-4 pb-3 px-4 flex justify-between items-center border-b">
-            <Link to="/" className="text-xl font-medium" onClick={() => setIsMenuOpen(false)}>
+            <Link
+              to="/"
+              className="text-xl font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
               Andrew Caplin
             </Link>
-            <button type="button" onClick={() => setIsMenuOpen(false)} className="p-2" aria-label="Close menu">
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            <button
+              type="button"
+              onClick={() => setIsMenuOpen(false)}
+              className="p-2"
+              aria-label="Close menu"
+            >
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
           </div>
@@ -101,8 +142,7 @@ const Header: React.FC = () => {
         </div>
       )}
     </header>
-  )
-}
+  );
+};
 
-export default Header
-
+export default Header;
