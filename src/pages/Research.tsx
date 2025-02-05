@@ -104,10 +104,7 @@ export default function Research() {
         element={<OperationsResearchPage />}
       />
 
-      {/* Route for the third paper (Psychology Anxiety Prediction Errors) */}
-
-      {/* Add additional routes for other papers as needed */}
-      {/* Route for 404 / Paper Not Found */}
+     
       <Route
         path="*"
         element={<div className="text-gray-500">Paper not found</div>}

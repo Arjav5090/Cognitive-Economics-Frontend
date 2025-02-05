@@ -4,7 +4,7 @@ import { ResearchCard } from "../components/ui/research-card";
 import { ResourceCard } from "../components/ui/resource-card";
 import { SectionTitle } from "../components/ui/section-title";
 import { Link } from "react-router-dom";
-import AndrewCaplinImage from "../assets/media/Andrew_Caplin.jpg";
+import AndrewCaplinImage from "../assets/media/Andrew_Caplin.png";
 import Book from "../assets/media/Book.webp";
 import download from "../assets/media/Download.svg";
 import redirect from "../assets/media/Redirect.svg";
@@ -163,14 +163,15 @@ const Home: React.FC = () => {
           </motion.div>
           <motion.div
             variants={fadeInUp}
-            className="relative aspect-[4/3] rounded-3xl overflow-hidden order-first lg:order-last bg-gray-200"
+            className="relative aspect-[4/3] rounded-3xl overflow-hidden order-first lg:order-last"
           >
             {/* Blank placeholder */}
-            <div className="absolute inset-0 flex items-center justify-center text-gray-400 text-2xl">
+            <div className="absolute inset-0 flex items-center justify-center text-2xl">
               <img
                 src={AndrewCaplinImage}
                 alt="Picture of the author"
-                style={{ objectFit: "fill", width: "100%", height: "100%" }}
+                
+                className="w-auto rounded-3xl h-auto max-w-full max-h-full object-contain"
               />
             </div>
           </motion.div>

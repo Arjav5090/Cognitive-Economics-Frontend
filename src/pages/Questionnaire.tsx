@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 interface FormData {
@@ -6,19 +6,23 @@ interface FormData {
   email?: string;
   location?: string;
   age?: number | string;
-  profile?: string;
-  education?: string;
-  economicsCourses?: string;
-  highestEconomicsCourse?: string;
-  furtherTraining?: string;
+  highestEducationField?: string;
+  workStatus?: string;
+  interestDescription?: string;
+  selectedChapters?: string[];
+  selectedBooks?: string[];
   motivation?: string;
-  [key: string]: boolean | string | number | undefined;
+  participationPreferences?: string[];
+  proposalTitle?: string;
+  proposalSummary?: string;
+  proposalFile?: File | null;
+  [key: string]: string | number | boolean | string[] | File | undefined | null;
 }
 
 const steps = [
-  "Basic Information",
-  "Education and Professional Background",
-  "Interests",
+  "About You",
+  "Your Interest in Cognitive Economics",
+  "Participate in the Growth of Cognitive Economics",
 ];
 
 export default function Questionnaire() {
@@ -57,25 +61,25 @@ export default function Questionnaire() {
     e: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLButtonElement>
   ) => {
     e.preventDefault();
-    const chaptersRead = [];
-    for (let i = 1; i <= 10; i++) {
-      const chapterKey = `chapter_${i}`;
-      if (formData[chapterKey]) {
-        chaptersRead.push(`Chapter ${i}: ${steps[i - 1]}`);
-      }
-    }
+
+    
     const templateParams = {
-      from_name: formData.fullName,
+      fullName: formData.fullName,
       email: formData.email,
       location: formData.location,
       age: formData.age,
-      profile: formData.profile,
-      education: formData.education,
-      economicsCourses: formData.economicsCourses,
-      highestEconomicsCourse: formData.highestEconomicsCourse,
-      furtherTraining: formData.furtherTraining,
-      motivation: formData.motivation,
-      chaptersRead: chaptersRead.join("\n"), // Join chapters by line breaks for plain text
+      workStatus:formData.workStatus,
+      highestEducationField: formData.highestEducationField,
+      interestDescription: formData.interestDescription,
+      selectedChapters: formData.selectedChapters?.join("\n") || "", // Join selected chapters with line breaks
+      selectedBooks: formData.selectedBooks?.join("\n"),
+      participationPreferences:
+        formData.participationPreferences?.join("\n") || "",
+      proposalTitle: formData.proposalTitle,
+      proposalSummary: formData.proposalSummary,
+      proposalFile: formData.proposalFile
+        ? formData.proposalFile.name
+        : undefined,
       date: new Date().toLocaleDateString(),
     };
 
@@ -106,6 +110,31 @@ export default function Questionnaire() {
       e.preventDefault(); // Allow Enter inside textarea but not elsewhere
     }
   };
+  const handleCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, checked, value } = e.target;
+
+    // Ensure that selectedChapters and selectedBooks are arrays before modifying them
+    setFormData((prevFormData) => {
+      const currentValues = (prevFormData[name] as string[]) || [];
+
+      return {
+        ...prevFormData,
+        [name]: checked
+          ? [...currentValues, value] // Add the selected chapter or book
+          : currentValues.filter((item) => item !== value), // Remove if unchecked
+      };
+    });
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, files } = e.target;
+    if (files && files[0]) {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: files[0], // Dynamically update the field (proposalFile or others)
+      }));
+    }
+  };
 
   return (
     <div className="min-h-screen bg-white text-black">
@@ -120,15 +149,18 @@ export default function Questionnaire() {
             />
           )}
           {currentStep === 1 && (
-            <EducationBackground
+            <InterestCognitiveEconomics
               formData={formData}
               handleInputChange={handleInputChange}
+              handleCheckboxChange={handleCheckboxChange}
             />
           )}
           {currentStep === 2 && (
-            <Interests
+            <GrowthCognitiveEconomics
               formData={formData}
               handleInputChange={handleInputChange}
+              handleCheckboxChange={handleCheckboxChange}
+              handleFileChange={handleFileChange}
             />
           )}
 
@@ -162,8 +194,8 @@ export default function Questionnaire() {
         </form>
         {isSubmitted && (
           <div className="mt-4 p-4 bg-green-100 text-green-700 border border-green-400 rounded">
-            ✅ Thank you for Completing the form and it was successfully
-            submitted! 🎉
+            ✅ Thank you for completing the survey. Your input will help shape
+            the future of cognitive economics. 🎉
           </div>
         )}
 
@@ -214,7 +246,8 @@ interface BasicInfoProps {
     email?: string;
     location?: string;
     age?: number | string;
-    profile?: string;
+    highestEducationField?: string;
+    workStatus?: string;
   };
   handleInputChange: (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -227,16 +260,14 @@ const BasicInfo: React.FC<BasicInfoProps> = ({
 }) => {
   return (
     <div className="space-y-6">
-      <h2 className="text-2xl font-semibold">
-        6.1.1 About You: Part 1: Basic Information
-      </h2>
+      <h2 className="text-2xl font-semibold">Part 1: About You</h2>
       <div className="space-y-4">
         <div>
           <label
             htmlFor="fullName"
             className="block text-sm font-medium text-gray-700"
           >
-            1. Full Name:
+            1. Name:
           </label>
           <input
             type="text"
@@ -245,9 +276,10 @@ const BasicInfo: React.FC<BasicInfoProps> = ({
             required
             value={formData.fullName || ""}
             onChange={handleInputChange}
-            className="mt-1 block w-full focus:outline-none px-2 py-2 border rounded-lg border-[#000000]  shadow-sm focus:border-black focus:ring-black"
+            className="mt-1 block w-full px-2 py-2 border rounded-lg border-black shadow-sm focus:border-black focus:ring-black"
           />
         </div>
+
         <div>
           <label
             htmlFor="email"
@@ -262,9 +294,10 @@ const BasicInfo: React.FC<BasicInfoProps> = ({
             required
             value={formData.email || ""}
             onChange={handleInputChange}
-            className="mt-1 focus:outline-none px-2 py-2 border rounded-lg border-[#000000]  block w-full  shadow-sm focus:border-black focus:ring-black"
+            className="mt-1 block w-full px-2 py-2 border rounded-lg border-black shadow-sm focus:border-black focus:ring-black"
           />
         </div>
+
         <div>
           <label
             htmlFor="location"
@@ -279,9 +312,10 @@ const BasicInfo: React.FC<BasicInfoProps> = ({
             required
             value={formData.location || ""}
             onChange={handleInputChange}
-            className="mt-1 focus:outline-none block w-full px-2 py-2 border rounded-lg border-[#000000] shadow-sm focus:border-black focus:ring-black"
+            className="mt-1 block w-full px-2 py-2 border rounded-lg border-black shadow-sm focus:border-black focus:ring-black"
           />
         </div>
+
         <div>
           <label
             htmlFor="age"
@@ -296,23 +330,44 @@ const BasicInfo: React.FC<BasicInfoProps> = ({
             required
             value={formData.age || ""}
             onChange={handleInputChange}
-            className="mt-1 focus:outline-none block w-full px-2 py-2 border rounded-lg border-[#000000] shadow-sm focus:border-black focus:ring-black"
+            className="mt-1 block w-full px-2 py-2 border rounded-lg border-black shadow-sm focus:border-black focus:ring-black"
           />
         </div>
+
         <div>
           <label
-            htmlFor="profile"
+            htmlFor="highestEducationField"
             className="block text-sm font-medium text-gray-700"
           >
-            5. CV, LinkedIn or Professional Profile (optional):
+            5. What is your highest educational qualification and in what field?
           </label>
           <input
             type="text"
-            id="profile"
-            name="profile"
-            value={formData.profile || ""}
+            id="highestEducationField"
+            name="highestEducationField"
+            required
+            value={formData.highestEducationField || ""}
             onChange={handleInputChange}
-            className="mt-1 block w-full focus:outline-none px-2 py-2 border rounded-lg border-[#000000] shadow-sm focus:border-black focus:ring-black"
+            className="mt-1 block w-full px-2 py-2 border rounded-lg border-black shadow-sm focus:border-black focus:ring-black"
+          />
+        </div>
+
+        <div>
+          <label
+            htmlFor="workStatus"
+            className="block text-sm font-medium text-gray-700"
+          >
+            6. Are you currently working for pay (Y/N), and if so, how would you
+            describe your line of work?
+          </label>
+          <input
+            type="text"
+            id="workStatus"
+            name="workStatus"
+            required
+            value={formData.workStatus || ""}
+            onChange={handleInputChange}
+            className="mt-1 block w-full px-2 py-2 border rounded-lg border-black shadow-sm focus:border-black focus:ring-black"
           />
         </div>
       </div>
@@ -320,147 +375,216 @@ const BasicInfo: React.FC<BasicInfoProps> = ({
   );
 };
 
-interface EducationBackgroundProps {
+interface InterestCognitiveEconomicsProps {
   formData: {
-    education?: string;
-    economicsCourses?: string;
-    highestEconomicsCourse?: string;
-    furtherTraining?: string;
+    interestDescription?: string;
+    selectedChapters?: string[];
+    selectedBooks?: string[];
   };
   handleInputChange: (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void;
+  handleCheckboxChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const EducationBackground: React.FC<EducationBackgroundProps> = ({
+const InterestCognitiveEconomics: React.FC<InterestCognitiveEconomicsProps> = ({
   formData,
   handleInputChange,
+  handleCheckboxChange,
 }) => {
   return (
     <div className="space-y-6">
       <h2 className="text-2xl font-semibold">
-        Part 2: Education and Professional Background
+        Part 2: Your Interest in Cognitive Economics
       </h2>
-      <div className="space-y-4">
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            1. Highest Level of Education:
-          </label>
-          <div className="mt-2 space-y-2">
-            {[
-              "High School",
-              "Bachelor's Degree",
-              "Master's Degree",
-              "Doctorate",
-              "Other",
-            ].map((option) => (
-              <div key={option} className="flex items-center">
-                <input
-                  id={option}
-                  name="education"
-                  type="radio"
-                  value={option}
-                  checked={formData.education === option}
-                  onChange={handleInputChange}
-                  className="focus:ring-black h-4 w-4 text-black border-gray-300"
-                />
-                <label
-                  htmlFor={option}
-                  className="ml-3 block text-sm font-medium text-gray-700"
-                >
-                  {option}
-                </label>
-              </div>
-            ))}
+
+      {/* Question 1 */}
+      <div>
+        <label
+          htmlFor="interestDescription"
+          className="block text-sm font-medium text-gray-700"
+        >
+          1. In your own words, briefly describe how you found out about
+          cognitive economics and why it interests you:
+        </label>
+        <textarea
+          id="interestDescription"
+          name="interestDescription"
+          rows={4}
+          value={formData.interestDescription || ""}
+          onChange={handleInputChange}
+          className="mt-1 block w-full px-2 py-2 border rounded-lg border-black shadow-sm focus:border-black focus:ring-black"
+        />
+      </div>
+
+      {/* Question 2 */}
+      <div>
+        <p className="text-sm font-medium text-gray-700">
+          2. Please pick out those chapters of{" "}
+          <i>Introduction to Cognitive Economics</i> that are of particular
+          interest to you and explain why:
+        </p>
+        {[
+          "Chapter 2: Cognitive Household Finance",
+          "Chapter 3: Measuring and Minimizing Mistakes",
+          "Chapter 4: Cognitive Economics at Work",
+          "Chapter 5: Cognitive Capital and Human-AI Interactions",
+          "Chapter 6: Work Skills for the Cognitive Economy",
+          "Chapter 7: Cognitive Economics of Teaching",
+          "Chapter 8: Cognitive Economics Takes Off",
+          "Chapter 9: Next Steps in Research, Business, and Policy",
+          "Chapter 10: Accelerating Cognitive Economics: Why Now, and How?",
+        ].map((chapter) => (
+          <div key={chapter} className="flex items-center">
+            <input
+              type="checkbox"
+              id={chapter}
+              name="selectedChapters"
+              value={chapter}
+              checked={formData.selectedChapters?.includes(chapter) || false}
+              onChange={handleCheckboxChange}
+              className="mr-2"
+            />
+            <label htmlFor={chapter} className="text-sm">
+              {chapter}
+            </label>
           </div>
-        </div>
-        <div>
-          <label
-            htmlFor="economicsCourses"
-            className="block text-sm font-medium text-gray-700"
-          >
-            2. Have you taken any courses in economics? (Y/N)
-          </label>
-          <input
-            type="text"
-            id="economicsCourses"
-            name="economicsCourses"
-            value={formData.economicsCourses || ""}
-            onChange={handleInputChange}
-            className="mt-1 block w-full focus:outline-none px-2 py-2 border rounded-lg border-[#000000] shadow-sm focus:border-black focus:ring-black"
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="highestEconomicsCourse"
-            className="block text-sm font-medium text-gray-700"
-          >
-            3. Highest formal economics course:
-          </label>
-          <input
-            type="text"
-            id="highestEconomicsCourse"
-            name="highestEconomicsCourse"
-            value={formData.highestEconomicsCourse || ""}
-            onChange={handleInputChange}
-            className="mt-1 block w-full focus:outline-none px-2 py-2 border rounded-lg border-[#000000] shadow-sm focus:border-black focus:ring-black"
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="furtherTraining"
-            className="block text-sm font-medium text-gray-700"
-          >
-            4. Are you planning on furthering training in economics?
-          </label>
-          <input
-            type="text"
-            id="furtherTraining"
-            name="furtherTraining"
-            value={formData.furtherTraining || ""}
-            onChange={handleInputChange}
-            className="mt-1 block w-full focus:outline-none px-2 py-2 border rounded-lg border-[#000000]  shadow-sm focus:border-black focus:ring-black"
-          />
-        </div>
-        {/* Add more fields for work status, type of work, etc. */}
+        ))}
+      </div>
+
+      {/* Question 3 */}
+      <div>
+        <p className="text-sm font-medium text-gray-700">
+          3. I have several other books on cognitive economics in the planning
+          stages. Please indicate any that would be of particular interest to
+          you:
+        </p>
+        {[
+          "Shared Equity: Reimagining and Rebuilding Housing Finance Through Cognitive Economics: This book will focus on shared equity mortgages, which are currently being designed using cognitive economic principles. It outlines the thirty year process that led to their development. It outlines how they can address housing affordability, risk-sharing, and financial stability. It points to other markets in which cognitive economic research is needed to benefit households.",
+          "Human-AI Collaboration: How Cognitive Economics can Revolutionize Healthcare: This book explores how cognitive economics can enhance human-AI collaboration in medical decision-making, aiming to reduce medical errors. It includes research studies illustrating the practical application of cognitive economic principles in healthcare.",
+          "Clarity in Action: Improving Evidence-Based Communication: Building on cognitive economics, this book addresses how clear communication improves decision-making in policy, business, and personal contexts. It provides practical frameworks, case studies, and tools for enhancing communication.",
+          "Career Disruption and Worker Preparedness in the Age of AI: This book examines how workers perceive career risks from AI-driven changes and how cognitive economics can help prepare them. It explores strategies for improving worker resilience, from policy interventions to decision-making skills.",
+          "Teaching Cognitive Economics: A How-To Guide for Educators: This book provides educators with tools to teach cognitive economics effectively. It includes a framework for creating courses, sample syllabi, lecture materials, exercises, and strategies for engaging students in scientific thinking about decision-making and human behavior.",
+        ].map((book) => (
+          <div key={book} className="flex items-center gap-2">
+            <input
+              type="checkbox"
+              id={book}
+              name="selectedBooks"
+              value={book}
+              checked={formData.selectedBooks?.includes(book) || false}
+              onChange={handleCheckboxChange}
+              className="mr-3"
+            />
+            <label htmlFor={book} className="text-sm text-justify">
+              {book}
+            </label>
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
-interface InterestsProps {
-  formData: FormData;
+const GrowthCognitiveEconomics: React.FC<{
+  formData: any;
   handleInputChange: (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void;
-}
-
-const Interests: React.FC<InterestsProps> = ({
+  handleCheckboxChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleFileChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}> = ({
   formData,
   handleInputChange,
+  handleCheckboxChange,
+  handleFileChange,
 }) => {
   return (
     <div className="space-y-6">
-      <h2 className="text-2xl font-semibold">Part 3: Interests</h2>
-      <div className="space-y-4">
-        <div>
-          <label
-            htmlFor="motivation"
-            className="block text-sm font-medium text-gray-700"
-          >
-            1. Motivation for interest in cognitive economics in your own words:
-          </label>
-          <textarea
-            id="motivation"
-            name="motivation"
-            rows={4}
-            value={formData.motivation || ""}
-            onChange={handleInputChange}
-            className="mt-1 block w-full focus:outline-none px-2 py-2 border rounded-lg border-[#000000] shadow-sm focus:border-black focus:ring-black"
-          ></textarea>
-        </div>
+      <h2 className="text-2xl font-semibold">
+        Part 3: Participate in the Growth of Cognitive Economics
+      </h2>
 
-        {/* You can add more fields for other interests as necessary */}
+      <div>
+        <label className="block text-sm font-medium text-gray-700">
+          1. Preferred Participation (select all that apply):
+        </label>
+        <div className="space-y-4">
+          {[
+            "Purely Informational: I would like to keep current and learn more about cognitive economics as it progresses",
+            "Forming a Research Innovation Partnership: I would like to participate in or fund research in cognitive economics on key topics",
+            "Forming a Business Innovation Partnership: I would like to partner in developing socially beneficial business models or innovations aligned with cognitive economic principles",
+            "Forming a Regulatory Innovation Partnership: I would like to partner in integrating cognitive insights to upgrade regulatory frameworks for the age of AI",
+            "Forming an Education Innovation Partnership: I would like to partner in developing cognitive economic methods for upgrading education for the age of AI",
+          ].map((option) => (
+            <div key={option} className="flex items-center">
+              <input
+                type="checkbox"
+                id={option}
+                name="participationPreferences"
+                value={option}
+                checked={
+                  formData.participationPreferences?.includes(option) || false
+                }
+                onChange={handleCheckboxChange}
+                className="mr-2"
+              />
+              <label htmlFor={option} className="text-sm">
+                {option}
+              </label>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <label
+          htmlFor="proposalTitle"
+          className="block text-sm font-medium text-gray-700"
+        >
+          (a) Proposal Title:
+        </label>
+        <input
+          type="text"
+          id="proposalTitle"
+          name="proposalTitle"
+          value={formData.proposalTitle || ""}
+          onChange={handleInputChange}
+          className="mt-1 block w-full px-2 py-2 border rounded-lg border-black shadow-sm focus:border-black focus:ring-black"
+        />
+      </div>
+
+      <div>
+        <label
+          htmlFor="proposalSummary"
+          className="block text-sm font-medium text-gray-700"
+        >
+          (b) Summary (Max 200 words):
+        </label>
+        <textarea
+          id="proposalSummary"
+          name="proposalSummary"
+          rows={4}
+          value={formData.proposalSummary || ""}
+          onChange={handleInputChange}
+          className="mt-1 block w-full px-2 py-2 border rounded-lg border-black shadow-sm focus:border-black focus:ring-black"
+        />
+      </div>
+
+      <div>
+        <label
+          htmlFor="proposalFile"
+          className="block text-sm font-medium text-gray-700"
+        >
+          (c) Supporting Documentation:
+        </label>
+        <input
+          type="file"
+          id="proposalFile"
+          name="proposalFile"
+          onChange={handleFileChange}
+          className="mt-1 block w-full px-2 py-2 border rounded-lg border-black shadow-sm"
+        />
       </div>
     </div>
   );
