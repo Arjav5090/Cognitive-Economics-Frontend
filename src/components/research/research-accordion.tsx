@@ -29,16 +29,40 @@ const researchData: ResearchCategory[] = [
         year: "2001",
       },
       {
-        id: "https://www.jstor.org/stable/1914185",
-        title: "Prospect Theory: An Analysis of Decision Under Risk",
-        citation: "Econometrica",
-        year: "1979",
+        id: "https://bpb-us-e1.wpmucdn.com/wp.nyu.edu/dist/2/8350/files/2017/12/Fear-as-a-Policy-Instrument.pdf",
+        title: "Fear as a Policy Instrument",
+        citation: "In Time and Decision, eds. G. Loewenstein and D. Read",
+        year: "2003",
       },
       {
-        id: "https://www.jstor.org/stable/2118482",
-        title: "Anomalies in Intertemporal Choice: Evidence and Implications",
-        citation: "Psychological Review",
-        year: "1992",
+        id: "https://www.jstor.org/stable/1593781",
+        title: "AIDS Policy and Psychology: A Mechanism Design Approach",
+        citation: "RAND Journal of Economics",
+        year: "2003",
+      },
+      {
+        id: "https://www.jstor.org/stable/3590292",
+        title: "The Supply of Information by a Concerned Expert",
+        citation: "Economic Journal",
+        year: "2004",
+      },
+      {
+        id: "https://academic.oup.com/qje/article-abstract/123/2/663/1930862",
+        title: "Dopamine, Reward Prediction Error, and Economics",
+        citation: "Quarterly Journal of Economics",
+        year: "2008",
+      },
+      {
+        id: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4092011/",
+        title: "Measuring Beliefs and Rewards: A Neuroeconomic Approach",
+        citation: "Quarterly Journal of Economics",
+        year: "2010",
+      },
+      {
+        id: "https://www.nber.org/system/files/working_papers/w25707/w25707.pdf",
+        title: "Wishful Thinking",
+        citation: "NBER Working Paper",
+        year: "2019",
       },
     ],
   },
@@ -775,15 +799,15 @@ export function ResearchAccordion() {
             Research That Shapes the Future
           </h1>
         </div>
-        <p className="text-xl text-[#000000] font-light font-outfit mb-8 leading-relaxed text-justify">
-          Explore the groundbreaking impact of Professor Andrew Caplin's pioneer
-          in cognitive economics and behavioral macroeconomics. From
-          foundational theories to cutting-edge applications, discover how this
-          research is transforming our understanding of human decision-making
-          across various fields.
+        <p className="text-xl text-[#000000] font-outfit mb-8 leading-relaxed text-justify">
+          I've had the opportunity to explore the impact of my work in cognitive
+          economics and behavioral macroeconomics. From foundational theories to
+          more recent applications, I hope to offer insights into how this
+          research is helping to shape our understanding of human
+          decision-making in various areas
         </p>
       </div>
-      <div className="space-y-4">
+      <div className=" space-y-4">
         {researchData.map((category, index) => (
           <div
             key={index}
@@ -850,6 +874,101 @@ export function ResearchAccordion() {
             </div>
           </div>
         ))}
+      </div>
+      <div className="mt-6 mx-auto font-outfit text-justify text-black">
+        <section className="mb-6">
+          <h1 className="text-2xl font-semibold mb-4">Economic Logic</h1>
+          <p className="text-base mb-4">
+            I first encountered formal economic logic in high school at age 15.
+            I felt a profound sense of relief in at last finding a field in
+            which <strong>logic</strong> can be applied to human affairs. This
+            was a stark contrast to the identity-driven discourse and moral
+            posturing that dominates much of social and economic commentary—a
+            frustration that has only deepened with time.
+          </p>
+          <p className="text-base mb-4">
+            My fascination with reasoning about social affairs led me to pursue
+            an undergraduate degree in economics at Cambridge. While I learned
+            much, I was often disheartened by my tutors’ focus on ideological
+            critiques of <i className="font-light">capitalism</i> and
+            disinterest in comparing their ill-defined abstractions to reality.
+            Despite this, I found inspiration in my broad reading and research,
+            including a formative essay on the life-cycle model of wealth
+            accumulation, which explored how adjustable-rate mortgages might
+            explain the spike in U.K. savings during the 1970s inflation.
+          </p>
+          <p className="text-base mb-4">
+            One of my early academic heroes, Frank Hahn, profoundly shaped my
+            thinking. Yet when I explained my ideas to him, he immediately
+            pointed out its flaws under perfect capital markets. Even he seemed
+            unwilling to engage with actual market imperfections. This
+            highlighted a recurring academic attitude too admiring of existing
+            markets: “If it’s a good idea, it already being done.” Fighting
+            against this resistance to innovation has shaped my career,
+            particularly my work in housing finance reform, as detailed in
+            another section of this website.
+          </p>
+        </section>
+
+        <section className="mb-6">
+          <h2 className="text-2xl font-semibold mb-4">
+            Graduate School and Intellectual Development
+          </h2>
+          <p className="text-base mb-4">
+            At Yale, I was fortunate to work with remarkable mentors like Herb
+            Scarf, Bill Nordhaus, Don Brown, and James Tobin. They taught me to
+            bridge the gap between abstract economic models and real-world
+            social questions—a bridge that has defined my research.
+          </p>
+          <p className="text-base mb-4">
+            My first research project, with Herb Scarf, involved integer
+            programming in operations research. While no breakthroughs emerged,
+            it sharpened my geometric skills and laid a foundation for later
+            work. After some frustration, I shifted to applied questions,
+            exploring why firms adhered to FIFO accounting during inflation when
+            LIFO would have reduced their tax burdens. Though unsuccessful, this
+            experience fueled my interest in understanding apparent “mistakes”
+            in decision-making.
+          </p>
+          <p className="text-base mb-4">
+            A turning point came in my fourth year when I read Alan Blinder’s
+            article on retail inventory behavior. It inspired my first
+            significant research contribution, culminating in the paper{" "}
+            <i className="font-light">Aggregation of (S,s) Policies</i>. This
+            work laid the foundation for my later research on state-dependent
+            pricing and macroeconomic dynamics.
+          </p>
+        </section>
+
+        <section className="mb-6">
+          <h2 className="text-2xl font-semibold mb-4">
+            Navigating Academic Boundaries
+          </h2>
+          <p className="text-base mb-4">
+            Despite these successes, I became increasingly frustrated with the
+            rigid silos within and between social science disciplines.
+            Theoretical advancements often lacked corresponding innovations in
+            measurement, and academic conventions stifled interdisciplinary
+            exploration. This dissatisfaction drove me to step outside
+            traditional academic structures in 1994, focusing on work with
+            real-world impact—most notably, housing finance reform. The journey
+            has been long and often unrewarding, but the current recognition of
+            these ideas is deeply gratifying.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">
+            Bringing Social Science into the 21st Century
+          </h2>
+          <p className="text-base mb-4">
+            Social science lags behind disciplines like biology and data science
+            in connecting ideas with applications. Archaic institutional
+            structures hinder progress, and it’s time to shake things up. I
+            welcome ideas and collaborations to drive this transformation.
+            Irrelevance is not a virtue.
+          </p>
+        </section>
       </div>
     </div>
   );

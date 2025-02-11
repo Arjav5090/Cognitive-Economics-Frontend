@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+
 
 export interface ResourceCard {
   number: string;
@@ -31,12 +31,7 @@ export const ResourceCard: React.FC<Props> = ({ card }) => {
             {card.description}
           </p>
         </div>
-        <Link
-          to="#"
-          className="text-sm font-medium font-outfit hover:underline inline-flex items-center gap-2 mt-auto"
-        >
-          Explore <span className="text-lg">→</span>
-        </Link>
+      
       </div>
     </motion.div>
   );

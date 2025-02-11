@@ -16,26 +16,14 @@ export default function HousingFinancePage() {
             Real Estate and Housing Finance
           </h1>
 
-          <div className="space-y-1">
-            <p className="text-xl text-[#646464] font-medium font-outfit">
-              Andrew Caplin
-            </p>
-            <p className="text-xl text-[#000000] font-bold font-outfit">
-              Published in
-            </p>
-            <p className="text-sm text-[#000000] font-light font-outfit">
-              Palgrave Pivot, 2025
-            </p>
-          </div>
-
-          <div className="space-y-4 text-sm font-outfit">
-            <section>
-              <p className="text-[#000000] text-justify font-normal leading-relaxed">
-                My first paper on housing finance, “Collateral Damage,” (link)
-                was co-authored with Charlie Freeman, a top professional in
-                mortgage finance, and my research colleague Joe Tracy. We found
-                that homeowners in areas with falling house prices were unable
-                to refinance fixed-rate mortgages to benefit from lower interest
+          <div>
+            <section className="space-y-4 ">
+              <p className="text-[#000000] text-justify font-outfit font-normal leading-relaxed">
+                My first paper on housing finance, “Collateral Damage”, was
+                co-authored with Charlie Freeman, a top professional in mortgage
+                finance, and my research colleague Joe Tracy. We found that
+                homeowners in areas with falling house prices were unable to
+                refinance fixed-rate mortgages to benefit from lower interest
                 rates. This phenomenon exacerbated economic difficulties in
                 depressed regions relative to booming ones and increased the
                 risk of default. Partly due to our findings and advocacy, the
@@ -49,26 +37,27 @@ export default function HousingFinancePage() {
                 homeownership rates. Firms mix debt and equity, so why not allow
                 homebuyers to do the same? Our proposal to combine debt and
                 equity financing was detailed in a 1995 paper and expanded in
-                our 1997 book, Housing Partnerships. The work received generous
-                reviews from Ed Glaeser, Bob Shiller, and even the New York
-                Times, encouraging us to push for equity-sharing adoption and
-                explore related innovations such as reverse mortgages and house
-                price insurance.
+                our 1997 book,{" "}
+                <i className="font-light">Housing Partnerships</i>. The work
+                received generous reviews from Ed Glaeser, Bob Shiller, and even
+                the <i className="font-light">New York Times</i>, encouraging us
+                to push for equity-sharing adoption and explore related
+                innovations such as reverse mortgages and house price insurance.
               </p>
               <p className="text-[#000000] text-justify font-normal leading-relaxed">
                 As detailed in the “Housing Finance and Market Design” section
-                of the website (link), I was naively optimistic that these
-                changes would be implemented quickly. I collaborated with
-                entrepreneurs interested in these ideas and conducted extensive
-                empirical and theoretical research on house price dynamics. The
-                empirical work, conducted with Yann LeCun and others, applied
-                machine learning techniques to house price prediction during a
-                quiet period for AI. The theoretical work, with John Leahy,
-                introduced graph-theoretic approaches to study markets with
-                indivisible goods and evolving fundamentals. Our approaches were
-                more than a decade premature. Shared equity markets are only now
-                beginning to take shape (link to Genrae). Research on house
-                price dynamics will likely accelerate as these markets develop.
+                of the website, I was naively optimistic that these changes
+                would be implemented quickly. I collaborated with entrepreneurs
+                interested in these ideas and conducted extensive empirical and
+                theoretical research on house price dynamics. The empirical
+                work, conducted with Yann LeCun and others, applied machine
+                learning techniques to house price prediction during a quiet
+                period for AI. The theoretical work, with John Leahy, introduced
+                graph-theoretic approaches to study markets with indivisible
+                goods and evolving fundamentals. Our approaches were more than a
+                decade premature. Shared equity markets are only now beginning
+                to take shape. Research on house price dynamics will likely
+                accelerate as these markets develop.
               </p>
               <p className="text-[#000000] text-justify font-normal leading-relaxed">
                 During a period of pessimism about reform prospects, I wrote
@@ -78,19 +67,23 @@ export default function HousingFinancePage() {
                 “The Mortgage Mess,” I highlighted the lack of accountability
                 and the role of the press in shielding policymakers from
                 scrutiny. While reform has been slow, I believe better days are
-                ahead (link to Housing Finance tab).
+                ahead.
               </p>
             </section>
 
-            <section>
+            <section className="mt-4">
               <h2 className="text-xl text-[#000000] font-bold font-outfit">
                 References
               </h2>
-              <ul className="list-disc pl-4 text-[#000000] space-y-2 font-outfit">
+              <ol className="list-decimal pl-4 text-[#000000] space-y-3 font-outfit text-justify">
                 <li>
-                  Caplin, A., C. Freeman, and J. Tracy, “Collateral Damage: How
-                  Refinancing Constraints Exacerbate Regional Recessions”.{" "}
-                  <i className="text-sm">
+                  Caplin, A., C. Freeman, and J. Tracy,{" "}
+                  <strong>
+                    “Collateral Damage: How Refinancing Constraints Exacerbate
+                    Regional Recessions”.
+                  </strong>
+                  <i className="font-light">
+                    {" "}
                     Journal of Money, Credit and Banking, 496-516, 1997.
                   </i>
                   <p>
@@ -102,19 +95,22 @@ export default function HousingFinancePage() {
                 </li>
                 <li>
                   Caplin, A., C. Freeman, and J. Tracy,{" "}
-                  <i className="text-sm">
-                    Housing Partnerships: A New System of Housing Finance
+                  <strong>
+                    “Housing Partnerships: A New System of Housing Finance”.
+                  </strong>
+                  <i className="font-light">
+                    {" "}
+                    Columbia University Discussion Paper 705, 1994.
                   </i>
-                  . Columbia University Discussion Paper 705, 1994.
                   <p>Proposes equity-based finance for residential housing.</p>
                 </li>
                 <li>
                   Caplin, A., S. Chan, C. Freeman, and J. Tracy,{" "}
-                  <i className="text-sm">
-                    Housing Partnerships: A New Approach to a Market at a
-                    Crossroads
-                  </i>
-                  , MIT Press, 1997.
+                  <strong>
+                    “Housing Partnerships: A New Approach to a Market at a
+                    Crossroads”.
+                  </strong>
+                  <i className="font-light"> MIT Press, 1997.</i>
                   <p>
                     Expands on equity-based finance, discussing its potential to
                     expand affordability, lower costs and risks, and better
@@ -123,20 +119,29 @@ export default function HousingFinancePage() {
                   </p>
                 </li>
                 <li>
-                  Caplin, A. “The Reverse Mortgage Market: Problems and
-                  Prospects” in{" "}
-                  <i className="text-sm">Innovations in Retirement Financing</i>
-                  , eds. O. Mitchell, Z. Bodie, B. Hammond, and S. Zeldes,
-                  University of Pennsylvania Press, 2002.
+                  Caplin, A., eds. O. Mitchell, Z. Bodie, B. Hammond, and S.
+                  Zeldes,{" "}
+                  <strong>
+                    “The Reverse Mortgage Market: Problems and Prospects” in
+                    Innovations in Retirement Financing".
+                  </strong>
+                  <i className="font-light">
+                    {" "}
+                    University of Pennsylvania Press, 2002.
+                  </i>
                   <p>
                     Critiques debt-based reverse mortgages and advocates for
                     equity-based instruments.
                   </p>
                 </li>
                 <li>
-                  Caplin, A., J. Carr, F. Pollock, and Z.Y. Tong, “Shared Equity
-                  Mortgages, Housing Affordability, and Home Ownership”.{" "}
-                  <i className="text-sm">
+                  Caplin, A., J. Carr, F. Pollock, and Z.Y. Tong,{" "}
+                  <strong>
+                    “Shared Equity Mortgages, Housing Affordability, and Home
+                    Ownership”.
+                  </strong>
+                  <i className="font-light">
+                    {" "}
                     Housing Policy Debate, vol. 18, 209-242, 2007.
                   </i>
                   <p>
@@ -146,25 +151,34 @@ export default function HousingFinancePage() {
                 </li>
                 <li>
                   Caplin, A., W. Goetzmann, E. Hangen, B. Nalebuff, E. Prentice,
-                  J. Rodkin, M. Spiegel, and T. Skinner. “Home Equity Insurance:
-                  A Pilot Project”. In{" "}
-                  <i className="text-sm">Housing Markets and the Economy</i>,
-                  eds. E. Glaeser and J. Quigley, Lincoln Press, 2009.
+                  J. Rodkin, M. Spiegel, and T. Skinner.{" "}
+                  <strong>“Home Equity Insurance: A Pilot Project”. In</strong>
+                  <i className="font-light"> Housing Markets and the Economy</i>
+                  ,
+                  <strong>
+                    eds. E. Glaeser and J. Quigley, Lincoln Press, 2009.
+                  </strong>
                 </li>
                 <li>
-                  Caplin, A., N. Cunningham, and M. Engler, “Rectifying the Tax
-                  Treatment of Shared Appreciation Mortgages”.{" "}
-                  <i className="text-sm">Tax Law Review, 2008.</i>
+                  Caplin, A., N. Cunningham, and M. Engler,{" "}
+                  <strong>
+                    “Rectifying the Tax Treatment of Shared Appreciation
+                    Mortgages”.
+                  </strong>
+                  <i className="font-light"> Tax Law Review, 2008.</i>
                   <p>
                     Outlines IRS changes needed to clarify the tax status of
                     shared equity mortgages.
                   </p>
                 </li>
                 <li>
-                  Caplin, A., S. Chopra, J. Leahy, Y. LeCun, and T. Thampy,
-                  “Discovering the Hidden Structure of House Prices with a
-                  Non-Parametric Latent Manifold Model”.{" "}
-                  <i className="text-sm">
+                  Caplin, A., S. Chopra, J. Leahy, Y. LeCun, and T. Thampy,{" "}
+                  <strong>
+                    “Discovering the Hidden Structure of House Prices with a
+                    Non-Parametric Latent Manifold Model”.
+                  </strong>
+                  <i className="font-light">
+                    {" "}
                     Proceedings of the 13th ACM SIGKDD International Conference
                     on Knowledge Discovery and Data Mining, 2007.
                   </i>
@@ -174,10 +188,12 @@ export default function HousingFinancePage() {
                   </p>
                 </li>
                 <li>
-                  Caplin, A., S. Chopra, J. Leahy, Y. LeCun, and T. Thampy,
-                  “Machine Learning and the Spatial Structure of House Prices
-                  and Housing Returns”.{" "}
-                  <i className="text-sm">SSRN Working Paper, 2008.</i>
+                  Caplin, A., S. Chopra, J. Leahy, Y. LeCun, and T. Thampy,{" "}
+                  <strong>
+                    “Machine Learning and the Spatial Structure of House Prices
+                    and Housing Returns”.
+                  </strong>
+                  <i className="font-light"> SSRN Working Paper, 2008.</i>
                   <p>
                     Further application of machine learning to house price
                     prediction.
@@ -185,14 +201,19 @@ export default function HousingFinancePage() {
                 </li>
                 <li>
                   D. Aragon, Caplin, A. S. Chopra, J. Leahy, Y. LeCun, M.
-                  Scoffier, and J. Tracy, “Reassessing FHA Risk”.{" "}
-                  <i className="text-sm">NBER Working Paper, 2010.</i>
+                  Scoffier, and J. Tracy,{" "}
+                  <strong>“Reassessing FHA Risk”.</strong>
+                  <i className="font-light"> NBER Working Paper, 2010.</i>
                   <p>Highlights high risk due to FHA’s accounting practices.</p>
                 </li>
                 <li>
-                  Caplin, A., and J. Leahy, “A Graph Theoretic Approach to
-                  Markets for Indivisible Goods”.{" "}
-                  <i className="text-sm">
+                  Caplin, A., and J. Leahy,{" "}
+                  <strong>
+                    “A Graph Theoretic Approach to Markets for Indivisible
+                    Goods”.
+                  </strong>
+                  <i className="font-light">
+                    {" "}
                     Journal of Mathematical Economics, 52, 112-122, 2014.
                   </i>
                   <p>
@@ -202,9 +223,12 @@ export default function HousingFinancePage() {
                   </p>
                 </li>
                 <li>
-                  Caplin, A., and J. Leahy, “Comparative Statics in Markets for
-                  Indivisible Goods”.{" "}
-                  <i className="text-sm">
+                  Caplin, A., and J. Leahy,{" "}
+                  <strong>
+                    “Comparative Statics in Markets for Indivisible Goods”.
+                  </strong>
+                  <i className="font-light">
+                    {" "}
                     Journal of Mathematical Economics, 2020.
                   </i>
                   <p>
@@ -216,9 +240,13 @@ export default function HousingFinancePage() {
                   </p>
                 </li>
                 <li>
-                  Caplin, A., and R. Lowrance, “The Mortgage Mess, the Press,
-                  and the Politics of Inattention.”{" "}
-                  <i className="text-sm">
+                  Caplin, A., and R. Lowrance,{" "}
+                  <strong>
+                    “The Mortgage Mess, the Press, and the Politics of
+                    Inattention.”
+                  </strong>
+                  <i className="font-light">
+                    {" "}
                     American Economic Review Papers and Proceeding, 2014.
                   </i>
                   <p>
@@ -227,7 +255,7 @@ export default function HousingFinancePage() {
                     crisis.
                   </p>
                 </li>
-              </ul>
+              </ol>
             </section>
           </div>
         </article>

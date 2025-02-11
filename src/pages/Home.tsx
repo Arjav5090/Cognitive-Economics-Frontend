@@ -27,19 +27,29 @@ const stagger = {
 
 const researchCards = [
   {
-    date: "01/01/2025",
+    title: "Data Engineering for Cognitive Economics",
+    citation: "Journal of Economic Literature",
+    year: "2025",
+    link:"https://www.nber.org/papers/w29378",
     description:
-      "His work illuminates the intricate workings of the human mind in economic contexts, reshaping our approach to markets, policy, and real-world problem-solving.",
+      "Exploring how data engineering intersects with cognitive economics to unlock insights in human decision-making and market behavior.",
   },
   {
-    date: "31/12/2024",
+    title: "Modeling Machine Learning: A Cognitive Economic Approach",
+    citation: "Journal of Economic Theory",
+    year: "2025",
+    link:"https://nyuscholars.nyu.edu/en/publications/modeling-machine-learning-a-cognitive-economic-approach",
     description:
-      "His work illuminates the intricate workings of the human mind in economic contexts, reshaping our approach to markets, policy, and real-world problem-solving.",
+      "Pioneering a new way to integrate machine learning techniques within the framework of cognitive economics to better model human behavior.",
   },
   {
-    date: "30/12/2024",
+    title:
+      "The ABC’s of Who Benefits from Working with AI",
+    citation: "NBER Working Paper 33021",
+    link:"https://www.nber.org/system/files/working_papers/w33021/w33021.pdf",
+    year: "2024",
     description:
-      "His work illuminates the intricate workings of the human mind in economic contexts, reshaping our approach to markets, policy, and real-world problem-solving.",
+      "An in-depth analysis of how individuals' ability, beliefs, and calibration affect their outcomes when working with AI systems in various economic settings.",
   },
 ];
 
@@ -98,7 +108,7 @@ const items = [
   {
     title: "Discover Equity-Sharing Mortgages",
     description: "Innovative financial products launching in the U.S. in 2025.",
-    linkText: "(link)",
+    linkText: "Housing Partnerships",
   },
   {
     title: "Access My Research and Work",
@@ -125,20 +135,21 @@ const Home: React.FC = () => {
               <br />
               in Cognitive Economics
             </h2>
-            <p className="text-base font-outfit md:text-lg text-black max-w-xl mx-auto lg:mx-0">
+            <p className="text-base font-outfit md:text-lg text-black max-w-xl mx-auto lg:mx-0 text-justify">
+              <span className="text-[#0E0E0E] font-outfit text-pretty">
+          
+                I am       {" "}
+              </span>
               <span className="text-black font-semibold font-outfit">
-                Professor Andrew Caplin
+                Andrew Caplin
               </span>
               <span className="text-[#0E0E0E] font-outfit text-pretty">
-                {""}, Silver Professor of Economics at NYU and Leader of the
-                Sloan Foundation Program on Cognitive Economics at Work, is a
-                pioneering researcher in Cognitive Economics, bridging
-                psychology, neuroscience, and economics to revolutionize our
-                understanding of decision-making processes.
+                {""}, Silver Professor of Economics at NYU, and I lead the Sloan
+                Foundation Program on Cognitive Economics at Work.
               </span>
-              <p className="text-[#0E0E0E] font-outfit text-pretty">
+              <p className="text-[#0E0E0E] font-outfit text-pretty text-justify">
                 My book,{" "}
-                <i>
+                <i className="underline">
                   An Introduction to Cognitive Economics: The Science of
                   Mistakes
                 </i>
@@ -147,19 +158,7 @@ const Home: React.FC = () => {
               </p>
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-              <Link to="/research">
-                <button className="bg-[#0E0E0E] border-2 border-black font-outfit text-white rounded-2xl py-3 px-8">
-                  Explore Research
-                </button>
-              </Link>
-
-              <Link to="/resources">
-                <button className="rounded-2xl font-outfit border-2 bg-white border-[#0E0E0E] py-3 px-6">
-                  Learning Resources
-                </button>
-              </Link>
-            </div>
+           
           </motion.div>
           <motion.div
             variants={fadeInUp}
@@ -170,7 +169,6 @@ const Home: React.FC = () => {
               <img
                 src={AndrewCaplinImage}
                 alt="Picture of the author"
-                
                 className="w-auto rounded-3xl h-auto max-w-full max-h-full object-contain"
               />
             </div>
@@ -198,6 +196,7 @@ const Home: React.FC = () => {
           </div>
         </motion.div>
         <motion.div className="px-4 md:py-10 max-w-7xl mx-auto bg-white text-black font-outfit p-8 flex flex-col items-center">
+         
           <div className="w-full grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {items.map((item, index) => (
               <div
@@ -205,14 +204,15 @@ const Home: React.FC = () => {
                 className="p-6 border border-black rounded-2xl min-w-[320px] flex flex-col items-center text-center"
               >
                 <h2 className="text-2xl font-semibold mb-2">{item.title}</h2>
-                <p className="w-64">
+                <p className="w-64 text-center">
                   {item.description}
+                  {" "}
                   {item.linkText && (
                     <a
                       href="https://mitpress.mit.edu/9780262527262/housing-partnerships/"
                       className="text-black underline"
                     >
-                      {item.linkText}
+                      <i>{item.linkText}</i>
                     </a>
                   )}
                 </p>
@@ -326,7 +326,7 @@ const Home: React.FC = () => {
         <SectionTitle title="Latest" subtitle="Research" />
         <hr className="border-t border-black" />
         <motion.div
-          className="flex gap-4 overflow-x-auto pb-4 mt-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8"
           variants={fadeInUp}
         >
           {researchCards.map((card, i) => (

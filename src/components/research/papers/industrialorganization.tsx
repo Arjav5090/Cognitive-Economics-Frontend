@@ -16,21 +16,9 @@ export default function IndustrialOrganizationPage() {
             Industrial Organization and Markets
           </h1>
 
-          <div className="space-y-1">
-            <p className="text-xl text-[#646464] font-medium font-outfit">
-              Andrew Caplin
-            </p>
-            <p className="text-xl text-[#000000] font-bold font-outfit">
-              Published in
-            </p>
-            <p className="text-sm text-[#000000] font-light font-outfit">
-              Palgrave Pivot, 2025
-            </p>
-          </div>
-
-          <div className="space-y-4 text-sm font-outfit">
-            <section>
-              <p className="text-[#000000] text-justify font-normal leading-relaxed">
+          <div>
+            <section className="space-y-4 font-outfit">
+              <p className="text-[#000000] text-justify font-normal font-outfit leading-relaxed">
                 My work in industrial organization and markets emerged as an
                 indirect outgrowth of other interests, often intersecting with
                 housing markets and indivisibilities. The two articles with John
@@ -42,15 +30,15 @@ export default function IndustrialOrganizationPage() {
               </p>
             </section>
 
-            <section>
+            <section className="mt-4">
               <h2 className="text-xl text-[#000000] font-bold font-outfit">
                 References
               </h2>
-              <ul className="list-disc pl-4 text-[#000000] space-y-2 font-outfit">
+              <ol className="list-decimal pl-4 text-[#000000] space-y-3 font-outfit text-justify">
                 <li>
-                  Caplin, A. and B. Nalebuff, “Aggregation and Imperfect
-                  Competition”.{" "}
-                  <i className="text-sm">Econometrica, 25-60, 1991.</i>
+                  Caplin, A. and B. Nalebuff,{" "}
+                  <strong>“Aggregation and Imperfect Competition”.</strong>
+                  <i className="font-light"> Econometrica, 25-60, 1991.</i>
                   <p>
                     Develops a unified framework for studying price competition
                     among differentiated products. Proves the existence and,
@@ -61,8 +49,10 @@ export default function IndustrialOrganizationPage() {
                   </p>
                 </li>
                 <li>
-                  Caplin, A. and B. Nalebuff, “Competition among Institutions”.{" "}
-                  <i className="text-sm">
+                  Caplin, A. and B. Nalebuff,{" "}
+                  <strong>“Competition among Institutions”.</strong>
+                  <i className="font-light">
+                    {" "}
                     Journal of Economic Theory, 72(2), pp. 306-342, 1997.
                   </i>
                   <p>
@@ -74,9 +64,13 @@ export default function IndustrialOrganizationPage() {
                   </p>
                 </li>
                 <li>
-                  Caplin, A., and J. Leahy, “A Graph Theoretic Approach to
-                  Markets for Indivisible Goods”.{" "}
-                  <i className="text-sm">
+                  Caplin, A., and J. Leahy,{" "}
+                  <strong>
+                    “A Graph Theoretic Approach to Markets for Indivisible
+                    Goods”.
+                  </strong>
+                  <i className="font-light">
+                    {" "}
                     Journal of Mathematical Economics, 52, 112-122, 2014.
                   </i>
                   <p>
@@ -86,9 +80,12 @@ export default function IndustrialOrganizationPage() {
                   </p>
                 </li>
                 <li>
-                  Caplin, A., and J. Leahy, “Comparative Statics in Markets for
-                  Indivisible Goods”.{" "}
-                  <i className="text-sm">
+                  Caplin, A., and J. Leahy,{" "}
+                  <strong>
+                    “Comparative Statics in Markets for Indivisible Goods”.
+                  </strong>
+                  <i className="font-light">
+                    {" "}
                     Journal of Mathematical Economics, 2020.
                   </i>
                   <p>
@@ -99,9 +96,11 @@ export default function IndustrialOrganizationPage() {
                   </p>
                 </li>
                 <li>
-                  Bucher, S., and A. Caplin, “Inattention and Inequity in School
-                  Matching”.{" "}
-                  <i className="text-sm">NBER Working Paper 29586. 2021.</i>
+                  Bucher, S., and A. Caplin,{" "}
+                  <strong>
+                    “Inattention and Inequity in School Matching”.
+                  </strong>
+                  <i className="font-light"> NBER Working Paper 29586. 2021.</i>
                   <p>
                     Models how imperfect information affects outcomes in school
                     matching markets. Demonstrates that the interaction between
@@ -109,7 +108,7 @@ export default function IndustrialOrganizationPage() {
                     policy concern.
                   </p>
                 </li>
-              </ul>
+              </ol>
             </section>
           </div>
         </article>

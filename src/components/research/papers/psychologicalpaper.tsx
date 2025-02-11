@@ -13,78 +13,107 @@ export default function PsychologicalExpectedUtilityPage() {
 
         <article className="space-y-5">
           <h1 className="text-5xl font-bold text-[#000000] font-outfit">
-            Psychological Expected Utility Theory and Anticipatory Feelings
+            Psychology of Learning: Anxiety and Prediction Errors
           </h1>
 
-          <div className="space-y-1">
-            <p className="text-xl text-[#646464] font-outfit font-medium">Andrew Caplin</p>
-            <p className="text-xl text-[#000000] font-outfit font-bold">Published in</p>
-            <p className="text-sm text-[#000000] font-outfit font-light">Quarterly Journal of Economics, 2001</p>
-          </div>
-
-          <div className="space-y-4 text-sm">
+          <div className="space-y-4">
             <section>
-              <h2 className="text-xl text-[#000000] font-outfit font-bold">Introduction</h2>
               <p className="text-[#000000] text-justify font-normal font-outfit leading-relaxed">
-                My interest in psychology and economics began when John Leahy and I explored the behavioral implications of emotional states like anxiety and anticipation. We sought to understand how such emotions could influence decision-making processes and the economic choices individuals make. This work extends psychological theories of emotional response to economic contexts, providing a model for the integration of these emotional states into expected utility theory.
+                My interest in psychology and economics began when John Leahy
+                and I explored the behavioral implications of emotional states
+                like anxiety and anticipation. Our framework, summarized in
+                <span className="font-bold"> Psychological Expected Utility Theory and Anticipatory Feelings</span>
+                , challenged the notion that emotions are inherently
+                irrational. Instead, we argued that many decisions aim to
+                optimize psychological states—a rational, if subtle, form of
+                reasoning.
               </p>
             </section>
 
             <section>
-              <h2 className="text-xl text-[#000000] font-outfit font-bold">Abstract</h2>
               <p className="text-[#000000] text-justify font-normal font-outfit leading-relaxed">
-                In this paper, we introduce the concept of anticipatory feelings into expected utility theory, specifically focusing on how feelings of anxiety and anticipation can affect decision-making under uncertainty. We demonstrate that individuals’ choices are not only shaped by their expected outcomes but also by the emotions they anticipate experiencing. By incorporating anticipatory feelings into traditional utility models, we can better understand a wide range of economic behaviors that deviate from traditional rational choice models.
+                While well-received, this work faced criticism over its
+                operational content. Critics reasonably asked: What specific
+                behaviors reveal whether a person avoids information due to
+                anxiety versus a love of surprise? This challenge led me to
+                question broader conventions in economics: What behaviors reveal
+                imperfect or asymmetric information? How do we identify latent
+                informational states and the constraints that shape them?
               </p>
             </section>
 
             <section>
-              <h2 className="text-xl text-[#000000] font-outfit font-bold">Core Concepts and Methodology</h2>
               <p className="text-[#000000] text-justify font-normal font-outfit leading-relaxed">
-                The primary innovation in this paper is the introduction of anticipatory feelings—emotions experienced in response to future events—into standard utility models. To this end, we propose a modification of expected utility theory that incorporates these emotions into the calculation of utility, alongside more traditional economic factors such as risk and reward.
+                This critique deepened my commitment to operationalizing
+                abstract concepts through innovative mea- surement, ultimately
+                driving my work in <span className="font-bold">Economic Data Engineering</span> and <span className="font-bold">Cognitivie Economics.</span>
+                These fields, discussed elsewhere on this site, aim to bridge the gap between theory and measurement,
+                bringing clarity and rigor to the study of decision-making.
               </p>
             </section>
 
             <section>
-              <h2 className="text-xl text-[#000000] font-outfit font-bold">Key Insights and Findings</h2>
-              <ul className="list-disc pl-4 text-[#000000] space-y-2">
-                <li>
-                  Individuals tend to overvalue outcomes associated with high emotional anticipation.
-                  <ul className="list-disc pl-4 mt-1">
-                    <li>Emotional states such as anxiety and excitement influence risk preferences and the perception of uncertainty.</li>
-                    <li>This can lead to seemingly irrational decisions where individuals either over- or under-estimate the utility of certain choices based on their emotional state.</li>
-                  </ul>
-                </li>
-                <li>
-                  Anticipatory feelings may account for several anomalies in traditional economic models.
-                  <ul className="list-disc pl-4 mt-1">
-                    <li>For example, people may sometimes avoid risk despite the potential for high financial returns due to anxiety about future outcomes.</li>
-                    <li>Similarly, they may exhibit overconfidence when anticipating pleasurable outcomes, leading to overly optimistic forecasts about future events.</li>
-                  </ul>
-                </li>
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="text-xl text-[#000000] font-outfit font-bold">Policy Implications</h2>
               <p className="text-[#000000] text-justify font-normal font-outfit leading-relaxed">
-                The incorporation of emotional states such as anxiety and anticipation into economic models has important implications for policy design. Understanding how these emotional responses influence economic behavior can improve the effectiveness of interventions, such as in the areas of public health, insurance, and savings behavior. For example, policies designed to alleviate anxiety or stress during uncertain times could encourage more rational decision-making in areas such as healthcare and retirement savings.
+                I have also been engaged in research linking neuroscience and
+                economics, in particular in relation to the dopaminergic reward
+                prediction error theory. Evidence to date is broadly
+                confirmatory, but measurement remains highly challenging. Only
+                when this changes will it be important to revisit this area.
               </p>
             </section>
 
-            <section>
-              <h2 className="text-xl text-[#000000] font-outfit font-bold">References</h2>
-              <ul className="list-disc pl-4 text-[#000000] space-y-2">
-                <li>
-                  Caplin, A., and J. Leahy, “Psychological Expected Utility Theory and Anticipatory Feelings”. Quarterly Journal of Economics, 2001.
-                </li>
-                <li>
-                  Kahneman, D., and A. Tversky, “Prospect Theory: An Analysis of Decision Under Risk”. Econometrica, 1979.
-                </li>
-                <li>
-                  Loewenstein, G., and D. Prelec, “Anomalies in Intertemporal Choice: Evidence and Implications”. Psychological Review, 1992.
-                </li>
-              </ul>
-            </section>
+            <section className="mt-4">
+  <h2 className="text-xl text-[#000000] font-outfit font-bold">
+    References
+  </h2>
+  
+  <ol className="list-decimal pl-4 text-[#000000] space-y-3 font-outfit text-justify">
+    <li>
+      Caplin, A., and J. Leahy, <strong>“Psychological Expected Utility Theory and Anticipatory Feelings”</strong>.  
+      <span className="italic font-light"> Quarterly Journal of Economics</span>, 2001. 
+      <br />
+      Extends expected utility theory to account for emotional states like anxiety and anticipatory excitement.
+    </li>
+    <li>
+      Caplin, A., <strong>“Fear as a Policy Instrument”</strong>. In <span className="italic font-light"> Time and Decisions</span>, eds. G. Loewenstein and D. Read, 2003. 
+      <br />
+      Explores how fear can motivate behavioral change, focusing on public health messaging and its impact on attention, knowledge, and their link to prevention efforts.
+    </li>
+    <li>
+      Caplin, A., and K. Eliaz, <strong>“AIDS Policy and Psychology: A Mechanism Design Approach”</strong>. 
+      <span className="italic font-light"> RAND Journal of Economics</span>, 2003. 
+      <br />
+      Develops a model acknowledging psychological factors, such as fear of testing, to design mechanisms that encourage HIV testing and reduce disease spread.
+    </li>
+    <li>
+      Caplin, A., and J. Leahy, <strong>“The Supply of Information by a Concerned Expert”</strong> 
+      <span className="italic font-light"> Economic Journal</span>, 2004. 
+      <br />
+      Investigates how policymakers balance the utility of informed citizens with the potential psychological costs of information, using a game-theoretic framework.
+    </li>
+    <li>
+      Caplin, A., and M. Dean, <strong>“Dopamine, Reward Prediction Error, and Economics”</strong> (with Mark Dean). 
+      <span className="italic font-light"> Quarterly Journal of Economics</span>, 2008. 
+      <br />
+      Provides axiomatic foundations for the “reward prediction error” hypothesis, bridging neuroscience and economics to study belief formation and choice.
+    </li>
+    <li>
+      Caplin, A., M. Dean, P. Glimcher, and R. Rutledge, <strong>“Measuring Beliefs and Rewards: A Neuroeconomic Approach”</strong>. 
+      <span className="italic font-light"> Quarterly Journal of Economics</span>, 2010. 
+      <br />
+      Tests dopamine’s role in encoding reward prediction errors, providing evidence for asymmetries in neural responses to gains and losses.
+    </li>
+    <li>
+      Caplin, A., and J. Leahy, <strong>“Wishful Thinking”</strong>. 
+      <span className="italic font-light"> NBER Working Paper</span>, 2019.
+ 
+      <br />
+      Models agents who derive utility from optimistic beliefs, potentially rationalizing various forms of bias.
+    </li>
+  </ol>
+</section>
+
+
           </div>
         </article>
       </div>

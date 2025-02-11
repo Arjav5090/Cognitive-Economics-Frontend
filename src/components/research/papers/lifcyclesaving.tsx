@@ -17,19 +17,7 @@ export default function LifeCycleSavingsPage() {
             Beliefs
           </h1>
 
-          <div className="space-y-1">
-            <p className="text-xl text-[#646464] font-outfit font-medium">
-              Andrew Caplin
-            </p>
-            <p className="text-xl text-[#000000] font-outfit font-bold">
-              Published in
-            </p>
-            <p className="text-sm text-[#000000] font-outfit font-light">
-              Palgrave Pivot, 2025
-            </p>
-          </div>
-
-          <section className="space-y-4 text-sm">
+          <section className="space-y-4 ">
             <p className="text-[#000000] text-justify font-normal font-outfit leading-relaxed">
               Most theoretically oriented economists underestimate how
               profoundly measurement shapes what we consider important. Our
@@ -62,29 +50,31 @@ export default function LifeCycleSavingsPage() {
             </p>
 
             <p className="text-[#000000] text-justify font-normal font-outfit leading-relaxed">
-              With this by way of motivation, My early work on the propensity to
-              plan (Ameriks, Caplin, and Leahy, 2003) explored connections
-              between planning behaviors and wealth accumulation. Those who do
-              not like planning appear to accumulate less wealth than those who
-              do. Yet the lack of a tight connection to theory makes the precise
-              mechanism unclear. Does planning enhance attention to the future?
-              Can people be taught to plan better or even enjoy it? And does
-              planning improve other long-term goals, such as career success?
-              These open questions highlight the need for further synergistic
-              advances in modeling and measurement and led me to seek a tighter
-              link with modeling in the design of survey instruments.
+              With this by way of motivation, My early work on the{" "}
+              <i className="font-light"> propensity to plan</i> (Ameriks,
+              Caplin, and Leahy, 2003) explored connections between planning
+              behaviors and wealth accumulation. Those who do not like planning
+              appear to accumulate less wealth than those who do. Yet the lack
+              of a tight connection to theory makes the precise mechanism
+              unclear. Does planning enhance attention to the future? Can people
+              be taught to plan better or even enjoy it? And does planning
+              improve other long-term goals, such as career success? These open
+              questions highlight the need for further synergistic advances in
+              modeling and measurement and led me to seek a tighter link with
+              modeling in the design of survey instruments.
             </p>
 
             <p className="text-[#000000] text-justify font-normal font-outfit leading-relaxed">
               A second research line examined present bias, a cornerstone of
               behavioral economics. Following Strotz (1955), my collaborators
               and I (Ameriks, Caplin, Leahy, and Tyler, 2007) measured the gap
-              between ideal and actual spending. Younger individuals often
-              wished to spend less than they anticipated, correlating with lower
-              wealth levels—consistent with present bias. Interestingly, older
-              individuals often wished to spend more than they expected. Again,
-              while these findings are suggestive, the modeling framework for
-              rich exploration of counter-factual behaviors remains
+              between <i className="font-light">ideal</i> and{" "}
+              <i className="font-light">actual</i> spending. Younger individuals
+              often wished to spend less than they anticipated, correlating with
+              lower wealth levels—consistent with present bias. Interestingly,
+              older individuals often wished to spend more than they expected.
+              Again, while these findings are suggestive, the modeling framework
+              for rich exploration of counter-factual behaviors remains
               underdeveloped.
             </p>
 
@@ -97,14 +87,14 @@ export default function LifeCycleSavingsPage() {
               increasingly focused on tightly connecting measurement to theory.
               Almas, Attanasio, and Jervis (2024) argue similarly for designing.
               That is one of the key motivations for recent years designing
-              strategic survey questions (SSQs) to directly measure contingent
-              behaviors. Inspired by the preference parameter questions of
-              Barsky, Juster, Kimball, and Shapiro (1997), SSQs are engineered
-              to elicit behaviors in counterfactual scenarios. Developing SSQs
-              involves:
+              <strong> strategic survey questions</strong> (SSQs) to directly
+              measure contingent behaviors. Inspired by the preference parameter
+              questions of Barsky, Juster, Kimball, and Shapiro (1997), SSQs are
+              engineered to elicit behaviors in counterfactual scenarios.
+              Developing SSQs involves:
             </p>
 
-            <ul className="list-disc pl-6 text-[#000000] space-y-2">
+            <ul className="list-disc pl-6 text-[#000000]font-outfit text-base space-y-2">
               <li>
                 Pinpointing a substantive economic question and corresponding
                 model.
@@ -125,10 +115,12 @@ export default function LifeCycleSavingsPage() {
               and bequest motives are key hypotheses. In Ameriks et al. (2015,
               2020), we designed SSQs to disentangle these preferences.
               Respondents allocated wealth between long-term care and bequests
-              using state-dependent Arrow securities, tested their
-              comprehension, and repeated the exercise for different amounts.
-              The results were clear: long-term care dominated bequest motives
-              in explaining late-life savings behavior for most.
+              using{" "}
+              <i className="font-light"> state-dependent Arrow securities</i>,
+              tested their comprehension, and repeated the exercise for
+              different amounts. The results were clear: long-term care
+              dominated bequest motives in explaining late-life savings behavior
+              for most.
             </p>
 
             <p className="text-[#000000] text-justify font-normal font-outfit leading-relaxed">
@@ -148,8 +140,8 @@ export default function LifeCycleSavingsPage() {
               that they might themselves face a long period of decline. Yet the
               majority also trusted their designated agents, typically children,
               to take good care. Their deeper worry was about their ability to
-              recognize their own decline in time to transfer financial control.
-              This is a massively under-studied area.
+              <strong> recognize</strong> their own decline in time to transfer
+              financial control. This is a massively under-studied area.
             </p>
 
             <h2 className="text-xl font-bold text-[#000000]">
@@ -157,12 +149,16 @@ export default function LifeCycleSavingsPage() {
             </h2>
             <p className="text-[#000000] text-justify font-normal font-outfit leading-relaxed">
               I want to highlight groundbreaking work by Alison Andrew and Abi
-              Adams: Revealed Beliefs and the Marriage Market Return to
-              Education. They explore why female education and labor force
-              participation diverge in India, cleverly designing SSQs to jointly
-              recover preferences and beliefs. Their findings are both validated
-              and socially significant, setting a new high watermark for this
-              line of research.
+              Adams:{" "}
+              <i>
+                {" "}
+                Revealed Beliefs and the Marriage Market Return to Education
+              </i>
+              . They explore why female education and labor force participation
+              diverge in India, cleverly designing SSQs to jointly recover
+              preferences and beliefs. Their findings are both validated and
+              socially significant, setting a new high watermark for this line
+              of research.
             </p>
 
             <h2 className="text-xl font-bold text-[#000000]">
@@ -172,8 +168,8 @@ export default function LifeCycleSavingsPage() {
               Contingent beliefs are another focus of my research. Early
               studies, such as Dominitz and Manski (1997), highlight the
               importance of measuring income expectations. In recent work in the
-              Copenhagen Life Panel (link to section), we are expanding on this
-              to measure contingent risk allowing for the possibility of
+              Copenhagen Life Panel, we are expanding on this to measure{" "}
+              <strong>contingent risk</strong> allowing for the possibility of
               quitting or being fired from the current job. Job-match quality,
               which directly impacts subjective risk but is impossible to
               identify in administrative data, contributes significantly to
@@ -181,15 +177,19 @@ export default function LifeCycleSavingsPage() {
               administratively-linked subjective risk measures.
             </p>
           </section>
-          <section className="space-y-6 text-sm">
+          <section className="mt-4">
             <h2 className="text-xl font-bold text-[#000000]">References</h2>
-            <ul className="list-decimal pl-6 text-[#000000] space-y-4">
+            <ol className="list-decimal pl-6 text-[#000000] space-y-3 font-outfit text-justify">
               <li>
                 <p>
-                  Dominitz, J. and C. Manski, “Using Expectations Data to Study
-                  Subjective Income Expectations”.
-                  <i className="text-sm">
-                    Journal of the American Statistical Association, 92(439),
+                  Dominitz, J. and C. Manski,{" "}
+                  <strong>
+                    “Using Expectations Data to Study Subjective Income
+                    Expectations”
+                  </strong>
+                  .{" "}
+                  <i className="font-light">
+                     Journal of the American Statistical Association, 92(439),
                     pp. 855-867.
                   </i>
                 </p>
@@ -199,9 +199,12 @@ export default function LifeCycleSavingsPage() {
               </li>
               <li>
                 <p>
-                  Barsky, R., F.T. Juster, M. Kimball, and M. Shapiro,
-                  “Preference Parameters and Behavioral Heterogeneity”.
-                  <i className="text-sm">
+                  Barsky, R., F.T. Juster, M. Kimball, and M. Shapiro,{" "}
+                  <strong>
+                    “Preference Parameters and Behavioral Heterogeneity”
+                  </strong>
+                  .{" "}
+                  <i className="font-light">
                     Quarterly Journal of Economics, 1997.
                   </i>
                 </p>
@@ -212,9 +215,12 @@ export default function LifeCycleSavingsPage() {
               </li>
               <li>
                 <p>
-                  Strotz, R., “Myopia and Inconsistency in Dynamic Utility
-                  Maximization”.
-                  <i className="text-sm">
+                  Strotz, R.,{" "}
+                  <strong>
+                    “Myopia and Inconsistency in Dynamic Utility Maximization”
+                  </strong>
+                  .{" "}
+                  <i className="font-light">
                     Review of Economic Studies, 23(3), pp. 165-180.
                   </i>
                 </p>
@@ -225,9 +231,12 @@ export default function LifeCycleSavingsPage() {
               </li>
               <li>
                 <p>
-                  Ameriks, J., A. Caplin, and J. Leahy, “Wealth Accumulation and
-                  the Propensity to Plan”.
-                  <i className="text-sm">
+                  Ameriks, J., A. Caplin, and J. Leahy,{" "}
+                  <strong>
+                    “Wealth Accumulation and the Propensity to Plan”
+                  </strong>
+                  .{" "}
+                  <i className="font-light">
                     American Economic Review, vol. 97, pp. 966-972, 2003.
                   </i>
                 </p>
@@ -240,9 +249,9 @@ export default function LifeCycleSavingsPage() {
               </li>
               <li>
                 <p>
-                  Ameriks, J., A. Caplin, J. Leahy, and T. Tyler, “Measuring
-                  Self-Control Problems”.
-                  <i className="text-sm">
+                  Ameriks, J., A. Caplin, J. Leahy, and T. Tyler,{" "}
+                  <strong>“Measuring Self-Control Problems”</strong>.{" "}
+                  <i className="font-light">
                     American Economic Review, vol. 97, pp. 966-972, 2007.
                   </i>
                 </p>
@@ -257,9 +266,9 @@ export default function LifeCycleSavingsPage() {
               </li>
               <li>
                 <p>
-                  Ameriks, J., A. Caplin, S. Laufer, and S. Van Nieuwerburgh,
-                  “The Joy of Giving or Assisted Living?”
-                  <i className="text-sm">
+                  Ameriks, J., A. Caplin, S. Laufer, and S. Van Nieuwerburgh,{" "}
+                  <strong>“The Joy of Giving or Assisted Living?”</strong>.{" "}
+                  <i className="font-light">
                     Journal of Finance, vol. 66, pp. 519-561, 2011.
                   </i>
                 </p>
@@ -274,8 +283,11 @@ export default function LifeCycleSavingsPage() {
               </li>
               <li>
                 <p>
-                  Ameriks, J., J. Briggs, A. Caplin, M. Shapiro, and C. Tonetti,
-                  “Long-Term Care Utility and Late-in-Life Savings”.
+                  Ameriks, J., J. Briggs, A. Caplin, M. Shapiro, and C. Tonetti,{" "}
+                  <strong>
+                    “Long-Term Care Utility and Late-in-Life Savings”
+                  </strong>
+                  .
                 </p>
                 <p>
                   Older wealth-holders spend down assets much more slowly than
@@ -291,9 +303,9 @@ export default function LifeCycleSavingsPage() {
               </li>
               <li>
                 <p>
-                  Caplin, A., M. Luo, and K. McGarry, “Long Term Care in the
-                  Family Context”.
-                  <i className="text-sm">Economic Inquiry, 2016.</i>
+                  Caplin, A., M. Luo, and K. McGarry,{" "}
+                  <strong>“Long Term Care in the Family Context”</strong>.{" "}
+                  <i className="font-light">Economic Inquiry, 2016.</i>
                 </p>
                 <p>
                   Long-term care can be costly for those who need it and onerous
@@ -306,9 +318,12 @@ export default function LifeCycleSavingsPage() {
               </li>
               <li>
                 <p>
-                  Ameriks, J., A. Caplin, S. Laufer, and S. Van Nieuwerburgh,
-                  “Annuity Valuation, Long Term Care, and Bequest Motives”.
-                  <i className="text-sm">
+                  Ameriks, J., A. Caplin, S. Laufer, and S. Van Nieuwerburgh,{" "}
+                  <strong>
+                    “Annuity Valuation, Long Term Care, and Bequest Motives”
+                  </strong>
+                  .{" "}
+                  <i className="font-light">
                     In Recalibrating Retirement Spending and Saving, John
                     Ameriks and Olivia Mitchell, (Eds), Oxford University Press,
                     2008.
@@ -325,9 +340,12 @@ export default function LifeCycleSavingsPage() {
               <li>
                 <p>
                   Ameriks, J., J. Briggs, A. Caplin, M. Lee, M. Shapiro, and C.
-                  Tonetti, “The Long-Term-Care Insurance Puzzle: Modeling and
-                  Measurement”.
-                  <i className="text-sm">NBER Working Paper 22726, 2016.</i>
+                  Tonetti,{" "}
+                  <strong>
+                    “The Long-Term-Care Insurance Puzzle: Modeling and
+                    Measurement”
+                  </strong>
+                  .{" "}<i className="font-light">NBER Working Paper 22726, 2016.</i>
                 </p>
                 <p>
                   Individuals face significant late-in-life risks, prominently
@@ -341,10 +359,13 @@ export default function LifeCycleSavingsPage() {
               </li>
               <li>
                 <p>
-                  Ameriks, J., A. Caplin, M. Lee, M. Shapiro, and C. Tonetti,
-                  “Cognitive Decline, Limited Awareness, Imperfect Agency, and
-                  Financial Well-being”.
-                  <i className="text-sm">
+                  Ameriks, J., A. Caplin, M. Lee, M. Shapiro, and C. Tonetti,{" "}
+                  <strong>
+                    “Cognitive Decline, Limited Awareness, Imperfect Agency, and
+                    Financial Well-being”
+                  </strong>
+                  .{" "}
+                  <i className="font-light">
                     American Economic Review: Insights, 2023.
                   </i>
                 </p>
@@ -360,8 +381,8 @@ export default function LifeCycleSavingsPage() {
               <li>
                 <p>
                   Caplin, A., V. Gregory, E. Lee, S. Leth-Petersen, and J.
-                  Sæverud, “Subjective Earnings Risk”.
-                  <i className="text-sm">NBER Working Paper 31019, 2023.</i>
+                  Sæverud, <strong>“Subjective Earnings Risk”</strong>.{" "}
+                  <i className="font-light">NBER Working Paper 31019, 2023.</i>
                 </p>
                 <p>
                   Introduces the Copenhagen Life Panel contingent earnings
@@ -373,9 +394,13 @@ export default function LifeCycleSavingsPage() {
               </li>
               <li>
                 <p>
-                  Andrew, A., & Adams, A. (2023). “Revealed Beliefs and the
-                  Marriage Market Return to Education”.
-                  <i className="text-sm">
+                  Andrew, A., & Adams, A. (2023).{" "}
+                  <strong>
+                    “Revealed Beliefs and the Marriage Market Return to
+                    Education”
+                  </strong>
+                  .{" "}
+                  <i className="font-light">
                     Under Revision for Quarterly Journal of Economics.
                   </i>
                 </p>
@@ -389,9 +414,12 @@ export default function LifeCycleSavingsPage() {
               </li>
               <li>
                 <p>
-                  Almas, I., Attanasio, O., & Jervis, P. (2024). “Economics and
-                  Measurement: New Measures to Model Decision-Making”.
-                  <i className="text-sm">Econometrica, 2024.</i>
+                  Almas, I., Attanasio, O., & Jervis, P. (2024).{" "}
+                  <strong>
+                    “Economics and Measurement: New Measures to Model
+                    Decision-Making”
+                  </strong>
+                  .{" "}<i className="font-light">Econometrica, 2024.</i>
                 </p>
                 <p>
                   A general methodological statement of the need for additional
@@ -399,7 +427,7 @@ export default function LifeCycleSavingsPage() {
                   behavior, with a particular focus on family decision-making.
                 </p>
               </li>
-            </ul>
+            </ol>
           </section>
         </article>
       </div>

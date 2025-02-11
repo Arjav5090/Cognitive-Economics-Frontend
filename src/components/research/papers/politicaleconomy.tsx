@@ -16,20 +16,10 @@ export default function PoliticalEconomyPage() {
             Political Economy
           </h1>
 
-          <div className="space-y-1">
-            <p className="text-xl text-[#646464] font-medium font-outfit">
-              Andrew Caplin
-            </p>
-            <p className="text-xl text-[#000000] font-bold font-outfit">
-              Published in
-            </p>
-            <p className="text-sm text-[#000000] font-light font-outfit">
-              Econometrica, 1988–2014
-            </p>
-          </div>
+         
 
-          <div className="space-y-4 text-sm font-outfit">
-            <section>
+          <div>
+            <section className="space-y-4  font-outfit">
               <p className="text-[#000000] text-justify font-normal leading-relaxed">
                 Early in my career, my work in political economy reflected my
                 geometric training under Herb Scarf. Barry Nalebuff and I
@@ -41,7 +31,7 @@ export default function PoliticalEconomyPage() {
                 always, progresses at a glacial pace.
               </p>
               <p className="text-[#000000] text-justify font-normal leading-relaxed">
-                Our follow-up paper, “Competition among Institutions,”
+                Our follow-up paper, <i className="font-light">“Competition among Institutions”</i>,
                 highlighted the limits of geometric intuition. It modeled
                 self-selection into communities where institutional rules are
                 determined by their members. The results, intriguingly linked to
@@ -55,59 +45,42 @@ export default function PoliticalEconomyPage() {
               </p>
             </section>
 
-            <section>
-              <h2 className="text-xl text-[#000000] font-bold font-outfit">
-                References
-              </h2>
-              <ul className="list-disc pl-4 text-[#000000] space-y-2 font-outfit">
-                <li>
-                  Caplin, A. and B. Nalebuff, “On 64% Majority Rule”.{" "}
-                  <i className="text-sm">Econometrica, pp. 787-815, 1988.</i>
-                  <p>
-                    Extends Black’s (1948) single-peaked preference result to
-                    multi-dimensional settings, showing conditions under which
-                    the mean voter’s most-preferred outcome is unbeatable with a
-                    64%-majority rule.
-                  </p>
-                </li>
-                <li>
-                  Caplin, A. and B. Nalebuff, “Aggregation and Social Choice: A
-                  Mean Voter Theorem”.{" "}
-                  <i className="text-sm">Econometrica, pp. 1-24, 1991.</i>
-                  <p>
-                    Generalizes results on 64%-majority rule and identifies the
-                    mean voter’s most preferred position as an alternative to
-                    the median voter. Introduces a mathematical aggregation
-                    theorem with broad economic applications.
-                  </p>
-                </li>
-                <li>
-                  Caplin, A. and B. Nalebuff, “Competition among Institutions”.{" "}
-                  <i className="text-sm">
-                    Journal of Economic Theory, 72(2), pp. 306-342, 1997.
-                  </i>
-                  <p>
-                    Models group formation and institutional policy as mutually
-                    dependent. Highlights the algebraic nature of equilibrium
-                    existence in multi-dimensional, multi-institutional
-                    settings, suggesting deeper connections between economic and
-                    political environments.
-                  </p>
-                </li>
-                <li>
-                  Caplin, A., and R. Lowrance, “The Mortgage Mess, the Press,
-                  and the Politics of Inattention.”{" "}
-                  <i className="text-sm">
-                    American Economic Review Papers and Proceeding, 2014.
-                  </i>
-                  <p>
-                    Critiques the lack of policy accountability and the
-                    destructive role of the press in the 2006-2007 housing
-                    crisis.
-                  </p>
-                </li>
-              </ul>
-            </section>
+            <section className="mt-4">
+  <h2 className="text-xl text-[#000000] font-bold font-outfit">
+    References
+  </h2>
+  <ol className="list-decimal pl-4 text-[#000000] space-y-2 font-outfit font-justify">
+    <li>
+      Caplin, A. and B. Nalebuff, <strong>“On 64% Majority Rule”.</strong> 
+      <i className="font-light"> Econometrica, pp. 787-815, 1988.</i>
+      <p>
+        Extends Black’s (1948) single-peaked preference result to multi-dimensional settings, showing conditions under which the mean voter’s most-preferred outcome is unbeatable with a 64%-majority rule.
+      </p>
+    </li>
+    <li>
+      Caplin, A. and B. Nalebuff, <strong>“Aggregation and Social Choice: A Mean Voter Theorem”.</strong> 
+      <i className="font-light"> Econometrica, pp. 1-24, 1991.</i>
+      <p>
+        Generalizes results on 64%-majority rule and identifies the mean voter’s most preferred position as an alternative to the median voter. Introduces a mathematical aggregation theorem with broad economic applications.
+      </p>
+    </li>
+    <li>
+      Caplin, A. and B. Nalebuff, <strong>“Competition among Institutions”.</strong> 
+      <i className="font-light"> Journal of Economic Theory, 72(2), pp. 306-342, 1997.</i>
+      <p>
+        Models group formation and institutional policy as mutually dependent. Highlights the algebraic nature of equilibrium existence in multi-dimensional, multi-institutional settings, suggesting deeper connections between economic and political environments.
+      </p>
+    </li>
+    <li>
+      Caplin, A., and R. Lowrance, <strong>“The Mortgage Mess, the Press, and the Politics of Inattention.”</strong> 
+      <i className="font-light"> American Economic Review Papers and Proceeding, 2014.</i>
+      <p>
+        Critiques the lack of policy accountability and the destructive role of the press in the 2006-2007 housing crisis.
+      </p>
+    </li>
+  </ol>
+</section>
+
           </div>
         </article>
       </div>
