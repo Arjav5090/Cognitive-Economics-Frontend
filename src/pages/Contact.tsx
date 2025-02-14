@@ -54,18 +54,20 @@ export default function ContactForm() {
           </p>
 
           {/* Social Links */}
-          <div className="flex flex-row flex-wrap gap-4  sm:gap-6 mb-6">
+          <div className="flex flex-row flex-wrap gap-4 sm:gap-6 mb-6">
 
             <div className="flex flex-col sm:justify-items-center items-center">
-              <Link to="mailto:ac1@nyu.edu" className="p-3 sm:p-4 rounded-full border border-black hover:bg-gray-100 flex items-center justify-center">
+              <Link to="mailto:andrew.caplin@nyu.edu" className="p-3 sm:p-4 rounded-full border border-black hover:bg-gray-100 flex items-center justify-center">
                 <Mail className="w-10 h-10 sm:w-6 sm:h-6" />
               </Link>
-              <p className="text-black text-md sm:text-sm font-outfit mt-2">ac1@nyu.edu</p>
+              <p className="text-black text-md sm:text-sm font-outfit mt-2">andrew.caplin@nyu.edu</p>
             </div>
           </div>
 
-          <div className="text-sm sm:text-md text-black font-outfit mt-2">
-            <strong>Office:</strong> Economics Department, New York University
+          <div className="text-sm flex flex-col sm:text-md text-black font-outfit mt-2">
+            <strong>Office:</strong>
+            <span>Department of Economics, <br/> New York University, <br/> 19 W. 4th Street, 6th
+              Floor, <br/> New York, NY 10012</span>
           </div>
         </div>
 

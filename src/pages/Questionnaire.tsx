@@ -1,5 +1,5 @@
 import { ChangeEvent, useState } from "react";
-import emailjs from "@emailjs/browser";
+
 
 interface FormData {
   fullName?: string;
@@ -57,53 +57,53 @@ export default function Questionnaire() {
     }));
   };
 
-  const handleSubmit = (
-    e: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLButtonElement>
-  ) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>| React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
-    
-    const templateParams = {
-      fullName: formData.fullName,
-      email: formData.email,
-      location: formData.location,
-      age: formData.age,
-      workStatus:formData.workStatus,
-      highestEducationField: formData.highestEducationField,
-      interestDescription: formData.interestDescription,
-      selectedChapters: formData.selectedChapters?.join("\n") || "", // Join selected chapters with line breaks
-      selectedBooks: formData.selectedBooks?.join("\n"),
-      participationPreferences:
-        formData.participationPreferences?.join("\n") || "",
-      proposalTitle: formData.proposalTitle,
-      proposalSummary: formData.proposalSummary,
-      proposalFile: formData.proposalFile
-        ? formData.proposalFile.name
-        : undefined,
-      date: new Date().toLocaleDateString(),
-    };
+    const formDataToSend = new FormData();
 
-    // Ensure templateParams follows the correct type
-    emailjs
-      .send(
-        "service_n8gwbrr", // Service ID
-        "template_hyjfabv", // Template ID
-        templateParams, // Form data
-        "s17P9tfVREIA2zuD-" // User ID from EmailJS
-      )
-      .then(
-        (result) => {
-          console.log("Email sent successfully:", result.text);
-          setIsSubmitted(true); // Show success message
-          setIsError(false); // Reset error state
-        },
-        (error) => {
-          console.error("Error sending email:", error.text);
-          setIsSubmitted(false);
-          setIsError(true); // Show error message
-        }
-      );
-  };
+    formDataToSend.append("name", String(formData.fullName));
+    formDataToSend.append("email", String(formData.email));
+    formDataToSend.append("location", String(formData.location));
+    formDataToSend.append("age", String(formData.age));
+    formDataToSend.append("education", String(formData.highestEducationField));
+    formDataToSend.append("workStatus", String(formData.workStatus));
+    formDataToSend.append("interestInCognitiveEconomics", String(formData.interestDescription));
+
+    // Convert arrays to JSON strings
+    formDataToSend.append("selectedChapters", JSON.stringify(formData.selectedChapters || []));
+    formDataToSend.append("selectedBooks", JSON.stringify(formData.selectedBooks || []));
+    formDataToSend.append("participationPreferences", JSON.stringify(formData.participationPreferences || []));
+
+    formDataToSend.append("proposalTitle", String(formData.proposalTitle || ""));
+    formDataToSend.append("proposalSummary", String(formData.proposalSummary || ""));
+
+    // Ensure the file is correctly added
+    if (formData.proposalFile instanceof File) {
+        formDataToSend.append("proposalFile", formData.proposalFile);
+    }
+
+    try {
+        const response = await fetch("http://localhost:5001/api/forms/submit", {
+            method: "POST",
+            body: formDataToSend,
+        });
+
+        if (!response.ok) throw new Error("Failed to submit");
+
+        setIsSubmitted(true);
+        setIsError(false);
+    } catch (error) {
+        console.error("Submission error:", error);
+        setIsSubmitted(false);
+        setIsError(true);
+    }
+};
+
+
+  
+  
+  
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLFormElement>) => {
     if (e.key === "Enter") {

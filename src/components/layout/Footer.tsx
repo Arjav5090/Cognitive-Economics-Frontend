@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
   const resources = [
@@ -15,9 +15,9 @@ const Footer: React.FC = () => {
     { name: "Resources", path: "/resources" },
     { name: "Research papers", path: "/research" },
     { name: "Questionnaire", path: "/questionnaire" }, // Adjust as needed
-  //  { name: "Forum", path: "/forum" },
+    //  { name: "Forum", path: "/forum" },
     { name: "Contact", path: "/contact" },
- //   { name: "Chatbot", path: "/chatbot" }
+    //   { name: "Chatbot", path: "/chatbot" }
   ];
 
   return (
@@ -34,19 +34,29 @@ const Footer: React.FC = () => {
                 aria-label="Email"
               >
                 <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center">
-                  <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                    <polyline points="22,6 12,13 2,6"/>
+                  <svg
+                    className="w-5 h-5 text-white"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                  >
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
                   </svg>
                 </div>
-                <span className="mt-1 text-sm block text-center">ac1@nyu.edu</span>
+                <span className="mt-1 text-sm block text-center">
+                  andrew.caplin@nyu.edu
+                </span>
               </a>
             </div>
           </div>
 
           <div>
-            <h3 className="font-bold text-lg mb-2">Office</h3>
-            <p className="text-sm">Economics Department, New York University</p>
+            <h3 className="font-bold font-outfit text-lg mb-2">Office</h3>
+            <p className="text-sm font-outfit">
+              Department of Economics, <br/> New York University, <br/> 19 W. 4th Street, 6th
+              Floor, <br/> New York, NY 10012
+            </p>
           </div>
         </div>
 

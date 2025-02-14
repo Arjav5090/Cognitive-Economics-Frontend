@@ -10,6 +10,8 @@ import download from "../assets/media/Download.svg";
 import redirect from "../assets/media/Redirect.svg";
 import { Quote } from "lucide-react";
 import Video from "../assets/media/Introductory.mp4";
+import book from "../assets/media/Book.pdf";
+
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -28,25 +30,24 @@ const stagger = {
 const researchCards = [
   {
     title: "Data Engineering for Cognitive Economics",
-    citation: "Journal of Economic Literature",
+    citation: "NBER Working Paper 29378 ",
     year: "2025",
-    link:"https://www.nber.org/papers/w29378",
+    link: "https://www.nber.org/papers/w29378",
     description:
       "Exploring how data engineering intersects with cognitive economics to unlock insights in human decision-making and market behavior.",
   },
   {
     title: "Modeling Machine Learning: A Cognitive Economic Approach",
-    citation: "Journal of Economic Theory",
-    year: "2025",
-    link:"https://nyuscholars.nyu.edu/en/publications/modeling-machine-learning-a-cognitive-economic-approach",
+    citation: "NBER working paper 30600",
+    year: "2024",
+    link: "https://www.nber.org/papers/w30600",
     description:
       "Pioneering a new way to integrate machine learning techniques within the framework of cognitive economics to better model human behavior.",
   },
   {
-    title:
-      "The ABC’s of Who Benefits from Working with AI",
+    title: "The ABC’s of Who Benefits from Working with AI",
     citation: "NBER Working Paper 33021",
-    link:"https://www.nber.org/system/files/working_papers/w33021/w33021.pdf",
+    link: "https://www.nber.org/system/files/working_papers/w33021/w33021.pdf",
     year: "2024",
     description:
       "An in-depth analysis of how individuals' ability, beliefs, and calibration affect their outcomes when working with AI systems in various economic settings.",
@@ -117,6 +118,7 @@ const items = [
 ];
 
 const Home: React.FC = () => {
+ 
   return (
     <>
       <motion.section
@@ -137,8 +139,7 @@ const Home: React.FC = () => {
             </h2>
             <p className="text-base font-outfit md:text-lg text-black max-w-xl mx-auto lg:mx-0 text-justify">
               <span className="text-[#0E0E0E] font-outfit text-pretty">
-          
-                I am       {" "}
+                I am{" "}
               </span>
               <span className="text-black font-semibold font-outfit">
                 Andrew Caplin
@@ -157,8 +158,6 @@ const Home: React.FC = () => {
                 interdisciplinary field.
               </p>
             </p>
-
-           
           </motion.div>
           <motion.div
             variants={fadeInUp}
@@ -196,7 +195,6 @@ const Home: React.FC = () => {
           </div>
         </motion.div>
         <motion.div className="px-4 md:py-10 max-w-7xl mx-auto bg-white text-black font-outfit p-8 flex flex-col items-center">
-         
           <div className="w-full grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {items.map((item, index) => (
               <div
@@ -205,8 +203,7 @@ const Home: React.FC = () => {
               >
                 <h2 className="text-2xl font-semibold mb-2">{item.title}</h2>
                 <p className="w-64 text-center">
-                  {item.description}
-                  {" "}
+                  {item.description}{" "}
                   {item.linkText && (
                     <a
                       href="https://mitpress.mit.edu/9780262527262/housing-partnerships/"
@@ -270,45 +267,55 @@ const Home: React.FC = () => {
               The Science of Mistakes
             </p>
             <p className="text-xl font-light text-[#0E0E0E] leading-relaxed max-w-2xl font-outfit">
-              This groundbreaking book introduces "cognitive economics", a
-              rapidly emerging interdisciplinary science built on economic,
-              psychological, and data-scientific foundations.
+            This book introduces cognitive economics, an emerging field at the intersection of economics, psychology, and data science. I explore decision-making mistakes, AI’s impact on the workforce, and practical applications in law, privacy, and human-AI collaboration. I also advocate for interdisciplinary cooperation to advance the field.
             </p>
             <p className="text-xl font-light text-[#0E0E0E] font-outfit">
-              Professor Caplin provides innovative approaches to help students
-              collaboratively and safely explore problems that shape economic
-              outcomes.
+            Whether you're a citizen, leader, scholar, or policymaker, this book will show you why cognitive economics matters—and how you can help shape its future.
             </p>
             <motion.div className="flex gap-4 pt-4" variants={fadeInUp}>
-              <button className="bg-[#0E0E0E] rounded-xl border-2 border-[#0E0E0E] px-6 py-2 text-white font-outfit flex gap-2">
-                <motion.button
-                  className="bg-[#0E0E0E] flex gap-2"
+              <a
+                href={book}
+                download="An_Introduction_to_Cognitive_Economics.pdf"
+                className="bg-[#0E0E0E] rounded-xl border-2 border-[#0E0E0E] px-3 py-3 text-white font-outfit flex items-center gap-2"
+              >
+                <motion.span
+                  className="flex items-center gap-2"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   Download PDF
-                  <span>
-                    <img height={25} width={25} src={download}></img>
-                  </span>
-                </motion.button>
-              </button>
-              <Link
-                to="https://link.springer.com/book/10.1007/978-3-031-73042-9"
+                  <img
+                    height={20}
+                    width={20}
+                    src={download}
+                    alt="Download icon"
+                  />
+                </motion.span>
+              </a>
+
+              {/* ✅ View PDF in Browser */}
+              <a
+                href={book}
                 target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white rounded-xl border-2 border-[#0E0E0E] px-3 py-3 text-black font-outfit flex items-centerflex gap-2"
               >
-                <button className="bg-white rounded-xl border-2 border-[#0E0E0E] px-6 py-2 text-black font-outfit flex gap-2">
-                  <motion.button
-                    className="bg-white flex gap-2"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Learn More
-                    <span>
-                      <img height={25} width={25} src={redirect}></img>
-                    </span>
-                  </motion.button>
-                </button>
-              </Link>
+                <motion.span
+                  className="flex items-center gap-2"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  View PDF
+                  <motion.span>
+                    <img
+                      height={20}
+                      width={20}
+                      src={redirect}
+                      alt="Redirect icon"
+                    />
+                  </motion.span>
+                </motion.span>
+              </a>
             </motion.div>
             <p className="text-gray-500 text-lg font-outfit font-light ">
               Available as Open Access - Free to download and read online
