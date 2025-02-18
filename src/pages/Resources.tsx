@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
-import { ResourcesContent } from "../components/resource/resource-content";
 import { ResourcesSidebar } from "../components/resource/resource-sidebar";
 import ApplicationPage from "../components/resource/application";
 
@@ -8,8 +7,6 @@ import FoundationPage from "../components/resource/foundation";
 import HousingPage from "../components/resource/housing";
 import ManufacturingPage from "../components/resource/manufacturing";
 import TrainingPage from "../components/resource/training";
-import WorkersPage from "../components/resource/workers";
-import ProtocolsPage from "../components/resource/protocols";
 import AcceleratorPage from "../components/resource/accelerator";
 import ImportanceandProblemPage from "../components/resource/importanceandproblems";
 import CaseandLessonPage from "../components/resource/caseandlesson";
@@ -34,15 +31,12 @@ export default function ResourcesPage() {
       <main className="flex-1">
         <Routes>
           {/* Default route for ResourcesContent */}
-          <Route path="/" element={<ResourcesContent />} />
           <Route path="/application" element={<ApplicationPage />} />
 
           <Route path="/foundation" element={<FoundationPage />} />
           <Route path="/housing" element={<HousingPage />} />
           <Route path="/manufacturing" element={<ManufacturingPage />} />
           <Route path="/training" element={<TrainingPage />} />
-          <Route path="/workers" element={<WorkersPage />} />
-          <Route path="/protocols" element={<ProtocolsPage />} />
           <Route path="/accelerator" element={<AcceleratorPage />} />
           <Route
             path="/importanceandproblem"

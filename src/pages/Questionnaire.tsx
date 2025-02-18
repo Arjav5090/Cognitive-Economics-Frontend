@@ -1,6 +1,5 @@
 import { ChangeEvent, useState } from "react";
 
-
 interface FormData {
   fullName?: string;
   email?: string;
@@ -30,15 +29,59 @@ export default function Questionnaire() {
   const [formData, setFormData] = useState<FormData>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const isStepValid = (step: number): boolean => {
+    const data = formData;
+    const isValid = true;
+
+    if (step === 0) {
+      // Check if any required field is missing
+      if (
+        !data.fullName ||
+        !data.email ||
+        !data.location ||
+        !data.age ||
+        !data.highestEducationField ||
+        !data.workStatus
+      ) {
+        setIsError(true);
+        return false;
+      }
+    } else if (step === 1) {
+      if (
+        !data.interestDescription ||
+        (data.selectedChapters?.length ?? 0) === 0
+      ) {
+        setIsError(true);
+        return false;
+      }
+    } else if (step === 2) {
+      if (
+        (data.participationPreferences?.length ?? 0) === 0 ||
+        !data.proposalTitle ||
+        !data.proposalSummary
+      ) {
+        setIsError(true);
+        return false;
+      }
+    }
+
+    return isValid;
+  };
 
   const nextStep = () => {
-    if (currentStep < steps.length - 1) {
-      setCurrentStep(currentStep + 1);
+    if (isStepValid(currentStep)) {
+      if (currentStep < steps.length - 1) {
+        setIsError(false);
+        setCurrentStep(currentStep + 1);
+      }
     }
   };
 
   const prevStep = () => {
     if (currentStep > 0) {
+      setIsError(false);
       setCurrentStep(currentStep - 1);
     }
   };
@@ -57,10 +100,18 @@ export default function Questionnaire() {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>| React.MouseEvent<HTMLButtonElement>) => {
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLButtonElement>
+  ) => {
     e.preventDefault();
+    if (!isStepValid(currentStep)) {
+      setIsError(true);
+      return;
+    }
 
     const formDataToSend = new FormData();
+    setIsError(false); // Reset error state before submitting
+    setErrorMessage(null); // Reset any previous error message
 
     formDataToSend.append("name", String(formData.fullName));
     formDataToSend.append("email", String(formData.email));
@@ -68,42 +119,56 @@ export default function Questionnaire() {
     formDataToSend.append("age", String(formData.age));
     formDataToSend.append("education", String(formData.highestEducationField));
     formDataToSend.append("workStatus", String(formData.workStatus));
-    formDataToSend.append("interestInCognitiveEconomics", String(formData.interestDescription));
+    formDataToSend.append(
+      "interestInCognitiveEconomics",
+      String(formData.interestDescription)
+    );
 
     // Convert arrays to JSON strings
-    formDataToSend.append("selectedChapters", JSON.stringify(formData.selectedChapters || []));
-    formDataToSend.append("selectedBooks", JSON.stringify(formData.selectedBooks || []));
-    formDataToSend.append("participationPreferences", JSON.stringify(formData.participationPreferences || []));
+    formDataToSend.append(
+      "selectedChapters",
+      JSON.stringify(formData.selectedChapters || [])
+    );
+    formDataToSend.append(
+      "selectedBooks",
+      JSON.stringify(formData.selectedBooks || [])
+    );
+    formDataToSend.append(
+      "participationPreferences",
+      JSON.stringify(formData.participationPreferences || [])
+    );
 
-    formDataToSend.append("proposalTitle", String(formData.proposalTitle || ""));
-    formDataToSend.append("proposalSummary", String(formData.proposalSummary || ""));
+    formDataToSend.append(
+      "proposalTitle",
+      String(formData.proposalTitle || "")
+    );
+    formDataToSend.append(
+      "proposalSummary",
+      String(formData.proposalSummary || "")
+    );
 
     // Ensure the file is correctly added
     if (formData.proposalFile instanceof File) {
-        formDataToSend.append("proposalFile", formData.proposalFile);
+      formDataToSend.append("proposalFile", formData.proposalFile);
     }
 
     try {
-        const response = await fetch("http://localhost:5001/api/forms/submit", {
-            method: "POST",
-            body: formDataToSend,
-        });
+      const response = await fetch("http://localhost:5001/api/forms/submit", {
+        method: "POST",
+        body: formDataToSend,
+      });
 
-        if (!response.ok) throw new Error("Failed to submit");
+      if (!response.ok) throw new Error("Failed to submit");
 
-        setIsSubmitted(true);
-        setIsError(false);
+      setIsSubmitted(true);
+      setIsError(false);
     } catch (error) {
-        console.error("Submission error:", error);
-        setIsSubmitted(false);
-        setIsError(true);
+      console.error("Submission error:", error);
+      setIsSubmitted(false);
+      setIsError(true);
+      setErrorMessage("Something went wrong. Please try again later.");
     }
-};
-
-
-  
-  
-  
+  };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLFormElement>) => {
     if (e.key === "Enter") {
@@ -163,6 +228,18 @@ export default function Questionnaire() {
               handleFileChange={handleFileChange}
             />
           )}
+          {isError && !errorMessage && (
+            <div className="mt-4 p-4 bg-red-100 text-red-700 border border-red-400 rounded">
+              ❌ Please fill in all required fields before proceeding to the
+              next step.
+            </div>
+          )}
+
+          {isError && errorMessage && (
+            <div className="mt-4 p-4 bg-red-100 text-red-700 border border-red-400 rounded">
+              ❌ {errorMessage}
+            </div>
+          )}
 
           <div className="mt-8 flex justify-between">
             <button
@@ -200,7 +277,7 @@ export default function Questionnaire() {
         )}
 
         {/* Error Message */}
-        {isError && (
+        {isSubmitted && (
           <div className="mt-4 p-4 bg-red-100 text-red-700 border border-red-400 rounded">
             ❌ Oops! Something went wrong. Please try again.
           </div>
@@ -265,7 +342,7 @@ const BasicInfo: React.FC<BasicInfoProps> = ({
         <div>
           <label
             htmlFor="fullName"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-black"
           >
             1. Name:
           </label>
@@ -283,7 +360,7 @@ const BasicInfo: React.FC<BasicInfoProps> = ({
         <div>
           <label
             htmlFor="email"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-black"
           >
             2. Email Address:
           </label>
@@ -301,7 +378,7 @@ const BasicInfo: React.FC<BasicInfoProps> = ({
         <div>
           <label
             htmlFor="location"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-black"
           >
             3. Location (City/State, Country):
           </label>
@@ -317,10 +394,7 @@ const BasicInfo: React.FC<BasicInfoProps> = ({
         </div>
 
         <div>
-          <label
-            htmlFor="age"
-            className="block text-sm font-medium text-gray-700"
-          >
+          <label htmlFor="age" className="block text-sm font-medium text-black">
             4. Age:
           </label>
           <input
@@ -337,7 +411,7 @@ const BasicInfo: React.FC<BasicInfoProps> = ({
         <div>
           <label
             htmlFor="highestEducationField"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-black"
           >
             5. What is your highest educational qualification and in what field?
           </label>
@@ -355,7 +429,7 @@ const BasicInfo: React.FC<BasicInfoProps> = ({
         <div>
           <label
             htmlFor="workStatus"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-black"
           >
             6. Are you currently working for pay (Y/N), and if so, how would you
             describe your line of work?
@@ -402,7 +476,7 @@ const InterestCognitiveEconomics: React.FC<InterestCognitiveEconomicsProps> = ({
       <div>
         <label
           htmlFor="interestDescription"
-          className="block text-sm font-medium text-gray-700"
+          className="block text-sm font-medium text-black"
         >
           1. In your own words, briefly describe how you found out about
           cognitive economics and why it interests you:
@@ -419,12 +493,13 @@ const InterestCognitiveEconomics: React.FC<InterestCognitiveEconomicsProps> = ({
 
       {/* Question 2 */}
       <div>
-        <p className="text-sm font-medium text-gray-700">
+        <p className="text-sm font-medium text-black">
           2. Please pick out those chapters of{" "}
           <i>Introduction to Cognitive Economics</i> that are of particular
           interest to you and explain why:
         </p>
         {[
+          "Chapter 1: Introduction to Cognitive Economics",
           "Chapter 2: Cognitive Household Finance",
           "Chapter 3: Measuring and Minimizing Mistakes",
           "Chapter 4: Cognitive Economics at Work",
@@ -435,7 +510,7 @@ const InterestCognitiveEconomics: React.FC<InterestCognitiveEconomicsProps> = ({
           "Chapter 9: Next Steps in Research, Business, and Policy",
           "Chapter 10: Accelerating Cognitive Economics: Why Now, and How?",
         ].map((chapter) => (
-          <div key={chapter} className="flex items-center">
+          <div key={chapter} className="flex items-center gap-2">
             <input
               type="checkbox"
               id={chapter}
@@ -445,7 +520,7 @@ const InterestCognitiveEconomics: React.FC<InterestCognitiveEconomicsProps> = ({
               onChange={handleCheckboxChange}
               className="mr-2"
             />
-            <label htmlFor={chapter} className="text-sm">
+            <label htmlFor={chapter} className="text-sm my-2">
               {chapter}
             </label>
           </div>
@@ -454,40 +529,43 @@ const InterestCognitiveEconomics: React.FC<InterestCognitiveEconomicsProps> = ({
 
       {/* Question 3 */}
       <div>
-        <p className="text-sm font-medium text-gray-700">
+        <p className="text-sm font-medium text-black">
           3. I have several other books on cognitive economics in the planning
           stages. Please indicate any that would be of particular interest to
           you:
         </p>
         {[
-          "Shared Equity: Reimagining and Rebuilding Housing Finance Through Cognitive Economics: This book will focus on shared equity mortgages, which are currently being designed using cognitive economic principles. It outlines the thirty year process that led to their development. It outlines how they can address housing affordability, risk-sharing, and financial stability. It points to other markets in which cognitive economic research is needed to benefit households.",
-          "Human-AI Collaboration: How Cognitive Economics can Revolutionize Healthcare: This book explores how cognitive economics can enhance human-AI collaboration in medical decision-making, aiming to reduce medical errors. It includes research studies illustrating the practical application of cognitive economic principles in healthcare.",
-          "Clarity in Action: Improving Evidence-Based Communication: Building on cognitive economics, this book addresses how clear communication improves decision-making in policy, business, and personal contexts. It provides practical frameworks, case studies, and tools for enhancing communication.",
+          "Shared Equity - Reimagining and Rebuilding Housing Finance Through Cognitive Economics: This book will focus on shared equity mortgages, which are currently being designed using cognitive economic principles. It outlines the thirty year process that led to their development. It outlines how they can address housing affordability, risk-sharing, and financial stability. It points to other markets in which cognitive economic research is needed to benefit households.",
+          "Human-AI Collaboration - How Cognitive Economics can Revolutionize Healthcare: This book explores how cognitive economics can enhance human-AI collaboration in medical decision-making, aiming to reduce medical errors. It includes research studies illustrating the practical application of cognitive economic principles in healthcare.",
+          "Clarity in Action - Improving Evidence-Based Communication: Building on cognitive economics, this book addresses how clear communication improves decision-making in policy, business, and personal contexts. It provides practical frameworks, case studies, and tools for enhancing communication.",
           "Career Disruption and Worker Preparedness in the Age of AI: This book examines how workers perceive career risks from AI-driven changes and how cognitive economics can help prepare them. It explores strategies for improving worker resilience, from policy interventions to decision-making skills.",
-          "Teaching Cognitive Economics: A How-To Guide for Educators: This book provides educators with tools to teach cognitive economics effectively. It includes a framework for creating courses, sample syllabi, lecture materials, exercises, and strategies for engaging students in scientific thinking about decision-making and human behavior.",
-        ].map((book) => (
-          <div key={book} className="flex items-center gap-2">
-            <input
-              type="checkbox"
-              id={book}
-              name="selectedBooks"
-              value={book}
-              checked={formData.selectedBooks?.includes(book) || false}
-              onChange={handleCheckboxChange}
-              className="mr-3"
-            />
-            <label htmlFor={book} className="text-sm text-justify">
-              {book}
-            </label>
-          </div>
-        ))}
+          "Teaching Cognitive Economics - A How-To Guide for Educators: This book provides educators with tools to teach cognitive economics effectively. It includes a framework for creating courses, sample syllabi, lecture materials, exercises, and strategies for engaging students in scientific thinking about decision-making and human behavior.",
+        ].map((book) => {
+          const [boldText, rest] = book.split(": ");
+          return (
+            <div key={book} className="flex items-center font-outfit gap-2">
+              <input
+                type="checkbox"
+                id={book}
+                name="selectedBooks"
+                value={book}
+                checked={formData.selectedBooks?.includes(book) || false}
+                onChange={handleCheckboxChange}
+                className="mr-3"
+              />
+              <label htmlFor={book} className="text-sm text-justify my-2">
+                <span className="font-bold">{boldText}:</span> {rest}
+              </label>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
 };
 
 const GrowthCognitiveEconomics: React.FC<{
-  formData: any;
+  formData: FormData;
   handleInputChange: (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void;
@@ -506,41 +584,44 @@ const GrowthCognitiveEconomics: React.FC<{
       </h2>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700">
+        <label className="block text-sm font-medium text-black">
           1. Preferred Participation (select all that apply):
         </label>
-        <div className="space-y-4">
+        <div className="space-y-2">
           {[
             "Purely Informational: I would like to keep current and learn more about cognitive economics as it progresses",
             "Forming a Research Innovation Partnership: I would like to participate in or fund research in cognitive economics on key topics",
             "Forming a Business Innovation Partnership: I would like to partner in developing socially beneficial business models or innovations aligned with cognitive economic principles",
             "Forming a Regulatory Innovation Partnership: I would like to partner in integrating cognitive insights to upgrade regulatory frameworks for the age of AI",
             "Forming an Education Innovation Partnership: I would like to partner in developing cognitive economic methods for upgrading education for the age of AI",
-          ].map((option) => (
-            <div key={option} className="flex items-center">
-              <input
-                type="checkbox"
-                id={option}
-                name="participationPreferences"
-                value={option}
-                checked={
-                  formData.participationPreferences?.includes(option) || false
-                }
-                onChange={handleCheckboxChange}
-                className="mr-2"
-              />
-              <label htmlFor={option} className="text-sm">
-                {option}
-              </label>
-            </div>
-          ))}
+          ].map((option) => {
+            const [boldText, rest] = option.split(": ");
+            return (
+              <div key={option} className="flex items-center font-outfit mt-1">
+                <input
+                  type="checkbox"
+                  id={option}
+                  name="participationPreferences"
+                  value={option}
+                  checked={
+                    formData.participationPreferences?.includes(option) || false
+                  }
+                  onChange={handleCheckboxChange}
+                  className="mr-2"
+                />
+                <label htmlFor={option} className="text-sm my-1">
+                  <span className="font-bold">{boldText}:</span> {rest}
+                </label>
+              </div>
+            );
+          })}
         </div>
       </div>
 
       <div>
         <label
           htmlFor="proposalTitle"
-          className="block text-sm font-medium text-gray-700"
+          className="block text-sm font-medium text-black"
         >
           (a) Proposal Title:
         </label>
@@ -557,7 +638,7 @@ const GrowthCognitiveEconomics: React.FC<{
       <div>
         <label
           htmlFor="proposalSummary"
-          className="block text-sm font-medium text-gray-700"
+          className="block text-sm font-medium text-black"
         >
           (b) Summary (Max 200 words):
         </label>
@@ -574,17 +655,30 @@ const GrowthCognitiveEconomics: React.FC<{
       <div>
         <label
           htmlFor="proposalFile"
-          className="block text-sm font-medium text-gray-700"
+          className="block text-sm font-medium text-black"
         >
           (c) Supporting Documentation:
         </label>
-        <input
-          type="file"
-          id="proposalFile"
-          name="proposalFile"
-          onChange={handleFileChange}
-          className="mt-1 block w-full px-2 py-2 border rounded-lg border-black shadow-sm"
-        />
+        <div className="flex items-center mt-2">
+          <label
+            htmlFor="proposalFile"
+            className="cursor-pointer bg-black border border-black text-white px-4 py-2 rounded-l-lg hover:bg-gray-700 transition-colors"
+          >
+            Choose File
+          </label>
+          <input
+            type="file"
+            id="proposalFile"
+            name="proposalFile"
+            onChange={handleFileChange}
+            className="hidden"
+          />
+          <span className="flex-grow px-4 py-2 border border-l-0 rounded-r-lg border-black bg-white">
+            {formData.proposalFile
+              ? formData.proposalFile.name
+              : "No file chosen"}
+          </span>
+        </div>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const PreparingWorkersPage: React.FC = () => {
   return (
-    <div className="p-4 sm:p-6 lg:p-8 max-w-5xl mx-auto font-outfit">
+    <div className="p-4 sm:p-6 lg:p-8 max-w-5xl mx-auto font-outfit text-justify">
       <h1 className="text-2xl sm:text-3xl font-bold mb-6">
         Preparing Workers for Careers in the Cognitive Economy
       </h1>
@@ -14,8 +14,8 @@ const PreparingWorkersPage: React.FC = () => {
             careers. To better understand these impacts, ongoing cognitive economic research focuses on:
           </p>
           <ul className="list-disc pl-6 space-y-2 text-sm sm:text-base lg:text-lg">
-            <li>Current Workers: Exploring their awareness of AI-driven opportunities and threats.</li>
-            <li>Job Market Entrants: Assessing whether current educational choices align with the evolving labor market.</li>
+            <li><strong>Current Workers:</strong> Exploring their awareness of AI-driven opportunities and threats.</li>
+            <li><strong>Job Market Entrants:</strong> Assessing whether current educational choices align with the evolving labor market.</li>
           </ul>
         </section>
 
@@ -57,10 +57,10 @@ const PreparingWorkersPage: React.FC = () => {
             A pilot survey has categorized workers into four groups based on their attitudes toward AI:
           </p>
           <ol className="list-decimal pl-6 space-y-2 text-sm sm:text-base lg:text-lg">
-            <li>Active Optimists: Enthusiastic about AI's potential.</li>
-            <li>Active Pessimists: Concerned but proactively planning.</li>
-            <li>Passive Optimists: Positive but disengaged.</li>
-            <li>Passive Pessimists: Resigned and inactive.</li>
+            <li><strong>Active Optimists:</strong> Enthusiastic about AI's potential.</li>
+            <li><strong>Active Pessimists:</strong> Concerned but proactively planning.</li>
+            <li><strong>Passive Optimists:</strong> Positive but disengaged.</li>
+            <li><strong>Passive Pessimists:</strong> Resigned and inactive.</li>
           </ol>
           <p className="text-sm sm:text-base lg:text-lg mt-4">
             The full survey, launching in 2025, will provide deeper insights into how workers across industries and

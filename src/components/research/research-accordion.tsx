@@ -796,15 +796,11 @@ export function ResearchAccordion() {
       <div>
         <div className="flex items-center gap-2 mb-6">
           <h1 className="text-5xl text-[#000000] font-bold font-outfit">
-            Research That Shapes the Future
+            Research: Back Story and  Research Papers
           </h1>
         </div>
-        <p className="text-xl text-[#000000] font-outfit mb-8 leading-relaxed text-justify">
-          I've had the opportunity to explore the impact of my work in cognitive
-          economics and behavioral macroeconomics. From foundational theories to
-          more recent applications, I hope to offer insights into how this
-          research is helping to shape our understanding of human
-          decision-making in various areas
+        <p className="text-2xl text-[#000000] font-outfit mb-8 leading-relaxed text-justify">
+          Here then are my research papers organised by broad area:
         </p>
       </div>
       <div className="mx-auto max-w-5xl space-y-4">

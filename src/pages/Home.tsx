@@ -7,10 +7,9 @@ import { Link } from "react-router-dom";
 import AndrewCaplinImage from "../assets/media/Andrew_Caplin.png";
 import Book from "../assets/media/Book.webp";
 import download from "../assets/media/Download.svg";
-import redirect from "../assets/media/Redirect.svg";
 import { Quote } from "lucide-react";
 import Video from "../assets/media/Introductory.mp4";
-import book from "../assets/media/Book.pdf";
+
 
 
 const fadeInUp = {
@@ -107,9 +106,10 @@ const items = [
       "Join the conversation and explore its impact on modern challenges.",
   },
   {
-    title: "Discover Equity-Sharing Mortgages",
-    description: "Innovative financial products launching in the U.S. in 2025.",
+    title: "Discover Equity-Sharing Mortgages by Genrae",
+    description: "Innovative financial products launching in the U.S by Genrae in 2025.",
     linkText: "Housing Partnerships",
+    genraeLink: "https://genrae.com",
   },
   {
     title: "Access My Research and Work",
@@ -203,16 +203,28 @@ const Home: React.FC = () => {
               >
                 <h2 className="text-2xl font-semibold mb-2">{item.title}</h2>
                 <p className="w-64 text-center">
-                  {item.description}{" "}
-                  {item.linkText && (
-                    <a
-                      href="https://mitpress.mit.edu/9780262527262/housing-partnerships/"
-                      className="text-black underline"
-                    >
-                      <i>{item.linkText}</i>
-                    </a>
-                  )}
-                </p>
+          {item.description}{" "}
+          <p>
+          {item.genraeLink && (
+            <a
+              href={item.genraeLink}
+              className="text-black italic underline "
+            >
+              Genrae
+            </a>
+          )}
+          {""}
+          {item.linkText && (
+            <a
+              href="https://mitpress.mit.edu/9780262527262/housing-partnerships/"
+              className="text-black underline ml-2"
+            >
+              <i>{item.linkText}</i>
+            </a>
+          )}
+          
+        </p>
+        </p>
               </div>
             ))}
           </div>
@@ -274,7 +286,7 @@ const Home: React.FC = () => {
             </p>
             <motion.div className="flex gap-4 pt-4" variants={fadeInUp}>
               <a
-                href={book}
+                href="https://link.springer.com/book/10.1007/978-3-031-73042-9"
                 download="An_Introduction_to_Cognitive_Economics.pdf"
                 className="bg-[#0E0E0E] rounded-xl border-2 border-[#0E0E0E] px-3 py-3 text-white font-outfit flex items-center gap-2"
               >
@@ -294,28 +306,7 @@ const Home: React.FC = () => {
               </a>
 
               {/* ✅ View PDF in Browser */}
-              <a
-                href={book}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white rounded-xl border-2 border-[#0E0E0E] px-3 py-3 text-black font-outfit flex items-centerflex gap-2"
-              >
-                <motion.span
-                  className="flex items-center gap-2"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  View PDF
-                  <motion.span>
-                    <img
-                      height={20}
-                      width={20}
-                      src={redirect}
-                      alt="Redirect icon"
-                    />
-                  </motion.span>
-                </motion.span>
-              </a>
+             
             </motion.div>
             <p className="text-gray-500 text-lg font-outfit font-light ">
               Available as Open Access - Free to download and read online

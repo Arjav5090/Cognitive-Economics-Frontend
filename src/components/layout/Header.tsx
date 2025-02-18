@@ -8,7 +8,7 @@ const Header: React.FC = () => {
 
   const navigation = [
     { name: "Home", href: "/" },
-    { name: "Resources", href: "/resources" },
+    { name: "Resources", href: "/resources/foundation" },
     { name: "Research", href: "/research" },
     // { name: "Forum", href: "/forum" },
     { name: "Contact", href: "/contact" },

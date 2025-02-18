@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react"; // Import icons
 import dropdown from "../../assets/media/dropdown.svg"; // Dropdown arrow icon
 
@@ -198,9 +198,9 @@ export function ResourcesSidebar() {
                 {expandedSections.includes(section.title) && (
                   <div className="ml-6 space-y-2 mt-2">
                     {section.items.map((item) => (
-                      <a
+                      <Link
                         key={item.href}
-                        href={item.href}
+                        to={item.href}
                         className={`block text-sm font-light py-1 px-3 hover:bg-gray-100 rounded ${
                           location.pathname === item.href
                             ? "bg-gray-100 font-medium"
@@ -209,7 +209,7 @@ export function ResourcesSidebar() {
                         onClick={() => setIsSidebarOpen(false)}
                       >
                         {item.title}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}

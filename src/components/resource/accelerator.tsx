@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function AcceleratorPage() {
   return (
-    <div className="p-4 sm:p-6 md:p-8 lg:p-8 max-w-full mx-auto">
+    <div className="p-4 sm:p-6 md:p-8 lg:p-8 max-w-full mx-auto font-outfit text-justify">
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 font-outfit leading-tight">
         1.4 An Accelerator for Cognitive Economics
       </h1>
@@ -49,7 +49,7 @@ export default function AcceleratorPage() {
         </ul>
 
         <p className="text-base sm:text-lg leading-relaxed mt-8">
-          The <strong>Participate and Connect</strong> section of the website (link) invites you to contribute to the
+          The <strong>Participate and Connect</strong> section of the website invites you to contribute to the
           development of the Accelerator and thereby help shape the cognitive economy. Whether you’re a policymaker,
           business leader, researcher, educator, student, or simply an engaged reader, there’s a way for you to get
           involved.

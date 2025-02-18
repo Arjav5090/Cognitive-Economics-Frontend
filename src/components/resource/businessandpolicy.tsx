@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const BusinessandPolicyPage: React.FC = () => {
   return (
-    <div className="p-4 sm:p-6 lg:p-8 max-w-5xl mx-auto font-outfit">
+    <div className="p-4 sm:p-6 lg:p-8 max-w-5xl mx-auto font-outfit text-justify">
       <h1 className="text-2xl sm:text-3xl font-bold mb-6">
         Applications in Business and Policy
       </h1>
@@ -97,7 +97,7 @@ const BusinessandPolicyPage: React.FC = () => {
           Previous Topic
         </Link>
         <Link
-          to="/resources"
+          to="/resources/foundation"
           className="px-6 py-3 bg-white border border-black text-black font-light rounded-lg hover:bg-black hover:text-white w-full sm:w-auto text-center"
         >
           Next Topic

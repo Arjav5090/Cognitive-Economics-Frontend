@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 
 export default function FoundationPage() {
   return (
-    <div className="p-6 sm:p-8 lg:p-12 max-w-5xl mx-auto">
+    <div className="p-6 sm:p-8 lg:p-12 max-w-5xl mx-auto font-outfit text-justify">
       <h1 className="text-2xl sm:text-3xl font-bold mb-6 font-outfit">
         1.1 Foundation of Cognitive Economics
       </h1>
 
       <div className="prose max-w-none mb-8">
         <h2 className="text-xl sm:text-2xl font-semibold mt-8 mb-4 font-outfit">
-         1. Introduction to Cognitive Economics
+          1. Introduction to Cognitive Economics
         </h2>
         <p className="text-base sm:text-lg leading-relaxed">
           This section introduces the core concepts of cognitive economics,
@@ -21,17 +21,44 @@ export default function FoundationPage() {
           between cognitive economics and behavioral economics.
         </p>
 
-        <ul className="list-disc pl-6 space-y-2 font-outfit text-base sm:text-lg">
-          <li>Section 1.1: What is Cognitive Economics?</li>
-          <li>Section 1.2: Challenges of Cognitive Economics</li>
+        <ul className="list-disc pl-6 pt-4 space-y-2 font-outfit text-base sm:text-lg">
           <li>
-            Section 1.3: How Cognitive Economics Differs from Behavioral
-            Economics
+            <Link
+              to="https://link.springer.com/chapter/10.1007/978-3-031-73042-9_1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-black font-outfit hover:underline"
+            >
+              <span className="font-bold font-outfit">Section 1.1:</span> What
+              is Cognitive Economics?
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="https://link.springer.com/chapter/10.1007/978-3-031-73042-9_1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-black font-outfit hover:underline"
+            >
+              <span className="font-bold">Section 1.4:</span> Challenges of
+              Cognitive Economics
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="https://link.springer.com/chapter/10.1007/978-3-031-73042-9_1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-black font-outfit hover:underline"
+            >
+              <span className="font-bold">Section 1.6:</span> How Cognitive
+              Economics Differs from Behavioral Economics
+            </Link>
           </li>
         </ul>
 
         <h2 className="text-xl sm:text-2xl font-semibold mt-8 mb-4 font-outfit">
-         2. Cognitive Economics Takes Off: A Rostovian Approach
+          2. Cognitive Economics Takes Off: A Rostovian Approach
         </h2>
         <p className="text-base sm:text-lg leading-relaxed">
           This chapter presents a history of cognitive economics framed around
@@ -43,24 +70,65 @@ export default function FoundationPage() {
           choice data.
         </p>
 
-        <ul className="list-disc pl-6 space-y-2 font-outfit text-base sm:text-lg">
-          <li>Stage 1: Samuelson and Revealed Preference</li>
-          <li>Stage 1.5: The Winter of Cognitive Economic Discontent</li>
-          <li>Stage 2: Preconditions for Takeoff</li>
-          <li>Stage 3: Takeoff to Sustained Growth</li>
-          <li>Stage 4: The Drive to Maturity</li>
+        <ul className="list-disc pl-6 pt-4 space-y-2 font-outfit text-base sm:text-lg text-black">
+          <li>
+            <Link
+              to="https://link.springer.com/chapter/10.1007/978-3-031-73042-9_8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              <span className="font-bold">Stage 1:</span> Samuelson and Revealed
+              Preference
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="https://link.springer.com/chapter/10.1007/978-3-031-73042-9_8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              <span className="font-bold">Stage 1.5:</span> The Winter of
+              Cognitive Economic Discontent
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="https://link.springer.com/chapter/10.1007/978-3-031-73042-9_8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              <span className="font-bold">Stage 2:</span> Preconditions for
+              Takeoff
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="https://link.springer.com/chapter/10.1007/978-3-031-73042-9_8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              <span className="font-bold">Stage 3:</span> Takeoff to Sustained
+              Growth
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="https://link.springer.com/chapter/10.1007/978-3-031-73042-9_8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              <span className="font-bold">Stage 4:</span> The Drive to Maturity
+            </Link>
+          </li>
         </ul>
       </div>
 
-      <div className="flex flex-col sm:flex-row justify-between mt-8 gap-4">
-        <button className="w-full sm:w-auto">
-          <Link
-            to="/resources"
-            className="px-6 py-3 bg-white border border-[#000000] text-black font-outfit font-light rounded-lg hover:bg-black hover:text-white w-full sm:w-auto"
-          >
-            Previous Topic
-          </Link>
-        </button>
+      <div className="flex flex-col sm:flex-row justify-end mt-8 gap-4">
         <button className="w-full sm:w-auto">
           <Link
             to="/resources/application"

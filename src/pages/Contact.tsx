@@ -43,7 +43,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto p-4 sm:p-6">
+    <div className="max-w-7xl mx-auto p-4 sm:p-6 min-h-screen">
       <div className="grid md:grid-cols-2 gap-8 md:gap-12">
         {/* Left Column */}
         <div>
@@ -64,11 +64,6 @@ export default function ContactForm() {
             </div>
           </div>
 
-          <div className="text-sm flex flex-col sm:text-md text-black font-outfit mt-2">
-            <strong>Office:</strong>
-            <span>Department of Economics, <br/> New York University, <br/> 19 W. 4th Street, 6th
-              Floor, <br/> New York, NY 10012</span>
-          </div>
         </div>
 
         {/* Right Column - Form */}
@@ -100,20 +95,6 @@ export default function ContactForm() {
                 placeholder="Enter your Email"
               />
             </div>
-          </div>
-
-          <div>
-            <label htmlFor="occupation" className="block text-base sm:text-lg font-semibold mb-2 text-black">Occupation</label>
-            <input
-              id="occupation"
-              type="text"
-              name="occupation"
-              value={formData.occupation}
-              onChange={handleChange}
-              required
-              className="w-full border border-black text-black p-2 sm:p-3 rounded-md focus:outline-none focus:border-black"
-              placeholder="What do you do for a living"
-            />
           </div>
 
           <div>
