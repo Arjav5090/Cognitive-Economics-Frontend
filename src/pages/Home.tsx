@@ -10,8 +10,6 @@ import download from "../assets/media/Download.svg";
 import { Quote } from "lucide-react";
 import Video from "../assets/media/Introductory.mp4";
 
-
-
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
@@ -107,7 +105,8 @@ const items = [
   },
   {
     title: "Discover Equity-Sharing Mortgages by Genrae",
-    description: "Innovative financial products launching in the U.S by Genrae in 2025.",
+    description:
+      "Innovative financial products launching in the U.S by Genrae in 2025.",
     linkText: "Housing Partnerships",
     genraeLink: "https://genrae.com",
   },
@@ -118,7 +117,6 @@ const items = [
 ];
 
 const Home: React.FC = () => {
- 
   return (
     <>
       <motion.section
@@ -150,10 +148,13 @@ const Home: React.FC = () => {
               </span>
               <p className="text-[#0E0E0E] font-outfit text-pretty text-justify">
                 My book,{" "}
-                <i className="underline">
-                  An Introduction to Cognitive Economics: The Science of
-                  Mistakes
-                </i>
+                <Link
+  to="https://link.springer.com/book/10.1007/978-3-031-73042-9"
+  target="_blank"
+  className="italic underline"
+>
+  An Introduction to Cognitive Economics: The Science of Mistakes
+</Link>
                 , offers the first comprehensive guide to this rapidly growing
                 interdisciplinary field.
               </p>
@@ -203,28 +204,27 @@ const Home: React.FC = () => {
               >
                 <h2 className="text-2xl font-semibold mb-2">{item.title}</h2>
                 <p className="w-64 text-center">
-          {item.description}{" "}
-          <p>
-          {item.genraeLink && (
-            <a
-              href={item.genraeLink}
-              className="text-black italic underline "
-            >
-              Genrae
-            </a>
-          )}
-          {""}
-          {item.linkText && (
-            <a
-              href="https://mitpress.mit.edu/9780262527262/housing-partnerships/"
-              className="text-black underline ml-2"
-            >
-              <i>{item.linkText}</i>
-            </a>
-          )}
-          
-        </p>
-        </p>
+                  {item.description}{" "}
+                  <p>
+                    {item.genraeLink && (
+                      <a
+                        href={item.genraeLink}
+                        className="text-black italic underline "
+                      >
+                        Genrae
+                      </a>
+                    )}
+                    {""}
+                    {item.linkText && (
+                      <a
+                        href="https://mitpress.mit.edu/9780262527262/housing-partnerships/"
+                        className="text-black underline ml-2"
+                      >
+                        <i>{item.linkText}</i>
+                      </a>
+                    )}
+                  </p>
+                </p>
               </div>
             ))}
           </div>
@@ -279,15 +279,22 @@ const Home: React.FC = () => {
               The Science of Mistakes
             </p>
             <p className="text-xl font-light text-[#0E0E0E] leading-relaxed max-w-2xl font-outfit">
-            This book introduces cognitive economics, an emerging field at the intersection of economics, psychology, and data science. I explore decision-making mistakes, AI’s impact on the workforce, and practical applications in law, privacy, and human-AI collaboration. I also advocate for interdisciplinary cooperation to advance the field.
+              This book introduces cognitive economics, an emerging field at the
+              intersection of economics, psychology, and data science. I explore
+              decision-making mistakes, AI’s impact on the workforce, and
+              practical applications in law, privacy, and human-AI
+              collaboration. I also advocate for interdisciplinary cooperation
+              to advance the field.
             </p>
             <p className="text-xl font-light text-[#0E0E0E] font-outfit">
-            Whether you're a citizen, leader, scholar, or policymaker, this book will show you why cognitive economics matters—and how you can help shape its future.
+              Whether you're a citizen, leader, scholar, or policymaker, this
+              book will show you why cognitive economics matters—and how you can
+              help shape its future.
             </p>
             <motion.div className="flex gap-4 pt-4" variants={fadeInUp}>
-              <a
-                href="https://link.springer.com/book/10.1007/978-3-031-73042-9"
-                download="An_Introduction_to_Cognitive_Economics.pdf"
+              <Link
+                to="https://link.springer.com/book/10.1007/978-3-031-73042-9"
+                target="_blank"
                 className="bg-[#0E0E0E] rounded-xl border-2 border-[#0E0E0E] px-3 py-3 text-white font-outfit flex items-center gap-2"
               >
                 <motion.span
@@ -297,16 +304,15 @@ const Home: React.FC = () => {
                 >
                   Download PDF
                   <img
-                    height={20}
-                    width={20}
+                    height={25}
+                    width={25}
                     src={download}
                     alt="Download icon"
                   />
                 </motion.span>
-              </a>
+              </Link>
 
               {/* ✅ View PDF in Browser */}
-             
             </motion.div>
             <p className="text-gray-500 text-lg font-outfit font-light ">
               Available as Open Access - Free to download and read online

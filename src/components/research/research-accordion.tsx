@@ -800,7 +800,7 @@ export function ResearchAccordion() {
           </h1>
         </div>
         <p className="text-2xl text-[#000000] font-outfit mb-8 leading-relaxed text-justify">
-          Here then are my research papers organised by broad area:
+          Here are my all research papers organised by broad area:
         </p>
       </div>
       <div className="mx-auto max-w-5xl space-y-4">
@@ -811,6 +811,7 @@ export function ResearchAccordion() {
             ref={openCategory === category.title ? activeCategoryRef : null}
           >
             <button
+           
               onClick={() =>
                 setOpenCategory(
                   openCategory === category.title ? null : category.title
@@ -823,6 +824,7 @@ export function ResearchAccordion() {
               }`}
             >
               {/* Category Title with Separate Click Event */}
+ 
               <span
                 className="text-md font-medium font-outfit cursor-pointer hover:underline"
                 onClick={(e) => {
@@ -835,7 +837,9 @@ export function ResearchAccordion() {
                 }}
               >
                 {category.title}
+                
               </span>
+             
               <img
                 src={openCategory === category.title ? dropup : dropdown}
                 alt="toggle icon"
@@ -874,7 +878,7 @@ export function ResearchAccordion() {
       <div className="mt-6 mx-auto font-outfit text-justify text-black">
         <section className="mb-6">
           <h1 className="text-2xl font-semibold mb-4">Economic Logic</h1>
-          <p className="text-base mb-4">
+          <p className="text-lg mb-4">
             I first encountered formal economic logic in high school at age 15.
             I felt a profound sense of relief in at last finding a field in
             which <strong>logic</strong> can be applied to human affairs. This
@@ -882,7 +886,7 @@ export function ResearchAccordion() {
             posturing that dominates much of social and economic commentary—a
             frustration that has only deepened with time.
           </p>
-          <p className="text-base mb-4">
+          <p className="text-lg mb-4">
             My fascination with reasoning about social affairs led me to pursue
             an undergraduate degree in economics at Cambridge. While I learned
             much, I was often disheartened by my tutors’ focus on ideological
@@ -893,7 +897,7 @@ export function ResearchAccordion() {
             accumulation, which explored how adjustable-rate mortgages might
             explain the spike in U.K. savings during the 1970s inflation.
           </p>
-          <p className="text-base mb-4">
+          <p className="text-lg mb-4">
             One of my early academic heroes, Frank Hahn, profoundly shaped my
             thinking. Yet when I explained my ideas to him, he immediately
             pointed out its flaws under perfect capital markets. Even he seemed
@@ -910,13 +914,13 @@ export function ResearchAccordion() {
           <h2 className="text-2xl font-semibold mb-4">
             Graduate School and Intellectual Development
           </h2>
-          <p className="text-base mb-4">
+          <p className="text-lg mb-4">
             At Yale, I was fortunate to work with remarkable mentors like Herb
             Scarf, Bill Nordhaus, Don Brown, and James Tobin. They taught me to
             bridge the gap between abstract economic models and real-world
             social questions—a bridge that has defined my research.
           </p>
-          <p className="text-base mb-4">
+          <p className="text-lg mb-4">
             My first research project, with Herb Scarf, involved integer
             programming in operations research. While no breakthroughs emerged,
             it sharpened my geometric skills and laid a foundation for later
@@ -926,7 +930,7 @@ export function ResearchAccordion() {
             experience fueled my interest in understanding apparent “mistakes”
             in decision-making.
           </p>
-          <p className="text-base mb-4">
+          <p className="text-lg mb-4">
             A turning point came in my fourth year when I read Alan Blinder’s
             article on retail inventory behavior. It inspired my first
             significant research contribution, culminating in the paper{" "}
@@ -940,7 +944,7 @@ export function ResearchAccordion() {
           <h2 className="text-2xl font-semibold mb-4">
             Navigating Academic Boundaries
           </h2>
-          <p className="text-base mb-4">
+          <p className="text-lg mb-4">
             Despite these successes, I became increasingly frustrated with the
             rigid silos within and between social science disciplines.
             Theoretical advancements often lacked corresponding innovations in
@@ -957,7 +961,7 @@ export function ResearchAccordion() {
           <h2 className="text-2xl font-semibold mb-4">
             Bringing Social Science into the 21st Century
           </h2>
-          <p className="text-base mb-4">
+          <p className="text-lg mb-4">
             Social science lags behind disciplines like biology and data science
             in connecting ideas with applications. Archaic institutional
             structures hinder progress, and it’s time to shake things up. I

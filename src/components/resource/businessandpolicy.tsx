@@ -10,20 +10,31 @@ const BusinessandPolicyPage: React.FC = () => {
       <div className="space-y-6 mb-8">
         <section>
           <p className="text-sm sm:text-base lg:text-lg mb-4">
-            Clear communication is essential for improving decision-making in business and policy contexts:
+            Clear communication is essential for improving decision-making in
+            business and policy contexts:
           </p>
           <ol className="list-decimal pl-6 space-y-2 text-sm sm:text-base lg:text-lg">
             <li>
-              <strong>Judicial Applications:</strong> Adding indices to case files, as demonstrated in Mexican labor courts, significantly reduces decision-making errors.
+              <strong>Judicial Applications:</strong> Adding indices to case
+              files, as demonstrated in Mexican labor courts, significantly
+              reduces decision-making errors.
             </li>
             <li>
-              <strong>Financial Presentation:</strong> Businesses can redesign financial options using cognitive economic principles. Tools like infographics, sliders, and dashboards help consumers understand trade-offs more effectively.
+              <strong>Financial Presentation:</strong> Businesses can redesign
+              financial options using cognitive economic principles. Tools like
+              infographics, sliders, and dashboards help consumers understand
+              trade-offs more effectively.
             </li>
             <li>
-              <strong>Regulatory Standards:</strong> Clarity evaluation tools can be applied to both consumer-facing presentations and the regulations themselves.
+              <strong>Regulatory Standards:</strong> Clarity evaluation tools
+              can be applied to both consumer-facing presentations and the
+              regulations themselves.
             </li>
             <li>
-              <strong>Certification Services:</strong> A private-sector "simplicity certification service" could scientifically validate the clarity of communication, akin to certification frameworks like Underwriters Laboratories.
+              <strong>Certification Services:</strong> A private-sector
+              "simplicity certification service" could scientifically validate
+              the clarity of communication, akin to certification frameworks
+              like Underwriters Laboratories.
             </li>
           </ol>
         </section>
@@ -36,56 +47,98 @@ const BusinessandPolicyPage: React.FC = () => {
             Future research aims to extend cognitive economic principles to:
           </p>
           <ul className="list-disc pl-6 space-y-2 text-sm sm:text-base lg:text-lg">
-            <li>Improve online privacy disclosures, addressing concerns raised by FTC researchers.</li>
-            <li>Simplify equity-based financing mechanisms for first-time homebuyers.</li>
-            <li>Develop AI-driven decision aids and personalized financial advice tools, leveraging real buyer stories to build trust and engagement.</li>
+            <li>
+              Improve online privacy disclosures, addressing concerns raised by
+              FTC researchers.
+            </li>
+            <li>
+              Simplify equity-based financing mechanisms for first-time
+              homebuyers.
+            </li>
+            <li>
+              Develop AI-driven decision aids and personalized financial advice
+              tools, leveraging real buyer stories to build trust and
+              engagement.
+            </li>
           </ul>
         </section>
 
         <section>
-          <h2 className="text-xl sm:text-2xl font-semibold mb-4">
-            5.1 References
-          </h2>
-          <ol className="list-decimal pl-6 space-y-4 text-sm sm:text-base lg:text-lg">
+          <h2 className="text-xl sm:text-2xl font-semibold mb-4">References</h2>
+          <ul className="list-disc pl-6 space-y-3 text-sm sm:text-base lg:text-lg">
             <li>
-              <strong>Caplin A.,</strong> Introduction to Cognitive Economics, Chapter 3, Measuring and Minimizing Mistakes.
+              Caplin A.{" "}
+              <Link
+                to="https://link.springer.com/chapter/10.1007/978-3-031-73042-9_3"
+                target="_blank"
+                className="font-semibold italic hover:underline"
+              >
+                Introduction to Cognitive Economics, Chapter 3, Measuring and
+                Minimizing Mistakes
+              </Link>
+              . Palgrave Macmillan Pivot, 2025.
             </li>
-            
+
             <li>
-              <strong>Caplin, A., A. Gomberg, and J. Sadka</strong> "Judging the Judges: Indexing of Complex Information
-              Reduces Injustice". NBER Working Paper 32587. 2024.
-              <p className="mt-2">
-                Demonstrates that cognitive constraints produce injustice in its most paradigmatic form: incorrect
-                verdicts in judicial trials. Outlines a field study in Mexican labor courts in which time pressure on
-                the judges leads to their making mistakes. Adding index pages to help judges quickly find relevant
-                information halves successful appeals in complex cases. These findings have informed recent reforms
-                in Mexico's labor court procedures.
+              Caplin, A., A. Gomberg, and J. Sadka.{" "}
+              <Link
+                to="https://www.nber.org/papers/w32587"
+                target="_blank"
+                className="font-semibold italic hover:underline"
+              >
+                "Judging the Judges: Indexing of Complex Information Reduces
+                Injustice"
+              </Link>
+              . NBER Working Paper 32587, 2024.
+              <p>
+                Demonstrates that cognitive constraints produce injustice in its
+                most paradigmatic form: incorrect verdicts in judicial trials.
+                Outlines a field study in Mexican labor courts in which time
+                pressure on the judges leads to their making mistakes. Adding
+                index pages to help judges quickly find relevant information
+                halves successful appeals in complex cases. These findings have
+                informed recent reforms in Mexico's labor court procedures.
               </p>
             </li>
-            
+
             <li>
-              <strong>Bucher, S., A. Caplin, R. Oprea, and E. Spurlino</strong> "Clear Disclosure". Work in Progress
-              <p className="mt-2">
-                In decision-making environments where information is complex and choices often unclear, governments
-                and their regulators have long sought to make clear the relevant information necessary for individuals
-                to make optimal decisions. No regulatory tool has had such an expansive application as the mandated
-                disclosure statement. Yet studies of the effectiveness of these disclosures suggest an alarming rate
-                of ineffectiveness. Our ongoing cognitive economic research adopts a revealed clarity approach by
-                measuring the quality of the choices that are made with different disclosure protocols by the quality
-                of choices its readers choose as a response. Our goal is not just to make the information easier to
-                comprehend, but to ensure that the end result is a higher quality decision. The goal must be to help
-                consumers make better-informed decisions, not to endow them with a list of facts and statistics.
+              Bucher, S., A. Caplin, R. Oprea, and E. Spurlino.{" "}
+              <span className="font-semibold italic hover:underline">
+                "Clear Disclosure"
+              </span>
+              . Work in Progress.
+              <p>
+                In decision-making environments where information is complex and
+                choices often unclear, governments and their regulators have
+                long sought to make clear the relevant information necessary for
+                individuals to make optimal decisions. No regulatory tool has
+                had such an expansive application as the mandated disclosure
+                statement. Yet studies of the effectiveness of these disclosures
+                suggest an alarming rate of ineffectiveness. Our ongoing
+                cognitive economic research adopts a revealed clarity approach
+                by measuring the quality of the choices that are made with
+                different disclosure protocols by the quality of choices its
+                readers choose as a response. Our goal is not just to make the
+                information easier to comprehend, but to ensure that the end
+                result is a higher quality decision. The goal must be to help
+                consumers make better-informed decisions, not to endow them with
+                a list of facts and statistics.
               </p>
             </li>
-            
+
             <li>
-              <strong>Genrae,</strong> "Communication of Equity-Sharing Mortgages". Work in Progress.
-              <p className="mt-2">
-                Research is ongoing at Genrae to ensure comprehension of new shared equity forms of mortgage finance.
-                Watch this space for updates.
+              Genrae.{" "}
+              <span className="font-semibold italic hover:underline">
+                "Communication of Equity-Sharing Mortgages"
+              </span>
+              . Work in Progress.
+              <p>
+                Research is ongoing at Genrae to ensure comprehension of new
+                shared equity forms of mortgage finance. Watch this space for
+                updates.
               </p>
             </li>
-          </ol>
+          </ul>
         </section>
       </div>
 

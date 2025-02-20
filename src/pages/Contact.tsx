@@ -48,7 +48,7 @@ export default function ContactForm() {
         {/* Left Column */}
         <div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Get in touch</h1>
-          <p className="text-black font-outfit text-base sm:text-lg text-justify font-light mb-6 sm:mb-8 leading-relaxed">
+          <p className="text-black font-outfit text-base sm:text-lg text-justify  mb-6 sm:mb-8 leading-relaxed">
             Your insights and curiosity drive innovation. Contact us to join the journey into cognitive economics. 
             Whether you&apos;re a student, researcher, or professional, we&apos;d love to hear from you. Let&apos;s connect!
           </p>
