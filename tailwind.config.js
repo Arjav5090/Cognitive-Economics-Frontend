@@ -6,10 +6,7 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        'orienta': ['Orienta', 'sans-serif'],
-        'outfit': ['Outfit', 'sans-serif'],
-      },
+     
     },
   },
   

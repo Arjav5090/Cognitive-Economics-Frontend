@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+//import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import dropdown from "../../assets/media/dropdown.svg";
-import dropup from "../../assets/media/dropup.svg";
+//import dropup from "../../assets/media/dropup.svg";
 
 interface Paper {
   id: string;
@@ -779,18 +779,18 @@ const researchData: ResearchCategory[] = [
 ];
 
 export function ResearchAccordion() {
-  const [openCategory, setOpenCategory] = useState<string | null>(null);
+  //const [openCategory, setOpenCategory] = useState<string | null>(null);
   const navigate = useNavigate();
-  const activeCategoryRef = useRef<HTMLDivElement | null>(null);
+  //const activeCategoryRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
+  /*useEffect(() => {
     if (openCategory && activeCategoryRef.current) {
       activeCategoryRef.current.scrollIntoView({
         behavior: "smooth",
         block: "nearest",
       });
     }
-  }, [openCategory]);
+  }, [openCategory]);*/
   return (
     <div className="max-w-7xl mx-auto px-4 py-6">
       <div>
@@ -808,70 +808,46 @@ export function ResearchAccordion() {
           <div
             key={index}
             className="border-2 border-[#000000] rounded-lg overflow-hidden"
-            ref={openCategory === category.title ? activeCategoryRef : null}
+            //ref={openCategory === category.title ? activeCategoryRef : null}
           >
             <button
-           
-              onClick={() =>
-                setOpenCategory(
-                  openCategory === category.title ? null : category.title
-                )
-              }
-              className={`w-full px-4 py-3 flex items-center justify-between text-left font-outfit font-semibold ${
-                openCategory === category.title
-                  ? "bg-black text-white"
-                  : "bg-white text-black"
-              }`}
+            onClick={(e) => {
+              e.stopPropagation(); // Prevent button click from triggering dropdown toggle
+              navigate(
+                `/research/papers/${category.id
+                  .replace(/\s+/g, "-")
+                  .toLowerCase()}`
+              );
+            }}
+            //  onClick={() =>
+              //  setOpenCategory(
+             //</div>     openCategory === category.title ? null : category.title
+             //   )
+            //  }
+              className="w-full px-4 py-3 flex items-center justify-between text-left font-outfit font-semibold bg-white text-black" 
+              //${
+               // openCategory === category.title
+               //</div>   ? "bg-black text-white"
+               //   : "bg-white text-black"
+             // }`}
             >
               {/* Category Title with Separate Click Event */}
  
               <span
-                className="text-md font-medium font-outfit cursor-pointer hover:underline"
-                onClick={(e) => {
-                  e.stopPropagation(); // Prevent button click from triggering dropdown toggle
-                  navigate(
-                    `/research/papers/${category.id
-                      .replace(/\s+/g, "-")
-                      .toLowerCase()}`
-                  );
-                }}
+                className="text-md font-medium font-outfit"
+                
               >
                 {category.title}
                 
               </span>
              
               <img
-                src={openCategory === category.title ? dropup : dropdown}
+                src={dropdown}
                 alt="toggle icon"
                 className="w-4 h-4 transition-transform duration-300"
               />
             </button>
-            <div
-              className={`overflow-hidden transition-[max-height] duration-500 ease-in-out ${
-                openCategory === category.title ? "max-h-screen" : "max-h-0"
-              }`}
-            >
-              {category.papers.length > 0 && (
-                <div className="px-4 py-2 border-t-2 border-[#000000] space-y-3 max-h-[600px] overflow-y-auto">
-                  {category.papers.map((paper, paperIndex) => (
-                    <a
-                      key={paperIndex}
-                      href={`${paper.id}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block text-sm hover:bg-gray-50 -mx-4 px-4 py-2"
-                    >
-                      <div className="text-sm text-[#000000] font-outfit font-light">
-                        {paper.title}
-                      </div>
-                      <div className="text-xs text-[#000000] font-outfit font-extralight">
-                        {paper.citation} - {paper.year}
-                      </div>
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
+           
           </div>
         ))}
       </div>

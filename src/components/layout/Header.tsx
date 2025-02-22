@@ -21,7 +21,7 @@ const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
         <div className="flex justify-between py-10 items-center h-16">
           {/* Logo/Title */}
-          <Link to="/" className="text-3xl font-orienta font-light">
+          <Link to="/" className="text-4xl font-orienta text-[#0E0E0E] font-normal">
             Andrew Caplin
           </Link>
 
@@ -31,13 +31,13 @@ const Header: React.FC = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className="relative font-outfit group inline-flex items-center h-16 "
+                className="relative font-outfit group inline-flex items-center h-18 "
               >
                 <span
                   className={`${
                     location.pathname === item.href
                       ? "text-white bg-black rounded-md p-2"
-                      : "black"
+                      : "[#0E0E0E]"
                   } transition-colors`}
                 >
                   {item.name}

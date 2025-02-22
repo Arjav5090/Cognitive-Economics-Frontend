@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 export default function ApplicationPage() {
   return (
     <div className="p-4 sm:p-6 md:p-8 lg:p-8 max-w-full mx-auto font-outfit text-justify">
-      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 font-outfit leading-tight">
-        1.2 Applications in Finance and Labor Economics
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 font-outfit leading-tight text-left">
+        Applications in Finance and Labor Economics
       </h1>
 
       <div className="prose max-w-none mb-8">

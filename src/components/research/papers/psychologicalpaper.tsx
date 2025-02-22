@@ -69,48 +69,75 @@ export default function PsychologicalExpectedUtilityPage() {
   
   <ol className="list-decimal pl-4 text-[#000000] space-y-3 font-outfit text-justify">
     <li>
-      Caplin, A., and J. Leahy, <strong>“Psychological Expected Utility Theory and Anticipatory Feelings”</strong>.  
+      Caplin, A., and J. Leahy, <strong>
+        <Link to="https://www.jstor.org/stable/2696443" target="_blank" rel="noopener noreferrer" className="hover:underline">
+          “Psychological Expected Utility Theory and Anticipatory Feelings”
+        </Link>
+      </strong>.  
       <span className="italic font-light"> Quarterly Journal of Economics</span>, 2001. 
       <br />
       Extends expected utility theory to account for emotional states like anxiety and anticipatory excitement.
     </li>
     <li>
-      Caplin, A., <strong>“Fear as a Policy Instrument”</strong>. In <span className="italic font-light"> Time and Decisions</span>, eds. G. Loewenstein and D. Read, 2003. 
+      Caplin, A., <strong>
+        <Link to="https://bpb-us-e1.wpmucdn.com/wp.nyu.edu/dist/2/8350/files/2017/12/Fear-as-a-Policy-Instrument.pdf" target="_blank" rel="noopener noreferrer" className="hover:underline">
+          “Fear as a Policy Instrument”
+        </Link>
+      </strong>. In <span className="italic font-light"> Time and Decisions</span>, eds. G. Loewenstein and D. Read, 2003. 
       <br />
       Explores how fear can motivate behavioral change, focusing on public health messaging and its impact on attention, knowledge, and their link to prevention efforts.
     </li>
     <li>
-      Caplin, A., and K. Eliaz, <strong>“AIDS Policy and Psychology: A Mechanism Design Approach”</strong>. 
+      Caplin, A., and K. Eliaz, <strong>
+        <Link to="https://www.jstor.org/stable/1593781" target="_blank" rel="noopener noreferrer" className="hover:underline">
+          “AIDS Policy and Psychology: A Mechanism Design Approach”
+        </Link>
+      </strong>.  
       <span className="italic font-light"> RAND Journal of Economics</span>, 2003. 
       <br />
       Develops a model acknowledging psychological factors, such as fear of testing, to design mechanisms that encourage HIV testing and reduce disease spread.
     </li>
     <li>
-      Caplin, A., and J. Leahy, <strong>“The Supply of Information by a Concerned Expert”</strong> 
+      Caplin, A., and J. Leahy, <strong>
+        <Link to="https://www.jstor.org/stable/3590292" target="_blank" rel="noopener noreferrer" className="hover:underline">
+          “The Supply of Information by a Concerned Expert”
+        </Link>
+      </strong>.  
       <span className="italic font-light"> Economic Journal</span>, 2004. 
       <br />
       Investigates how policymakers balance the utility of informed citizens with the potential psychological costs of information, using a game-theoretic framework.
     </li>
     <li>
-      Caplin, A., and M. Dean, <strong>“Dopamine, Reward Prediction Error, and Economics”</strong> (with Mark Dean). 
+      Caplin, A., and M. Dean, <strong>
+        <Link to="https://academic.oup.com/qje/article-abstract/123/2/663/1930862" target="_blank" rel="noopener noreferrer" className="hover:underline">
+          “Dopamine, Reward Prediction Error, and Economics”
+        </Link>
+      </strong>.  
       <span className="italic font-light"> Quarterly Journal of Economics</span>, 2008. 
       <br />
       Provides axiomatic foundations for the “reward prediction error” hypothesis, bridging neuroscience and economics to study belief formation and choice.
     </li>
     <li>
-      Caplin, A., M. Dean, P. Glimcher, and R. Rutledge, <strong>“Measuring Beliefs and Rewards: A Neuroeconomic Approach”</strong>. 
+      Caplin, A., M. Dean, P. Glimcher, and R. Rutledge, <strong>
+        <Link to="https://pmc.ncbi.nlm.nih.gov/articles/PMC4092011/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+          “Measuring Beliefs and Rewards: A Neuroeconomic Approach”
+        </Link>
+      </strong>.  
       <span className="italic font-light"> Quarterly Journal of Economics</span>, 2010. 
       <br />
       Tests dopamine’s role in encoding reward prediction errors, providing evidence for asymmetries in neural responses to gains and losses.
     </li>
     <li>
-      Caplin, A., and J. Leahy, <strong>“Wishful Thinking”</strong>. 
+      Caplin, A., and J. Leahy, <strong>
+        <Link to="https://www.nber.org/system/files/working_papers/w25707/w25707.pdf" target="_blank" rel="noopener noreferrer" className="hover:underline">
+          “Wishful Thinking”
+        </Link>
+      </strong>.  
       <span className="italic font-light"> NBER Working Paper</span>, 2019.
- 
       <br />
       Models agents who derive utility from optimistic beliefs, potentially rationalizing various forms of bias.
     </li>
-  </ol>
+</ol>
 </section>
 
 

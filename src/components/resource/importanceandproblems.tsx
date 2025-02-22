@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function ImportanceandProblemPage() {
   return (
     <div className="p-6 sm:p-8 lg:p-12 max-w-5xl mx-auto font-outfit text-justify">
-      <h1 className="text-2xl sm:text-3xl font-bold mb-6 font-outfit">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 font-outfit text-left">
         Introduction: The Importance and Problems of Housing Finance
       </h1>
 

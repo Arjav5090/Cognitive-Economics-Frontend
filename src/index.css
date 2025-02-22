@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orienta&family=Outfit:wght@100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,19 +16,9 @@ html, body, #root {
   flex-direction: column;
 }
 
-@font-face {
-  font-family: 'Orienta';
-  src: url('/assets/fonts/Orienta-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
 
-@font-face {
-  font-family: 'Outfit';
-  src: url('/assets/fonts/Outfit-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+
+
 
 
 @layer base {

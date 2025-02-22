@@ -41,28 +41,44 @@ export default function OperationsResearchPage() {
     References
   </h2>
   <ol className="list-decimal pl-4 text-[#000000] space-y-2 font-outfit text-justify">
-    <li>
-      White, P., A. Caplin, and L. van der Heyden. <strong>“Scarf’s Algorithm and a Dual Simplex Algorithm”.</strong> 
-      <i className="font-light"> Mathematics of Operations Research, 1983.</i>
-      <p>
-        Establishes a geometric link between Scarf’s algorithm and the dual simplex algorithm.
-      </p>
-    </li>
-    <li>
-      Caplin, A., and J. Leahy. <strong>“A Graph Theoretic Approach to Markets for Indivisible Goods”.</strong> 
-      <i className="font-light"> Journal of Mathematical Economics, 52, 112-122, 2014.</i>
-      <p>
-        Introduces graph-theoretic techniques to analyze markets with indivisible goods and identifies algorithms for solving for a focal equilibrium.
-      </p>
-    </li>
-    <li>
-      Caplin, A., and J. Leahy. <strong>“Comparative Statics in Markets for Indivisible Goods”.</strong> 
-      <i className="font-light"> Journal of Mathematical Economics, 2020.</i>
-      <p>
-        Introduces homotopy methods to analyze equilibrium transitions in non-transferable utility allocation markets. Identifies that there are five and only five distinct types of market shift.
-      </p>
-    </li>
-  </ol>
+  <li>
+    White, P., A. Caplin, and L. van der Heyden.{" "}
+    <strong>
+      <a href="https://www.jstor.org/stable/3689638" target="_blank" rel="noopener noreferrer" className="hover:underline">
+        “Scarf’s Algorithm and a Dual Simplex Algorithm”.
+      </a>
+    </strong>
+    <i className="font-light"> Mathematics of Operations Research, 1983.</i>
+    <p>
+      Establishes a geometric link between Scarf’s algorithm and the dual simplex algorithm.
+    </p>
+  </li>
+  <li>
+    Caplin, A., and J. Leahy.{" "}
+    <strong>
+      <a href="https://www.sciencedirect.com/science/article/abs/pii/S0304406814000500" target="_blank" rel="noopener noreferrer" className="hover:underline">
+        “A Graph Theoretic Approach to Markets for Indivisible Goods”.
+      </a>
+    </strong>
+    <i className="font-light"> Journal of Mathematical Economics, 52, 112-122, 2014.</i>
+    <p>
+      Introduces graph-theoretic techniques to analyze markets with indivisible goods and identifies algorithms for solving for a focal equilibrium.
+    </p>
+  </li>
+  <li>
+    Caplin, A., and J. Leahy.{" "}
+    <strong>
+      <a href="https://www.nber.org/system/files/working_papers/w16285/w16285.pdf" target="_blank" rel="noopener noreferrer" className="hover:underline">
+        “Comparative Statics in Markets for Indivisible Goods”.
+      </a>
+    </strong>
+    <i className="font-light"> Journal of Mathematical Economics, 2020.</i>
+    <p>
+      Introduces homotopy methods to analyze equilibrium transitions in non-transferable utility allocation markets. Identifies that there are five and only five distinct types of market shift.
+    </p>
+  </li>
+</ol>
+
 </section>
 
           </div>

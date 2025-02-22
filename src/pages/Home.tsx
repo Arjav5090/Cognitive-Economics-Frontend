@@ -111,7 +111,7 @@ const items = [
     genraeLink: "https://genrae.com",
   },
   {
-    title: "Access My Research and Work",
+    title: "Access My Research Back Story and Work",
     description: "Stay updated on projects driving cognitive economics.",
   },
 ];
@@ -130,16 +130,16 @@ const Home: React.FC = () => {
             variants={fadeInUp}
             className="space-y-4 md:space-y-6 text-center lg:text-left"
           >
-            <h2 className="text-3xl md:text-4xl font-orienta font-[900] leading-tight">
+            <h2 className="text-3xl md:text-4xl font-orienta text-[#0E0E0E] font-[700] leading-tight">
               Economist, Researcher, Innovator
               <br />
               in Cognitive Economics
             </h2>
-            <p className="text-base font-outfit md:text-lg text-black max-w-xl mx-auto lg:mx-0 text-justify">
+            <p className="text-base font-outfit md:text-lg text-[#0E0E0E] max-w-xl mx-auto lg:mx-0 text-justify">
               <span className="text-[#0E0E0E] font-outfit text-pretty">
                 I am{" "}
               </span>
-              <span className="text-black font-semibold font-outfit">
+              <span className="text-[#0E0E0E] font-semibold font-outfit">
                 Andrew Caplin
               </span>
               <span className="text-[#0E0E0E] font-outfit text-pretty">
@@ -149,12 +149,13 @@ const Home: React.FC = () => {
               <p className="text-[#0E0E0E] font-outfit text-pretty text-justify">
                 My book,{" "}
                 <Link
-  to="https://link.springer.com/book/10.1007/978-3-031-73042-9"
-  target="_blank"
-  className="italic underline"
->
-  An Introduction to Cognitive Economics: The Science of Mistakes
-</Link>
+                  to="https://link.springer.com/book/10.1007/978-3-031-73042-9"
+                  target="_blank"
+                  className="italic underline"
+                >
+                  An Introduction to Cognitive Economics: The Science of
+                  Mistakes
+                </Link>
                 , offers the first comprehensive guide to this rapidly growing
                 interdisciplinary field.
               </p>
@@ -206,23 +207,16 @@ const Home: React.FC = () => {
                 <p className="w-64 text-center">
                   {item.description}{" "}
                   <p>
+
                     {item.genraeLink && (
                       <a
                         href={item.genraeLink}
-                        className="text-black italic underline "
+                        className="text-white italic hover:underline bg-black px-2 py-1 rounded-lg "
                       >
                         Genrae
                       </a>
                     )}
-                    {""}
-                    {item.linkText && (
-                      <a
-                        href="https://mitpress.mit.edu/9780262527262/housing-partnerships/"
-                        className="text-black underline ml-2"
-                      >
-                        <i>{item.linkText}</i>
-                      </a>
-                    )}
+                   
                   </p>
                 </p>
               </div>

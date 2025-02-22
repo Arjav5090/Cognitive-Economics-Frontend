@@ -79,8 +79,15 @@ export default function HousingFinancePage() {
                 <li>
                   Caplin, A., C. Freeman, and J. Tracy,{" "}
                   <strong>
-                    “Collateral Damage: How Refinancing Constraints Exacerbate
-                    Regional Recessions”.
+                    <a
+                      href="https://www.jstor.org/stable/2953710"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “Collateral Damage: How Refinancing Constraints Exacerbate
+                      Regional Recessions”.
+                    </a>
                   </strong>
                   <i className="font-light">
                     {" "}
@@ -96,7 +103,14 @@ export default function HousingFinancePage() {
                 <li>
                   Caplin, A., C. Freeman, and J. Tracy,{" "}
                   <strong>
-                    “Housing Partnerships: A New System of Housing Finance”.
+                    <a
+                      href="https://www.academia.edu/98113389/Housing_Partnerships_A_new_system_of_housing_Finance"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “Housing Partnerships: A New System of Housing Finance”.
+                    </a>
                   </strong>
                   <i className="font-light">
                     {" "}
@@ -107,8 +121,15 @@ export default function HousingFinancePage() {
                 <li>
                   Caplin, A., S. Chan, C. Freeman, and J. Tracy,{" "}
                   <strong>
-                    “Housing Partnerships: A New Approach to a Market at a
-                    Crossroads”.
+                    <a
+                      href="https://mitpress.mit.edu/9780262527262/housing-partnerships/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “Housing Partnerships: A New Approach to a Market at a
+                      Crossroads”.
+                    </a>
                   </strong>
                   <i className="font-light"> MIT Press, 1997.</i>
                   <p>
@@ -122,8 +143,15 @@ export default function HousingFinancePage() {
                   Caplin, A., eds. O. Mitchell, Z. Bodie, B. Hammond, and S.
                   Zeldes,{" "}
                   <strong>
-                    “The Reverse Mortgage Market: Problems and Prospects” in
-                    Innovations in Retirement Financing".
+                    <a
+                      href="https://core.ac.uk/download/pdf/228110809.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “Turning Assets into Cash: Problems and Prospects in
+                      Innovations in Retirement Financing".
+                    </a>
                   </strong>
                   <i className="font-light">
                     {" "}
@@ -137,8 +165,15 @@ export default function HousingFinancePage() {
                 <li>
                   Caplin, A., J. Carr, F. Pollock, and Z.Y. Tong,{" "}
                   <strong>
-                    “Shared Equity Mortgages, Housing Affordability, and Home
-                    Ownership”.
+                    <a
+                      href="https://www.researchgate.net/publication/228163773_Shared_Equity_Mortgages_Housing_Affordability_and_Homeownership"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “Shared Equity Mortgages, Housing Affordability, and Home
+                      Ownership”.
+                    </a>
                   </strong>
                   <i className="font-light">
                     {" "}
@@ -152,18 +187,34 @@ export default function HousingFinancePage() {
                 <li>
                   Caplin, A., W. Goetzmann, E. Hangen, B. Nalebuff, E. Prentice,
                   J. Rodkin, M. Spiegel, and T. Skinner.{" "}
-                  <strong>“Home Equity Insurance: A Pilot Project”. In</strong>
-                  <i className="font-light"> Housing Markets and the Economy</i>
-                  ,
                   <strong>
-                    eds. E. Glaeser and J. Quigley, Lincoln Press, 2009.
+                    <a
+                      href="https://ideas.repec.org/p/ysm/wpaper/ysm372.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “Home Equity Insurance: A Pilot Project”.
+                    </a>
                   </strong>
+                  <i className="font-light">
+                    {" "}
+                    In Housing Markets and the Economy, eds. E. Glaeser and J.
+                    Quigley, Lincoln Press, 2009.
+                  </i>
                 </li>
                 <li>
                   Caplin, A., N. Cunningham, and M. Engler,{" "}
                   <strong>
-                    “Rectifying the Tax Treatment of Shared Appreciation
-                    Mortgages”.
+                    <a
+                      href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1267064"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “Rectifying the Tax Treatment of Shared Appreciation
+                      Mortgages”.
+                    </a>
                   </strong>
                   <i className="font-light"> Tax Law Review, 2008.</i>
                   <p>
@@ -174,8 +225,15 @@ export default function HousingFinancePage() {
                 <li>
                   Caplin, A., S. Chopra, J. Leahy, Y. LeCun, and T. Thampy,{" "}
                   <strong>
-                    “Discovering the Hidden Structure of House Prices with a
-                    Non-Parametric Latent Manifold Model”.
+                    <a
+                      href="https://www.semanticscholar.org/paper/Discovering-the-hidden-structure-of-house-prices-a-Chopra-Thampy/9f4028fea3fcc99776391d66d4e40edbe78388b3"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “Discovering the Hidden Structure of House Prices with a
+                      Non-Parametric Latent Manifold Model”.
+                    </a>
                   </strong>
                   <i className="font-light">
                     {" "}
@@ -190,8 +248,15 @@ export default function HousingFinancePage() {
                 <li>
                   Caplin, A., S. Chopra, J. Leahy, Y. LeCun, and T. Thampy,{" "}
                   <strong>
-                    “Machine Learning and the Spatial Structure of House Prices
-                    and Housing Returns”.
+                    <a
+                      href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1316046"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “Machine Learning and the Spatial Structure of House
+                      Prices and Housing Returns”.
+                    </a>
                   </strong>
                   <i className="font-light"> SSRN Working Paper, 2008.</i>
                   <p>
@@ -202,15 +267,31 @@ export default function HousingFinancePage() {
                 <li>
                   D. Aragon, Caplin, A. S. Chopra, J. Leahy, Y. LeCun, M.
                   Scoffier, and J. Tracy,{" "}
-                  <strong>“Reassessing FHA Risk”.</strong>
+                  <strong>
+                    <a
+                      href="https://www.nber.org/papers/w15802"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “Reassessing FHA Risk”.
+                    </a>
+                  </strong>
                   <i className="font-light"> NBER Working Paper, 2010.</i>
                   <p>Highlights high risk due to FHA’s accounting practices.</p>
                 </li>
                 <li>
                   Caplin, A., and J. Leahy,{" "}
                   <strong>
-                    “A Graph Theoretic Approach to Markets for Indivisible
-                    Goods”.
+                    <a
+                      href="https://www.sciencedirect.com/science/article/abs/pii/S0304406814000500"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “A Graph Theoretic Approach to Markets for Indivisible
+                      Goods”.
+                    </a>
                   </strong>
                   <i className="font-light">
                     {" "}
@@ -225,7 +306,14 @@ export default function HousingFinancePage() {
                 <li>
                   Caplin, A., and J. Leahy,{" "}
                   <strong>
-                    “Comparative Statics in Markets for Indivisible Goods”.
+                    <a
+                      href="https://www.sciencedirect.com/science/article/abs/pii/S0304406820300756"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “Comparative Statics in Markets for Indivisible Goods”.
+                    </a>
                   </strong>
                   <i className="font-light">
                     {" "}
@@ -242,12 +330,19 @@ export default function HousingFinancePage() {
                 <li>
                   Caplin, A., and R. Lowrance,{" "}
                   <strong>
-                    “The Mortgage Mess, the Press, and the Politics of
-                    Inattention.”
+                    <a
+                      href="https://www.aeaweb.org/articles?id=10.1257/aer.104.5.77"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “The Mortgage Mess, the Press, and the Politics of
+                      Inattention”.
+                    </a>
                   </strong>
                   <i className="font-light">
                     {" "}
-                    American Economic Review Papers and Proceeding, 2014.
+                    American Economic Review Papers and Proceedings, 2014.
                   </i>
                   <p>
                     Critiques the lack of policy accountability and the

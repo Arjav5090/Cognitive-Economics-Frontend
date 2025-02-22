@@ -184,12 +184,19 @@ export default function LifeCycleSavingsPage() {
                 <p>
                   Dominitz, J. and C. Manski,{" "}
                   <strong>
-                    “Using Expectations Data to Study Subjective Income
-                    Expectations”
+                    <a
+                      href="https://www.jstor.org/stable/2965550"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “Using Expectations Data to Study Subjective Income
+                      Expectations”
+                    </a>
                   </strong>
                   .{" "}
                   <i className="font-light">
-                     Journal of the American Statistical Association, 92(439),
+                    Journal of the American Statistical Association, 92(439),
                     pp. 855-867.
                   </i>
                 </p>
@@ -201,7 +208,14 @@ export default function LifeCycleSavingsPage() {
                 <p>
                   Barsky, R., F.T. Juster, M. Kimball, and M. Shapiro,{" "}
                   <strong>
-                    “Preference Parameters and Behavioral Heterogeneity”
+                    <a
+                      href="https://www.jstor.org/stable/2951245"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “Preference Parameters and Behavioral Heterogeneity”
+                    </a>
                   </strong>
                   .{" "}
                   <i className="font-light">
@@ -217,7 +231,14 @@ export default function LifeCycleSavingsPage() {
                 <p>
                   Strotz, R.,{" "}
                   <strong>
-                    “Myopia and Inconsistency in Dynamic Utility Maximization”
+                    <a
+                      href="https://www.jstor.org/stable/2295722"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “Myopia and Inconsistency in Dynamic Utility Maximization”
+                    </a>
                   </strong>
                   .{" "}
                   <i className="font-light">
@@ -233,7 +254,14 @@ export default function LifeCycleSavingsPage() {
                 <p>
                   Ameriks, J., A. Caplin, and J. Leahy,{" "}
                   <strong>
-                    “Wealth Accumulation and the Propensity to Plan”
+                    <a
+                      href="https://www.nber.org/system/files/working_papers/w8920/w8920.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “Wealth Accumulation and the Propensity to Plan”
+                    </a>
                   </strong>
                   .{" "}
                   <i className="font-light">
@@ -250,7 +278,17 @@ export default function LifeCycleSavingsPage() {
               <li>
                 <p>
                   Ameriks, J., A. Caplin, J. Leahy, and T. Tyler,{" "}
-                  <strong>“Measuring Self-Control Problems”</strong>.{" "}
+                  <strong>
+                    <a
+                      href="https://www.annualreviews.org/content/journals/10.1146/annurev-economics-080315-015417"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “Measuring Self-Control Problems”
+                    </a>
+                  </strong>
+                  .{" "}
                   <i className="font-light">
                     American Economic Review, vol. 97, pp. 966-972, 2007.
                   </i>
@@ -267,7 +305,17 @@ export default function LifeCycleSavingsPage() {
               <li>
                 <p>
                   Ameriks, J., A. Caplin, S. Laufer, and S. Van Nieuwerburgh,{" "}
-                  <strong>“The Joy of Giving or Assisted Living?”</strong>.{" "}
+                  <strong>
+                    <a
+                      href="https://onlinelibrary.wiley.com/doi/abs/10.1111"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “The Joy of Giving or Assisted Living?”
+                    </a>
+                  </strong>
+                  .{" "}
                   <i className="font-light">
                     Journal of Finance, vol. 66, pp. 519-561, 2011.
                   </i>
@@ -285,7 +333,14 @@ export default function LifeCycleSavingsPage() {
                 <p>
                   Ameriks, J., J. Briggs, A. Caplin, M. Shapiro, and C. Tonetti,{" "}
                   <strong>
-                    “Long-Term Care Utility and Late-in-Life Savings”
+                    <a
+                      href="https://www.journals.uchicago.edu/doi/abs/10.1086/706686?mobileUi=0&"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “Long-Term Care Utility and Late-in-Life Savings”
+                    </a>
                   </strong>
                   .
                 </p>
@@ -304,8 +359,17 @@ export default function LifeCycleSavingsPage() {
               <li>
                 <p>
                   Caplin, A., M. Luo, and K. McGarry,{" "}
-                  <strong>“Long Term Care in the Family Context”</strong>.{" "}
-                  <i className="font-light">Economic Inquiry, 2016.</i>
+                  <strong>
+                    <a
+                      href="https://www.nber.org/papers/w20973"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “Long Term Care in the Family Context”
+                    </a>
+                  </strong>
+                  . <i className="font-light">Economic Inquiry, 2016.</i>
                 </p>
                 <p>
                   Long-term care can be costly for those who need it and onerous
@@ -320,7 +384,14 @@ export default function LifeCycleSavingsPage() {
                 <p>
                   Ameriks, J., A. Caplin, S. Laufer, and S. Van Nieuwerburgh,{" "}
                   <strong>
-                    “Annuity Valuation, Long Term Care, and Bequest Motives”
+                    <a
+                      href="https://academic.oup.com/book/5658/chapter-abstract/148713451?redirectedFrom=fulltext"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “Annuity Valuation, Long Term Care, and Bequest Motives”
+                    </a>
                   </strong>
                   .{" "}
                   <i className="font-light">
@@ -342,10 +413,18 @@ export default function LifeCycleSavingsPage() {
                   Ameriks, J., J. Briggs, A. Caplin, M. Lee, M. Shapiro, and C.
                   Tonetti,{" "}
                   <strong>
-                    “The Long-Term-Care Insurance Puzzle: Modeling and
-                    Measurement”
+                    <a
+                      href="https://www.nber.org/papers/w22726"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “The Long-Term-Care Insurance Puzzle: Modeling and
+                      Measurement”
+                    </a>
                   </strong>
-                  .{" "}<i className="font-light">NBER Working Paper 22726, 2016.</i>
+                  .{" "}
+                  <i className="font-light">NBER Working Paper 22726, 2016.</i>
                 </p>
                 <p>
                   Individuals face significant late-in-life risks, prominently
@@ -361,8 +440,15 @@ export default function LifeCycleSavingsPage() {
                 <p>
                   Ameriks, J., A. Caplin, M. Lee, M. Shapiro, and C. Tonetti,{" "}
                   <strong>
-                    “Cognitive Decline, Limited Awareness, Imperfect Agency, and
-                    Financial Well-being”
+                    <a
+                      href="https://www.nber.org/papers/w29634"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “Cognitive Decline, Limited Awareness, Imperfect Agency,
+                      and Financial Well-being”
+                    </a>
                   </strong>
                   .{" "}
                   <i className="font-light">
@@ -381,7 +467,18 @@ export default function LifeCycleSavingsPage() {
               <li>
                 <p>
                   Caplin, A., V. Gregory, E. Lee, S. Leth-Petersen, and J.
-                  Sæverud, <strong>“Subjective Earnings Risk”</strong>.{" "}
+                  Sæverud,{" "}
+                  <strong>
+                    <a
+                      href="https://www.nber.org/papers/w31019"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “Subjective Earnings Risk”
+                    </a>
+                  </strong>
+                  .{" "}
                   <i className="font-light">NBER Working Paper 31019, 2023.</i>
                 </p>
                 <p>
@@ -396,8 +493,15 @@ export default function LifeCycleSavingsPage() {
                 <p>
                   Andrew, A., & Adams, A. (2023).{" "}
                   <strong>
-                    “Revealed Beliefs and the Marriage Market Return to
-                    Education”
+                    <a
+                      href="https://economics.sas.upenn.edu/system/files/2022-01/JMP_AlisonAndrew_MMReturns%286%29.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “Revealed Beliefs and the Marriage Market Return to
+                      Education”
+                    </a>
                   </strong>
                   .{" "}
                   <i className="font-light">
@@ -416,10 +520,17 @@ export default function LifeCycleSavingsPage() {
                 <p>
                   Almas, I., Attanasio, O., & Jervis, P. (2024).{" "}
                   <strong>
-                    “Economics and Measurement: New Measures to Model
-                    Decision-Making”
+                    <a
+                      href="https://onlinelibrary.wiley.com/doi/10.3982/ECTA22780"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “Economics and Measurement: New Measures to Model
+                      Decision-Making”
+                    </a>
                   </strong>
-                  .{" "}<i className="font-light">Econometrica, 2024.</i>
+                  . <i className="font-light">Econometrica, 2024.</i>
                 </p>
                 <p>
                   A general methodological statement of the need for additional
