@@ -153,7 +153,7 @@ export default function Questionnaire() {
     }
 
     try {
-      const response = await fetch("http://localhost:5001/api/forms/submit", {
+      const response = await fetch("https://cognitive-economics-backend.onrender.com/api/forms/submit", {
         method: "POST",
         body: formDataToSend,
       });
