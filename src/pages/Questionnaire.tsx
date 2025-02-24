@@ -156,6 +156,7 @@ export default function Questionnaire() {
       const response = await fetch("https://cognitive-economics-backend.onrender.com/api/forms/submit", {
         method: "POST",
         body: formDataToSend,
+        credentials: 'include',
       });
 
       if (!response.ok) throw new Error("Failed to submit");
