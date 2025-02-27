@@ -20,16 +20,50 @@ interface FormData {
 
 const steps = [
   "About You",
-  "Your Interest in Cognitive Economics",
-  "Participate in the Growth of Cognitive Economics",
+  "Your Interest",
+  "Participate in Growth",
 ];
+
+const Loader = () => (
+  <div className="inline-block w-5 h-5 border-4 border-t-white border-gray-400 rounded-full animate-spin"></div>
+);
+
+const Modal = ({
+  message,
+  isOpen,
+  onClose,
+}: {
+  message: string;
+  isOpen: boolean;
+  onClose: () => void;
+}) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+      <div className="bg-white p-6 rounded-lg shadow-lg w-96">
+        <p className="text-center text-lg">{message}</p>
+        <button
+          onClick={onClose}
+          className="mt-4 w-full bg-black text-white py-2 rounded-lg"
+        >
+          OK
+        </button>
+      </div>
+    </div>
+  );
+};
 
 export default function Questionnaire() {
   const [currentStep, setCurrentStep] = useState(0);
   const [formData, setFormData] = useState<FormData>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isError, setIsError] = useState(false);
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const [errorMessage] = useState<string | null>(null);
+  const [modalMessage, setModalMessage] = useState<string | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const isStepValid = (step: number): boolean => {
     const data = formData;
@@ -72,18 +106,26 @@ export default function Questionnaire() {
 
   const nextStep = () => {
     if (isStepValid(currentStep)) {
-      if (currentStep < steps.length - 1) {
+      setLoading(true); // ✅ Show loader
+      setTimeout(() => {
         setIsError(false);
-        setCurrentStep(currentStep + 1);
-      }
+        if (currentStep < steps.length - 1) {
+          setCurrentStep(currentStep + 1);
+        }
+        setLoading(false); // ✅ Hide loader
+      }, 500); // Simulate brief delay
     }
   };
 
   const prevStep = () => {
-    if (currentStep > 0) {
-      setIsError(false);
-      setCurrentStep(currentStep - 1);
-    }
+    setLoading(true); // ✅ Show loader
+    setTimeout(() => {
+      if (currentStep > 0) {
+        setIsError(false);
+        setCurrentStep(currentStep - 1);
+      }
+      setLoading(false); // ✅ Hide loader
+    }, 500);
   };
 
   const handleInputChange = (
@@ -110,8 +152,7 @@ export default function Questionnaire() {
     }
 
     const formDataToSend = new FormData();
-    setIsError(false); // Reset error state before submitting
-    setErrorMessage(null); // Reset any previous error message
+    setLoading(true);
 
     formDataToSend.append("name", String(formData.fullName));
     formDataToSend.append("email", String(formData.email));
@@ -153,21 +194,28 @@ export default function Questionnaire() {
     }
 
     try {
-      const response = await fetch("https://cognitive-economics-backend.onrender.com/api/forms/submit", {
-        method: "POST",
-        body: formDataToSend,
-        credentials: 'include',
-      });
+      const response = await fetch(
+        "https://cognitive-economics-backend.onrender.com/api/forms/submit",
+        {
+          method: "POST",
+          body: formDataToSend,
+          credentials: "include",
+        }
+      );
 
       if (!response.ok) throw new Error("Failed to submit");
-
+      setModalMessage("✅ Your form has been successfully submitted!");
+      setIsModalOpen(true);
       setIsSubmitted(true);
       setIsError(false);
     } catch (error) {
       console.error("Submission error:", error);
       setIsSubmitted(false);
       setIsError(true);
-      setErrorMessage("Something went wrong. Please try again later.");
+      setModalMessage("❌ Something went wrong. Please try again.");
+      setIsModalOpen(true);
+    } finally {
+      setLoading(false); // ✅ Hide loader after submission
     }
   };
 
@@ -202,11 +250,24 @@ export default function Questionnaire() {
     }
   };
 
+  const closeModal = () => {
+    setIsModalOpen(false);
+
+    if (isSubmitted) {
+      setFormData({});
+      setCurrentStep(0);
+    }
+  };
   return (
     <div className="min-h-screen bg-white text-black">
       <div className="max-w-7xl mx-auto p-6">
         <h1 className="text-3xl font-bold font-outfit mb-6">Questionnaire</h1>
         <ProgressBar steps={steps} currentStep={currentStep} />
+        <Modal
+          message={modalMessage || ""}
+          isOpen={isModalOpen}
+          onClose={closeModal}
+        />
         <form onKeyDown={handleKeyDown} className="mt-8">
           {currentStep === 0 && (
             <BasicInfo
@@ -236,53 +297,33 @@ export default function Questionnaire() {
             </div>
           )}
 
-          {isError && errorMessage && (
-            <div className="mt-4 p-4 bg-red-100 text-red-700 border border-red-400 rounded">
-              ❌ {errorMessage}
-            </div>
-          )}
-
           <div className="mt-8 flex justify-between">
             <button
               type="button"
               onClick={prevStep}
-              disabled={currentStep === 0}
-              className="px-4 py-2 bg-white border border-[#000000] text-black rounded disabled:opacity-50"
+              disabled={currentStep === 0 || loading}
+              className="px-4 py-2 bg-white border border-black text-black rounded disabled:opacity-50 flex items-center justify-center"
             >
-              Previous
+              {loading ? <Loader /> : "Previous"}
             </button>
-            {currentStep === steps.length - 1 ? (
-              <button
-                type="button" // <== CHANGED FROM type="submit"
-                onClick={(e) => handleSubmit(e)}
-                className="px-4 py-2 bg-black text-white rounded"
-              >
-                Submit
-              </button>
-            ) : (
-              <button
-                type="button"
-                onClick={nextStep}
-                className="px-4 py-2 bg-black text-white rounded"
-              >
-                Next
-              </button>
-            )}
+            <button
+              type="button"
+              onClick={
+                currentStep === steps.length - 1 ? handleSubmit : nextStep
+              }
+              disabled={loading}
+              className="px-4 py-2 bg-black text-white rounded flex items-center justify-center"
+            >
+              {loading ? (
+                <Loader />
+              ) : currentStep === steps.length - 1 ? (
+                "Submit"
+              ) : (
+                "Next"
+              )}
+            </button>
           </div>
         </form>
-        {isSubmitted && (
-          <div className="mt-4 p-4 bg-green-100 text-green-700 border border-green-400 rounded">
-            ✅ Thank you for completing the survey. Your input will help shape
-            the future of cognitive economics. 🎉
-          </div>
-        )}
-
-        {/* Error Message */}
-        {isSubmitted && (
-          <div className="mt-4 p-4 bg-red-100 text-red-700 border border-red-400 rounded">
-            ❌ Oops! Something went wrong. Please try again.
-          </div>
-        )}
       </div>
     </div>
   );
@@ -405,6 +446,8 @@ const BasicInfo: React.FC<BasicInfoProps> = ({
             required
             value={formData.age || ""}
             onChange={handleInputChange}
+            inputMode="numeric" // Helps mobile users get a numeric keyboard
+  pattern="[0-9]*" 
             className="mt-1 block w-full px-2 py-2 border rounded-lg border-black shadow-sm focus:border-black focus:ring-black"
           />
         </div>
