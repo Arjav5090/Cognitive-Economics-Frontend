@@ -18,11 +18,7 @@ interface FormData {
   [key: string]: string | number | boolean | string[] | File | undefined | null;
 }
 
-const steps = [
-  "About You",
-  "Your Interest",
-  "Participate in Growth",
-];
+const steps = ["About You", "Your Interest", "Participate in Growth"];
 
 const Loader = () => (
   <div className="inline-block w-5 h-5 border-4 border-t-white border-gray-400 rounded-full animate-spin"></div>
@@ -199,7 +195,7 @@ export default function Questionnaire() {
         {
           method: "POST",
           body: formDataToSend,
-          credentials: "include",
+   
         }
       );
 
@@ -447,7 +443,7 @@ const BasicInfo: React.FC<BasicInfoProps> = ({
             value={formData.age || ""}
             onChange={handleInputChange}
             inputMode="numeric" // Helps mobile users get a numeric keyboard
-  pattern="[0-9]*" 
+            pattern="[0-9]*"
             className="mt-1 block w-full px-2 py-2 border rounded-lg border-black shadow-sm focus:border-black focus:ring-black"
           />
         </div>
