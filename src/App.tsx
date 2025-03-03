@@ -8,7 +8,7 @@ import ContactForm from "./pages/Contact";
 import Forum from "./pages/Forum";
 import Questionnaire from "./pages/Questionnaire";
 import Chatbot from "./pages/Chatbot";
-import ReactGA from "react-ga"; // Use react-ga4 for GA4 support
+import ReactGA from "react-ga4"; // Use react-ga4 for GA4 support
 
 const TRACKING_ID = "G-M424D013QG"; // Your Google Analytics Measurement ID
 ReactGA.initialize(TRACKING_ID);
