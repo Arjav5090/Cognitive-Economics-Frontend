@@ -191,7 +191,7 @@ export default function Questionnaire() {
 
     try {
       const response = await fetch(
-        "https://cognitive-economics-backend.onrender.com/api/forms/submit",
+        "https://cognitive-economics-backend-2e54eec5231c.herokuapp.com/api/forms/submit",
         {
           method: "POST",
           body: formDataToSend,
