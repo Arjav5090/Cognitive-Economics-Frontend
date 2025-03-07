@@ -1,8 +1,31 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const PreparingWorkersPage: React.FC = () => {
   return (
     <div className="p-4 sm:p-6 lg:p-8 max-w-5xl mx-auto font-outfit text-justify">
+      <Helmet>
+        <title>
+          Preparing Workers for the Cognitive Economy | Andrew Caplin
+        </title>
+        <meta
+          name="description"
+          content="Explore how workers are preparing for AI-driven changes in the cognitive economy. Research from the Copenhagen Life Panel analyzes job security, career transitions, and worker adaptability."
+        />
+        <meta
+          property="og:title"
+          content="Preparing Workers for the Cognitive Economy"
+        />
+        <meta
+          property="og:description"
+          content="Discover how workers perceive AI-driven job changes and what strategies they use to prepare for the evolving labor market."
+        />
+        <meta
+          property="og:url"
+          content="https://andrewcaplin.com/resources/preparingworkers"
+        />
+          <link rel="canonical" href="https://andrewcaplin.com/resources/preparingworkers" />
+      </Helmet>
       <h1 className="text-2xl sm:text-3xl md:text-4xl text-left font-bold mb-6">
         Preparing Workers for Careers in the Cognitive Economy
       </h1>
@@ -10,28 +33,44 @@ const PreparingWorkersPage: React.FC = () => {
       <div className="space-y-6 mb-8">
         <section>
           <p className="text-sm sm:text-base lg:text-lg mb-4">
-            The cognitive economy will dramatically reshape the labor market, affecting workers at all stages of their
-            careers. To better understand these impacts, ongoing cognitive economic research focuses on:
+            The cognitive economy will dramatically reshape the labor market,
+            affecting workers at all stages of their careers. To better
+            understand these impacts, ongoing cognitive economic research
+            focuses on:
           </p>
           <ul className="list-disc pl-6 space-y-2 text-sm sm:text-base lg:text-lg">
-            <li><strong>Current Workers:</strong> Exploring their awareness of AI-driven opportunities and threats.</li>
-            <li><strong>Job Market Entrants:</strong> Assessing whether current educational choices align with the evolving labor market.</li>
+            <li>
+              <strong>Current Workers:</strong> Exploring their awareness of
+              AI-driven opportunities and threats.
+            </li>
+            <li>
+              <strong>Job Market Entrants:</strong> Assessing whether current
+              educational choices align with the evolving labor market.
+            </li>
           </ul>
         </section>
 
         <section>
           <p className="text-sm sm:text-base lg:text-lg mb-4">
-            Ongoing research leverages the Copenhagen Life Panel, a longitudinal dataset linked to Danish population
-            registries. This dataset captures:
+            Ongoing research leverages the Copenhagen Life Panel, a longitudinal
+            dataset linked to Danish population registries. This dataset
+            captures:
           </p>
           <ul className="list-disc pl-6 space-y-2 text-sm sm:text-base lg:text-lg">
-            <li>Subjective probabilities of job transitions (e.g., layoffs, quitting).</li>
-            <li>Expected earnings following transitions and time spent out of work.</li>
+            <li>
+              Subjective probabilities of job transitions (e.g., layoffs,
+              quitting).
+            </li>
+            <li>
+              Expected earnings following transitions and time spent out of
+              work.
+            </li>
           </ul>
           <p className="text-sm sm:text-base lg:text-lg mt-4">
-            By linking beliefs to outcomes, we aim to identify both those workers who are well prepared for the cognitive
-            transition and those who are not. These insights can guide policy interventions to help workers navigate the
-            cognitive economy.
+            By linking beliefs to outcomes, we aim to identify both those
+            workers who are well prepared for the cognitive transition and those
+            who are not. These insights can guide policy interventions to help
+            workers navigate the cognitive economy.
           </p>
         </section>
 
@@ -40,31 +79,56 @@ const PreparingWorkersPage: React.FC = () => {
             AI and Career Disruption: Navigating the Cognitive Economy
           </h2>
           <p className="text-sm sm:text-base lg:text-lg mb-4">
-            Generative AI represents a transformative force in the labor market, with profound implications for productivity,
-            economic growth, and individual livelihoods. The CLP is addressing key questions about how workers
-            perceive, adapt to, and prepare for AI-driven disruptions:
+            Generative AI represents a transformative force in the labor market,
+            with profound implications for productivity, economic growth, and
+            individual livelihoods. The CLP is addressing key questions about
+            how workers perceive, adapt to, and prepare for AI-driven
+            disruptions:
           </p>
           <ul className="list-disc pl-6 space-y-2 text-sm sm:text-base lg:text-lg">
-            <li>How do workers perceive AI's impact on job security, wages, and career prospects?</li>
-            <li>How do background and early-life experiences shape these beliefs?</li>
-            <li>What proactive steps are workers taking to retrain or adjust their career paths?</li>
-            <li>What barriers prevent workers from preparing for AI-driven disruptions?</li>
+            <li>
+              How do workers perceive AI's impact on job security, wages, and
+              career prospects?
+            </li>
+            <li>
+              How do background and early-life experiences shape these beliefs?
+            </li>
+            <li>
+              What proactive steps are workers taking to retrain or adjust their
+              career paths?
+            </li>
+            <li>
+              What barriers prevent workers from preparing for AI-driven
+              disruptions?
+            </li>
           </ul>
         </section>
 
         <section>
           <p className="text-sm sm:text-base lg:text-lg mb-4">
-            A pilot survey has categorized workers into four groups based on their attitudes toward AI:
+            A pilot survey has categorized workers into four groups based on
+            their attitudes toward AI:
           </p>
           <ol className="list-decimal pl-6 space-y-2 text-sm sm:text-base lg:text-lg">
-            <li><strong>Active Optimists:</strong> Enthusiastic about AI's potential.</li>
-            <li><strong>Active Pessimists:</strong> Concerned but proactively planning.</li>
-            <li><strong>Passive Optimists:</strong> Positive but disengaged.</li>
-            <li><strong>Passive Pessimists:</strong> Resigned and inactive.</li>
+            <li>
+              <strong>Active Optimists:</strong> Enthusiastic about AI's
+              potential.
+            </li>
+            <li>
+              <strong>Active Pessimists:</strong> Concerned but proactively
+              planning.
+            </li>
+            <li>
+              <strong>Passive Optimists:</strong> Positive but disengaged.
+            </li>
+            <li>
+              <strong>Passive Pessimists:</strong> Resigned and inactive.
+            </li>
           </ol>
           <p className="text-sm sm:text-base lg:text-lg mt-4">
-            The full survey, launching in 2025, will provide deeper insights into how workers across industries and
-            demographics adapt to AI-driven changes.
+            The full survey, launching in 2025, will provide deeper insights
+            into how workers across industries and demographics adapt to
+            AI-driven changes.
           </p>
         </section>
       </div>

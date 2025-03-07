@@ -1,8 +1,29 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const BusinessandPolicyPage: React.FC = () => {
   return (
     <div className="p-4 sm:p-6 lg:p-8 max-w-5xl mx-auto font-outfit text-justify">
+      <Helmet>
+        <title>Applications in Business and Policy - Cognitive Economics</title>
+        <meta
+          name="description"
+          content="Explore how cognitive economics enhances decision-making in business and policy, improving communication clarity and regulatory transparency."
+        />
+        <meta
+          property="og:title"
+          content="Applications in Business and Policy - Cognitive Economics"
+        />
+        <meta
+          property="og:description"
+          content="Discover how cognitive economics principles optimize financial presentation, judicial decisions, and regulatory clarity."
+        />
+        <meta
+          property="og:url"
+          content="https://andrewcaplin.com/resources/businessandpolicy"
+        />
+          <link rel="canonical" href="https://andrewcaplin.com/resources/businessandpolicy" />
+      </Helmet>
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
         Applications in Business and Policy
       </h1>

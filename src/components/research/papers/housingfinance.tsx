@@ -1,8 +1,35 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 export default function HousingFinancePage() {
   return (
     <main className="flex flex-col items-center justify-center px-4 py-6 font-outfit">
+      <Helmet>
+        <title>Real Estate and Housing Finance | Andrew Caplin</title>
+        <meta
+          name="description"
+          content="Explore research on real estate and housing finance, including shared equity mortgages, homeownership policies, and innovative market designs."
+        />
+        <meta
+          property="og:title"
+          content="Real Estate and Housing Finance | Andrew Caplin"
+        />
+        <meta
+          property="og:description"
+          content="Discover key insights on housing finance, refinancing constraints, shared equity solutions, and the future of real estate markets."
+        />
+        <meta
+          property="og:url"
+          content="https://andrewcaplin.com/research/papers/real-estate-housing-finance"
+        />
+        <meta
+          name="keywords"
+          content="Housing Finance, Real Estate, Mortgage Markets, Equity Sharing, Homeownership, House Price Dynamics, FHA Reform"
+        />
+        <meta name="author" content="Andrew Caplin" />
+        <meta property="og:type" content="article" />
+      </Helmet>
+
       <div className="max-w-3xl w-full">
         <Link
           to="/research"

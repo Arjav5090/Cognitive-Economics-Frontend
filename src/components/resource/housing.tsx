@@ -1,10 +1,29 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 export default function HousingPage() {
   return (
     <div className="p-4 sm:p-6 md:p-8 lg:p-8 max-w-full mx-auto font-outfit text-justify">
+      <Helmet>
+        <title>Cognitive Economics in Teaching | Andrew Caplin</title>
+        <meta
+          name="description"
+          content="Explore the role of cognitive economics in education, teaching, and decision-making. Learn how better calibration and proper scoring improve student outcomes."
+        />
+        <meta property="og:title" content="Cognitive Economics in Teaching" />
+        <meta
+          property="og:description"
+          content="Discover how cognitive economics can enhance education, teaching methodologies, and student decision-making."
+        />
+
+        <meta
+          property="og:url"
+          content="https://andrewcaplin.com/resources/housing"
+        />
+          <link rel="canonical" href="https://andrewcaplin.com/resources/housing" />
+      </Helmet>
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 font-outfit leading-tight">
-         Applications in Education and Teaching
+        Applications in Education and Teaching
       </h1>
 
       <div className="prose max-w-none mb-8">
@@ -145,7 +164,7 @@ export default function HousingPage() {
       </div>
 
       <div className="flex flex-col sm:flex-row justify-between mt-8 space-y-4 sm:space-y-0">
-        <button className="w-full sm:w-auto">
+        <button className="flex justify-start w-full sm:w-auto">
           <Link
             to="/resources/application"
             className="px-6 py-3 bg-white border border-[#000000] text-black font-outfit font-light rounded-lg hover:bg-black hover:text-white w-full sm:w-auto"
@@ -153,7 +172,7 @@ export default function HousingPage() {
             Previous Topic
           </Link>
         </button>
-        <button className="w-full sm:w-auto">
+        <button className="flex justify-start w-full sm:w-auto">
           <Link
             to="/resources/accelerator"
             className="px-6 py-3 bg-white border border-[#000000] text-black font-outfit font-light rounded-lg hover:bg-black hover:text-white w-full sm:w-auto"

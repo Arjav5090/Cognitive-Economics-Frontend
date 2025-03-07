@@ -1,8 +1,35 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 export default function PsychologicalFactorsPage() {
   return (
     <main className="flex flex-col items-center justify-center px-4 py-6 font-outfit">
+      <Helmet>
+        <title>Social Welfare and Policy | Andrew Caplin</title>
+        <meta
+          name="description"
+          content="Explore how psychological factors influence social welfare policies, market discount rates, and intergenerational transfers in Andrew Caplin’s research."
+        />
+        <meta
+          property="og:title"
+          content="Social Welfare and Policy | Andrew Caplin"
+        />
+        <meta
+          property="og:description"
+          content="Delve into economic and psychological insights on social discount rates, financial reform, and environmental sustainability."
+        />
+
+        <meta
+          property="og:url"
+          content="https://andrewcaplin.com/research/papers/social-welfare-policy"
+        />
+        <meta
+          name="keywords"
+          content="Social Welfare, Discount Rates, Market Dynamics, Intergenerational Transfers, Financial Reform, Environmental Policy, Economic Psychology"
+        />
+        <meta name="author" content="Andrew Caplin" />
+        <meta property="og:type" content="article" />
+      </Helmet>
       <div className="max-w-3xl w-full">
         <Link
           to="/research"
@@ -47,56 +74,101 @@ export default function PsychologicalFactorsPage() {
                 References
               </h2>
               <ol className="list-decimal pl-4 text-[#000000] space-y-3 font-outfit text-justify">
-  <li>
-    Caplin, A., and J. Leahy,{" "}
-    <strong>
-      <a href="https://www.journals.uchicago.edu/doi/abs/10.1086/424740" target="_blank" rel="noopener noreferrer" className="hover:underline">
-        “The Social Discount Rate”.
-      </a>
-    </strong>
-    <i className="font-light"> Journal of Political Economy, 1257-1268, 2004.</i>
-    <p>
-      Argues that the government should adopt a lower discount rate than the market to prioritize future-oriented policies, as market rates reflect overly myopic preferences.
-    </p>
-  </li>
-  <li>
-    Caplin, A., and J. Leahy,{" "}
-    <strong>
-      <a href="https://www.annualreviews.org/content/journals/10.1146/annurev-financial-101822-112948" target="_blank" rel="noopener noreferrer" className="hover:underline">
-        “Missing Participants, Missing Markets, and the Social Discount Rate: Borrowing Constraints, Intergenerational Transfers, Altruism and the Desire for Legacy”.
-      </a>
-    </strong>
-    <i className="font-light"> Annual Review of Financial Economics, 2023.</i>
-    <p>
-      Explores how market rates exclude key participants, leading to suboptimal societal discounting of the future. Introduces desire for legacy as a key force to tap into to increase future orientation.
-    </p>
-  </li>
-  <li>
-    Caplin, A., M. Ghandehari, C. Lim, P. Glimcher, and G. Thurston.{" "}
-    <strong>
-      <a href="https://www.nature.com/articles/s41467-019-09155-4" target="_blank" rel="noopener noreferrer" className="hover:underline">
-        “Advancing Environmental Exposure Assessment Science to Benefit Society”.
-      </a>
-    </strong>
-    <i className="font-light"> Nature Communications, 10, no. 1: 1-11, 2019.</i>
-    <p>
-      Reviews how advances in feasibility of granular pollution measurement can be used to better target environmental policies.
-    </p>
-  </li>
-  <li>
-    Caplin, A., and R. Lowrance,{" "}
-    <strong>
-      <a href="https://www.aeaweb.org/articles?id=10.1257/aer.104.5.77" target="_blank" rel="noopener noreferrer" className="hover:underline">
-        “The Mortgage Mess, the Press, and the Politics of Inattention”.
-      </a>
-    </strong>
-    <i className="font-light"> American Economic Review Papers and Proceedings, 2014.</i>
-    <p>
-      Critiques the lack of policy accountability and the destructive role of the press in the 2006-2007 housing crisis.
-    </p>
-  </li>
-</ol>
-
+                <li>
+                  Caplin, A., and J. Leahy,{" "}
+                  <strong>
+                    <a
+                      href="https://www.journals.uchicago.edu/doi/abs/10.1086/424740"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “The Social Discount Rate”.
+                    </a>
+                  </strong>
+                  <i className="font-light">
+                    {" "}
+                    Journal of Political Economy, 1257-1268, 2004.
+                  </i>
+                  <p>
+                    Argues that the government should adopt a lower discount
+                    rate than the market to prioritize future-oriented policies,
+                    as market rates reflect overly myopic preferences.
+                  </p>
+                </li>
+                <li>
+                  Caplin, A., and J. Leahy,{" "}
+                  <strong>
+                    <a
+                      href="https://www.annualreviews.org/content/journals/10.1146/annurev-financial-101822-112948"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “Missing Participants, Missing Markets, and the Social
+                      Discount Rate: Borrowing Constraints, Intergenerational
+                      Transfers, Altruism and the Desire for Legacy”.
+                    </a>
+                  </strong>
+                  <i className="font-light">
+                    {" "}
+                    Annual Review of Financial Economics, 2023.
+                  </i>
+                  <p>
+                    Explores how market rates exclude key participants, leading
+                    to suboptimal societal discounting of the future. Introduces
+                    desire for legacy as a key force to tap into to increase
+                    future orientation.
+                  </p>
+                </li>
+                <li>
+                  Caplin, A., M. Ghandehari, C. Lim, P. Glimcher, and G.
+                  Thurston.{" "}
+                  <strong>
+                    <a
+                      href="https://www.nature.com/articles/s41467-019-09155-4"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “Advancing Environmental Exposure Assessment Science to
+                      Benefit Society”.
+                    </a>
+                  </strong>
+                  <i className="font-light">
+                    {" "}
+                    Nature Communications, 10, no. 1: 1-11, 2019.
+                  </i>
+                  <p>
+                    Reviews how advances in feasibility of granular pollution
+                    measurement can be used to better target environmental
+                    policies.
+                  </p>
+                </li>
+                <li>
+                  Caplin, A., and R. Lowrance,{" "}
+                  <strong>
+                    <a
+                      href="https://www.aeaweb.org/articles?id=10.1257/aer.104.5.77"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      “The Mortgage Mess, the Press, and the Politics of
+                      Inattention”.
+                    </a>
+                  </strong>
+                  <i className="font-light">
+                    {" "}
+                    American Economic Review Papers and Proceedings, 2014.
+                  </i>
+                  <p>
+                    Critiques the lack of policy accountability and the
+                    destructive role of the press in the 2006-2007 housing
+                    crisis.
+                  </p>
+                </li>
+              </ol>
             </section>
           </div>
         </article>

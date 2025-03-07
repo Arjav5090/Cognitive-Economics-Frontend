@@ -1,8 +1,40 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 export default function JobTransitionsPage() {
   return (
     <main className="flex flex-col items-center justify-center px-4 py-6 font-outfit">
+      <Helmet>
+        <title>
+          Job Transitions, Career Dynamics, and Earnings in the Cognitive
+          Economy | Andrew Caplin
+        </title>
+        <meta
+          name="description"
+          content="Explore research on job transitions, earnings, cognitive skills, and career dynamics in the AI-driven economy by Andrew Caplin."
+        />
+        <meta
+          property="og:title"
+          content="Job Transitions, Career Dynamics, and Earnings in the Cognitive Economy | Andrew Caplin"
+        />
+        <meta
+          property="og:description"
+          content="Discover insights on job mobility, human capital, cognitive skills, and the role of AI in shaping career earnings."
+        />
+
+        <meta
+          property="og:url"
+          content="https://andrewcaplin.com/research/papers/job-transitions-career-dynamics"
+        />
+        <meta
+          name="keywords"
+          content="Job Transitions, Career Dynamics, Cognitive Economy, Labor Economics, Human Capital, AI in Jobs, Earnings Growth, Wage Dynamics"
+        />
+        <meta name="author" content="Andrew Caplin" />
+        <meta property="og:type" content="article" />
+        <link rel="canonical" href="https://andrewcaplin.com/research/papers/job-transitions-career-dynamics" />
+      </Helmet>
+
       <div className="max-w-3xl w-full">
         <Link
           to="/research"
@@ -81,114 +113,171 @@ export default function JobTransitionsPage() {
                 References
               </h2>
               <ol className="list-decimal pl-4 text-[#000000] space-y-3 font-outfit text-justify">
-  <li>
-    <p>
-      Caplin, A., D. Deming, S. Leth-Petersen, and B. Weidmann,{" "}
-      <strong>
-        <a 
-          href="https://www.nber.org/papers/w31674" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="hover:underline"
-        >
-          “Economic Decision-Making Skill Predicts Income in Two Countries”
-        </a>
-      </strong>
-      . <i className="font-light">NBER Working Paper 31674, 2023.</i>
-    </p>
-    <p>
-      Models and measures economic decision-making skill and finds that it strongly predicts earnings in the U.S. and Denmark, conditional on education, IQ, numeracy, and other covariates. It is more valuable in management and other decision-intensive occupations.
-    </p>
-  </li>
-  <li>
-    <p>
-      Caplin, A., V. Gregory, E. Lee, S. Leth-Petersen, and J. Sæverud,{" "}
-      <strong>
-        <a 
-          href="https://www.nber.org/papers/w31019" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="hover:underline"
-        >
-          “Subjective Earnings Risk”
-        </a>
-      </strong>
-      . <i className="font-light">NBER Working Paper 31019, 2023.</i>
-    </p>
-    <p>
-      Introduces the Copenhagen Life Panel contingent earnings survey instrument and shows job transitions to be the key drivers of earnings risk. The survey reveals subjective earning risk to be many times smaller than traditional estimates suggest.
-    </p>
-  </li>
-  <li>
-    <p>
-      Ameriks, J., J. Briggs, A. Caplin, M. Lee, M. Shapiro, and C. Tonetti,{" "}
-      <strong>
-        <a 
-          href="https://www.aeaweb.org/articles?id=10.1257/mac.20170403" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="hover:underline"
-        >
-          “Older Americans Would Work Longer If Jobs Were Flexible”
-        </a>
-      </strong>
-      . <i className="font-light">American Economic Journal: Macroeconomics, 12(1), 174-209, 2020.</i>
-    </p>
-    <p>
-      Uses SSQs purpose-designed to complement behavioral data to find that older Americans, even those who are long retired, have strong willingness to work, especially in jobs with flexible schedules.
-    </p>
-  </li>
-  <li>
-    <p>
-      Caplin, A., M. Lee, S. Leth-Petersen, J. Saeverud, and M. Shapiro,{" "}
-      <strong>
-        <a 
-          href="https://www.nber.org/papers/w30342" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="hover:underline"
-        >
-          “How Worker Productivity and Wages Grow with Tenure and Experience: The Firm Perspective”
-        </a>
-      </strong>
-      . <i className="font-light">NBER Working Paper 30342, 2022.</i>
-    </p>
-    <p>
-      Surveys firms to separate the role of on-the-job tenure from total experience in determining productivity growth. Finds evidence consistent with wages not being allocative period-by-period, and finds previous experience to be a less than perfect substitute for on-the-job tenure.
-    </p>
-  </li>
-  <li>
-    <p>
-      Caplin, A., S. Leth-Petersen, and C. Tonetti,{" "}
-      <strong>
-        <a 
-          href="https://www.nber.org/papers/w32309" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="hover:underline"
-        >
-          “Identification of Marginal Treatment Effects using Subjective Expectations”
-        </a>
-      </strong>
-      . <i className="font-light">NBER Working Paper 32309, 2024.</i>
-    </p>
-    <p>
-      Introduces a survey-based method to identify the individual latent propensity to select into treatment and marginal treatment effects. Applies the method to study how childbirth affects female labor supply in Denmark and to study the effects of counterfactual changes to childcare cost and quality on female labor supply.
-    </p>
-  </li>
-  <li>
-    <p>
-      Caplin, A., S. Leth-Petersen, and C. Tonetti,{" "}
-      <strong>“Women, Children, and Work: The Partner Effect”</strong>. <i className="font-light">2025.</i>
-    </p>
-    <p>
-      We use a customized survey to identify the critical role of partner parental leave in shaping female employment after giving birth. Key findings: <br />
-      <ul className="list-disc pl-4 text-[#000000] space-y-3 font-outfit text-justify" ><li>Women whose partners do not take leave remain out of the workforce longer than they had expected too.</li><li>Better communication would help: even when about to give birth, many mothers remain highly uncertain about whether their partner will take leave. This is particularly the case for first-time mothers.</li></ul>
-     
-    </p>
-  </li>
-</ol>
-
+                <li>
+                  <p>
+                    Caplin, A., D. Deming, S. Leth-Petersen, and B. Weidmann,{" "}
+                    <strong>
+                      <a
+                        href="https://www.nber.org/papers/w31674"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline"
+                      >
+                        “Economic Decision-Making Skill Predicts Income in Two
+                        Countries”
+                      </a>
+                    </strong>
+                    .{" "}
+                    <i className="font-light">
+                      NBER Working Paper 31674, 2023.
+                    </i>
+                  </p>
+                  <p>
+                    Models and measures economic decision-making skill and finds
+                    that it strongly predicts earnings in the U.S. and Denmark,
+                    conditional on education, IQ, numeracy, and other
+                    covariates. It is more valuable in management and other
+                    decision-intensive occupations.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Caplin, A., V. Gregory, E. Lee, S. Leth-Petersen, and J.
+                    Sæverud,{" "}
+                    <strong>
+                      <a
+                        href="https://www.nber.org/papers/w31019"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline"
+                      >
+                        “Subjective Earnings Risk”
+                      </a>
+                    </strong>
+                    .{" "}
+                    <i className="font-light">
+                      NBER Working Paper 31019, 2023.
+                    </i>
+                  </p>
+                  <p>
+                    Introduces the Copenhagen Life Panel contingent earnings
+                    survey instrument and shows job transitions to be the key
+                    drivers of earnings risk. The survey reveals subjective
+                    earning risk to be many times smaller than traditional
+                    estimates suggest.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Ameriks, J., J. Briggs, A. Caplin, M. Lee, M. Shapiro, and
+                    C. Tonetti,{" "}
+                    <strong>
+                      <a
+                        href="https://www.aeaweb.org/articles?id=10.1257/mac.20170403"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline"
+                      >
+                        “Older Americans Would Work Longer If Jobs Were
+                        Flexible”
+                      </a>
+                    </strong>
+                    .{" "}
+                    <i className="font-light">
+                      American Economic Journal: Macroeconomics, 12(1), 174-209,
+                      2020.
+                    </i>
+                  </p>
+                  <p>
+                    Uses SSQs purpose-designed to complement behavioral data to
+                    find that older Americans, even those who are long retired,
+                    have strong willingness to work, especially in jobs with
+                    flexible schedules.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Caplin, A., M. Lee, S. Leth-Petersen, J. Saeverud, and M.
+                    Shapiro,{" "}
+                    <strong>
+                      <a
+                        href="https://www.nber.org/papers/w30342"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline"
+                      >
+                        “How Worker Productivity and Wages Grow with Tenure and
+                        Experience: The Firm Perspective”
+                      </a>
+                    </strong>
+                    .{" "}
+                    <i className="font-light">
+                      NBER Working Paper 30342, 2022.
+                    </i>
+                  </p>
+                  <p>
+                    Surveys firms to separate the role of on-the-job tenure from
+                    total experience in determining productivity growth. Finds
+                    evidence consistent with wages not being allocative
+                    period-by-period, and finds previous experience to be a less
+                    than perfect substitute for on-the-job tenure.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Caplin, A., S. Leth-Petersen, and C. Tonetti,{" "}
+                    <strong>
+                      <a
+                        href="https://www.nber.org/papers/w32309"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline"
+                      >
+                        “Identification of Marginal Treatment Effects using
+                        Subjective Expectations”
+                      </a>
+                    </strong>
+                    .{" "}
+                    <i className="font-light">
+                      NBER Working Paper 32309, 2024.
+                    </i>
+                  </p>
+                  <p>
+                    Introduces a survey-based method to identify the individual
+                    latent propensity to select into treatment and marginal
+                    treatment effects. Applies the method to study how
+                    childbirth affects female labor supply in Denmark and to
+                    study the effects of counterfactual changes to childcare
+                    cost and quality on female labor supply.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Caplin, A., S. Leth-Petersen, and C. Tonetti,{" "}
+                    <strong>
+                      “Women, Children, and Work: The Partner Effect”
+                    </strong>
+                    . <i className="font-light">2025.</i>
+                  </p>
+                  <p>
+                    We use a customized survey to identify the critical role of
+                    partner parental leave in shaping female employment after
+                    giving birth. Key findings: <br />
+                    <ul className="list-disc pl-4 text-[#000000] space-y-3 font-outfit text-justify">
+                      <li>
+                        Women whose partners do not take leave remain out of the
+                        workforce longer than they had expected too.
+                      </li>
+                      <li>
+                        Better communication would help: even when about to give
+                        birth, many mothers remain highly uncertain about
+                        whether their partner will take leave. This is
+                        particularly the case for first-time mothers.
+                      </li>
+                    </ul>
+                  </p>
+                </li>
+              </ol>
             </section>
           </div>
         </article>

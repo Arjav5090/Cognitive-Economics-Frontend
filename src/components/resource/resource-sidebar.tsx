@@ -107,13 +107,11 @@ const topics: TopicSection[] = [
 ];
 
 export function ResourcesSidebar() {
-  const [expandedSections, setExpandedSections] = useState<string[]>([]); // Start with no sections expanded
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Sidebar state
-  const location = useLocation(); // Get current location
+  const [expandedSections, setExpandedSections] = useState<string[]>([]);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const location = useLocation();
 
-  // Automatically open the sidebar and expand the relevant topic when the route changes
   useEffect(() => {
-    // Find the section whose item matches the current route
     const sectionToExpand = topics
       .map((section) =>
         section.items.some((item) => item.href === location.pathname)
@@ -123,21 +121,18 @@ export function ResourcesSidebar() {
       .filter((section) => section !== null);
 
     if (sectionToExpand.length > 0) {
-      setExpandedSections([sectionToExpand[0] as string]); // Expand only the matched section
+      setExpandedSections([sectionToExpand[0] as string]);
     } else {
-      setExpandedSections([]); // If no match, collapse all sections
+      setExpandedSections([]);
     }
 
-    setIsSidebarOpen(true); // Automatically open the sidebar when route changes
-  }, [location.pathname]); // Trigger when pathname changes
+    setIsSidebarOpen(true);
+  }, [location.pathname]);
 
   const toggleSection = (title: string) => {
-    setExpandedSections((prev) =>
-      prev.includes(title) ? [] : [title] // Close the section if it's already open, otherwise open it
-    );
+    setExpandedSections((prev) => (prev.includes(title) ? [] : [title]));
   };
 
-  // Handle resize event to keep the sidebar open on large screens
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
@@ -153,7 +148,6 @@ export function ResourcesSidebar() {
 
   return (
     <>
-      {/* Mobile Toggle Button */}
       <button
         className="fixed bottom-4 right-4 z-50 md:hidden bg-white p-3 rounded-full shadow-md"
         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -161,7 +155,6 @@ export function ResourcesSidebar() {
         {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
 
-      {/* Sidebar Overlay for Mobile */}
       <div
         className={`fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden transition-opacity duration-300 ${
           isSidebarOpen ? "opacity-100" : "opacity-0 pointer-events-none"
@@ -169,7 +162,6 @@ export function ResourcesSidebar() {
         onClick={() => setIsSidebarOpen(false)}
       />
 
-      {/* Sidebar */}
       <aside
         className={`fixed md:sticky top-0 left-0 z-40 w-72 h-screen bg-white border-r transform transition-transform duration-300 ease-in-out ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"

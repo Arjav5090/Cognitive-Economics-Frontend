@@ -1,4 +1,5 @@
 import { ChangeEvent, useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 interface FormData {
   fullName?: string;
@@ -195,7 +196,6 @@ export default function Questionnaire() {
         {
           method: "POST",
           body: formDataToSend,
-   
         }
       );
 
@@ -255,73 +255,82 @@ export default function Questionnaire() {
     }
   };
   return (
-    <div className="min-h-screen bg-white text-black">
-      <div className="max-w-7xl mx-auto p-6">
-        <h1 className="text-3xl font-bold font-outfit mb-6">Questionnaire</h1>
-        <ProgressBar steps={steps} currentStep={currentStep} />
-        <Modal
-          message={modalMessage || ""}
-          isOpen={isModalOpen}
-          onClose={closeModal}
+    <>
+      <Helmet>
+        <title>Questionnaire | Cognitive Economics</title>
+        <meta
+          name="description"
+          content="Participate in the Cognitive Economics questionnaire to contribute to research, business innovation, and education."
         />
-        <form onKeyDown={handleKeyDown} className="mt-8">
-          {currentStep === 0 && (
-            <BasicInfo
-              formData={formData}
-              handleInputChange={handleInputChange}
-            />
-          )}
-          {currentStep === 1 && (
-            <InterestCognitiveEconomics
-              formData={formData}
-              handleInputChange={handleInputChange}
-              handleCheckboxChange={handleCheckboxChange}
-            />
-          )}
-          {currentStep === 2 && (
-            <GrowthCognitiveEconomics
-              formData={formData}
-              handleInputChange={handleInputChange}
-              handleCheckboxChange={handleCheckboxChange}
-              handleFileChange={handleFileChange}
-            />
-          )}
-          {isError && !errorMessage && (
-            <div className="mt-4 p-4 bg-red-100 text-red-700 border border-red-400 rounded">
-              ❌ Please fill in all required fields before proceeding to the
-              next step.
-            </div>
-          )}
+      </Helmet>
+      <div className="min-h-screen bg-white text-black">
+        <div className="max-w-7xl mx-auto p-6">
+          <h1 className="text-3xl font-bold font-outfit mb-6">Questionnaire</h1>
+          <ProgressBar steps={steps} currentStep={currentStep} />
+          <Modal
+            message={modalMessage || ""}
+            isOpen={isModalOpen}
+            onClose={closeModal}
+          />
+          <form onKeyDown={handleKeyDown} className="mt-8">
+            {currentStep === 0 && (
+              <BasicInfo
+                formData={formData}
+                handleInputChange={handleInputChange}
+              />
+            )}
+            {currentStep === 1 && (
+              <InterestCognitiveEconomics
+                formData={formData}
+                handleInputChange={handleInputChange}
+                handleCheckboxChange={handleCheckboxChange}
+              />
+            )}
+            {currentStep === 2 && (
+              <GrowthCognitiveEconomics
+                formData={formData}
+                handleInputChange={handleInputChange}
+                handleCheckboxChange={handleCheckboxChange}
+                handleFileChange={handleFileChange}
+              />
+            )}
+            {isError && !errorMessage && (
+              <div className="mt-4 p-4 bg-red-100 text-red-700 border border-red-400 rounded">
+                ❌ Please fill in all required fields before proceeding to the
+                next step.
+              </div>
+            )}
 
-          <div className="mt-8 flex justify-between">
-            <button
-              type="button"
-              onClick={prevStep}
-              disabled={currentStep === 0 || loading}
-              className="px-4 py-2 bg-white border border-black text-black rounded disabled:opacity-50 flex items-center justify-center"
-            >
-              {loading ? <Loader /> : "Previous"}
-            </button>
-            <button
-              type="button"
-              onClick={
-                currentStep === steps.length - 1 ? handleSubmit : nextStep
-              }
-              disabled={loading}
-              className="px-4 py-2 bg-black text-white rounded flex items-center justify-center"
-            >
-              {loading ? (
-                <Loader />
-              ) : currentStep === steps.length - 1 ? (
-                "Submit"
-              ) : (
-                "Next"
-              )}
-            </button>
-          </div>
-        </form>
+            <div className="mt-8 flex justify-between">
+              <button
+                type="button"
+                onClick={prevStep}
+                disabled={currentStep === 0 || loading}
+                className="px-4 py-2 bg-white border border-black text-black rounded disabled:opacity-50 flex items-center justify-center"
+              >
+                {loading ? <Loader /> : "Previous"}
+              </button>
+              <button
+                type="button"
+                onClick={
+                  currentStep === steps.length - 1 ? handleSubmit : nextStep
+                }
+                disabled={loading}
+                className="px-4 py-2 bg-black text-white rounded flex items-center justify-center"
+              >
+                {loading ? (
+                  <Loader />
+                ) : currentStep === steps.length - 1 ? (
+                  "Submit"
+                ) : (
+                  "Next"
+                )}
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

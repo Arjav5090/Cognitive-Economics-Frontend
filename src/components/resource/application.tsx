@@ -1,8 +1,31 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 export default function ApplicationPage() {
   return (
     <div className="p-4 sm:p-6 md:p-8 lg:p-8 max-w-full mx-auto font-outfit text-justify">
+      <Helmet>
+        <title>
+          Applications in Finance & Labor Economics - Cognitive Economics
+        </title>
+        <meta
+          name="description"
+          content="Explore how cognitive economics applies to finance and labor markets, covering financial literacy, decision-making skills, and AI's impact on wages."
+        />
+        <meta
+          property="og:title"
+          content="Applications in Finance & Labor Economics - Cognitive Economics"
+        />
+        <meta
+          property="og:description"
+          content="Discover the role of cognitive economics in financial planning, labor markets, and AI-driven workforce transformations."
+        />
+        <meta
+          property="og:url"
+          content="https://andrewcaplin.com/resources/application"
+        />
+          <link rel="canonical" href="https://andrewcaplin.com/resources/application" />
+      </Helmet>
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 font-outfit leading-tight text-left">
         Applications in Finance and Labor Economics
       </h1>
@@ -163,7 +186,7 @@ export default function ApplicationPage() {
       </div>
 
       <div className="flex flex-col sm:flex-row justify-between mt-8 space-y-4 sm:space-y-0">
-        <button className="w-full sm:w-auto">
+        <button className="flex justify-start w-full sm:w-auto">
           <Link
             to="/resources/foundation"
             className="px-6 py-3 bg-white border border-[#000000] text-black font-outfit font-light rounded-lg hover:bg-black hover:text-white w-full sm:w-auto"
@@ -171,7 +194,7 @@ export default function ApplicationPage() {
             Previous Topic
           </Link>
         </button>
-        <button className="w-full sm:w-auto">
+        <button className="flex justify-start w-full sm:w-auto">
           <Link
             to="/resources/housing"
             className="px-6 py-3 bg-white border border-[#000000] text-black font-outfit font-light rounded-lg hover:bg-black hover:text-white w-full sm:w-auto"

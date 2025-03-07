@@ -1,8 +1,6 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-
 import DataEngineeringCognitiveEconomicsPage from "../components/research/papers/dataeconmics";
 import PsychologicalExpectedUtilityPage from "../components/research/papers/psychologicalpaper";
-// New paper component
 import { ResearchAccordion } from "../components/research/research-accordion";
 import CognitiveEconomicModelingAndRationalInattentionPage from "../components/research/papers/economicmodeling";
 import HumanAIInteractionsPage from "../components/research/papers/humanai";
@@ -16,99 +14,108 @@ import PsychologicalFactorsPage from "../components/research/papers/psychologica
 import MarketDynamicsPage from "../components/research/papers/marketdynamics";
 import HousingFinancePage from "../components/research/papers/housingfinance";
 import { useEffect } from "react";
-// Import other papers as needed
+import { Helmet } from "react-helmet-async";
 
 export default function Research() {
+  const location = useLocation();
 
-  const location = useLocation(); // Get the current location (route)
-
-  // Scroll to top whenever the route changes
   useEffect(() => {
-    window.scrollTo(0, 0); // Scroll to the top of the page
-  }, [location]); // Trigger on route change
+    window.scrollTo(0, 0);
+  }, [location]);
   return (
-    <Routes>
-      {/* Default path shows the ResearchAccordion */}
-      <Route path="/" element={<ResearchAccordion />} />
+    <>
+      <Helmet>
+        <title>Research | Andrew Caplin - Cognitive Economics</title>
+        <meta
+          name="description"
+          content="Explore research papers by Andrew Caplin on cognitive economics, AI decision-making, and behavioral finance."
+        />
+        <meta
+          property="og:title"
+          content="Research | Andrew Caplin - Cognitive Economics"
+        />
+        <meta
+          property="og:description"
+          content="Discover research papers on AI, economics, and cognitive decision-making."
+        />
 
-      {/* Route for the first paper (Psychological Expected Utility) */}
-      <Route
-        path="/papers/psychology-anxiety-prediction-errors"
-        element={<PsychologicalExpectedUtilityPage />}
-      />
+        <meta property="og:url" content="https://andrewcaplin.com/research" />
+        <link rel="canonical" href="https://andrewcaplin.com/research" />
+      </Helmet>
 
-      {/* Route for the second paper (Data Engineering for Cognitive Economics) */}
-      <Route
-        path="papers/cognitive-data-engineering"
-        element={<DataEngineeringCognitiveEconomicsPage />}
-      />
-      <Route
-        path="papers/cognitive-economic-modeling-and-rational-inattention-theory"
-        element={<CognitiveEconomicModelingAndRationalInattentionPage />}
-      />
-      <Route
-        path="papers/human-ai-interactions-paper"
-        element={<HumanAIInteractionsPage />}
-      />
-      {/* Route for Life Cycle Savings Paper */}
-      <Route
-        path="papers/life-cycle-savings-strategic-survey-questions"
-        element={<LifeCycleSavingsPage />}
-      />
+      <Routes>
+        <Route path="/" element={<ResearchAccordion />} />
 
-      {/* Route for Job Transitions Paper */}
-      <Route
-        path="papers/job-transitions-career-dynamics"
-        element={<JobTransitionsPage />}
-      />
+        <Route
+          path="/papers/psychology-anxiety-prediction-errors"
+          element={<PsychologicalExpectedUtilityPage />}
+        />
 
-      {/* Route for Real Estate and Housing Finance Paper */}
-      <Route
-        path="papers/real-estate-housing-finance"
-        element={<HousingFinancePage />}
-      />
+        <Route
+          path="papers/cognitive-data-engineering"
+          element={<DataEngineeringCognitiveEconomicsPage />}
+        />
+        <Route
+          path="papers/cognitive-economic-modeling-and-rational-inattention-theory"
+          element={<CognitiveEconomicModelingAndRationalInattentionPage />}
+        />
+        <Route
+          path="papers/human-ai-interactions-paper"
+          element={<HumanAIInteractionsPage />}
+        />
 
-      {/* Route for Hidden Information and Market Dynamics Paper */}
-      <Route
-        path="papers/hidden-information-social-learning-market-dynamics"
-        element={<MarketDynamicsPage />}
-      />
+        <Route
+          path="papers/life-cycle-savings-strategic-survey-questions"
+          element={<LifeCycleSavingsPage />}
+        />
 
-      {/* Route for Industrial Organization and Markets Paper */}
-      <Route
-        path="papers/industrial-organization-markets"
-        element={<IndustrialOrganizationPage />}
-      />
+        <Route
+          path="papers/job-transitions-career-dynamics"
+          element={<JobTransitionsPage />}
+        />
 
-      {/* Route for State Dependence and Monetary Policy Paper */}
-      <Route
-        path="papers/state-dependence-monetary-policy-paper"
-        element={<StateDependenceMonetaryPolicyPage />}
-      />
+        <Route
+          path="papers/real-estate-housing-finance"
+          element={<HousingFinancePage />}
+        />
 
-      {/* Route for Political Economy Paper */}
-      <Route
-        path="papers/political-economy"
-        element={<PoliticalEconomyPage />}
-      />
+        <Route
+          path="papers/hidden-information-social-learning-market-dynamics"
+          element={<MarketDynamicsPage />}
+        />
 
-      {/* Route for Social Welfare and Policy Paper */}
-      <Route
-        path="papers/social-welfare-policy"
-        element={<PsychologicalFactorsPage />}
-      />
+        <Route
+          path="papers/industrial-organization-markets"
+          element={<IndustrialOrganizationPage />}
+        />
 
-      {/* Route for Operations Research Paper */}
-      <Route
-        path="papers/operations-research-paper"
-        element={<OperationsResearchPage />}
-      />
+        <Route
+          path="papers/state-dependence-monetary-policy-paper"
+          element={<StateDependenceMonetaryPolicyPage />}
+        />
 
-     
-      <Route
-        path="*"
-        element={<div className="text-gray-500">Paper not found</div>}
-      />
-    </Routes>
+        <Route
+          path="papers/political-economy"
+          element={<PoliticalEconomyPage />}
+        />
+
+        <Route
+          path="papers/social-welfare-policy"
+          element={<PsychologicalFactorsPage />}
+        />
+
+        <Route
+          path="papers/operations-research-paper"
+          element={<OperationsResearchPage />}
+        />
+
+        <Route
+          path="*"
+          element={
+            <div className="text-black font-outfit">Paper not found</div>
+          }
+        />
+      </Routes>
+    </>
   );
 }

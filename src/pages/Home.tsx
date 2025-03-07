@@ -9,6 +9,7 @@ import Book from "../assets/media/Book.webp";
 import download from "../assets/media/Download.svg";
 import { Quote } from "lucide-react";
 import Video from "../assets/media/Introductory.mp4";
+import { Helmet } from "react-helmet-async";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -119,6 +120,40 @@ const items = [
 const Home: React.FC = () => {
   return (
     <>
+      <Helmet>
+        <title>
+          Andrew Caplin | Economist & Cognitive Economics Researcher
+        </title>
+        <meta
+          name="description"
+          content="Discover Andrew Caplin's research in cognitive economics, AI decision-making, and behavioral finance."
+        />
+        <meta
+          property="og:title"
+          content="Andrew Caplin | Economist & Cognitive Economics Researcher"
+        />
+        <meta
+          property="og:description"
+          content="Explore Andrew Caplin's latest projects and research in cognitive economics."
+        />
+        <meta property="og:image" content="/public/preview-image.jpg" />
+        <meta property="og:url" content="https://andrewcaplin.com" />
+        <link rel="canonical" href="https://andrewcaplin.com" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Andrew Caplin",
+            url: "https://andrewcaplin.com",
+            image: "https://andrewcaplin.com/public/profile.jpg",
+            jobTitle: "Economist & Researcher",
+            description:
+              "Discover Andrew Caplin's research in cognitive economics.",
+            email: "andrew.caplin@nyu.edu",
+          })}
+        </script>
+      </Helmet>
+
       <motion.section
         className="px-4 py-2 md:py-16 max-w-7xl mx-auto"
         initial="initial"
@@ -169,6 +204,7 @@ const Home: React.FC = () => {
             <div className="absolute inset-0 flex items-center justify-center text-2xl">
               <img
                 src={AndrewCaplinImage}
+                loading="lazy"
                 alt="Picture of the author"
                 className="w-auto rounded-3xl h-auto max-w-full max-h-full object-contain"
               />
@@ -196,8 +232,8 @@ const Home: React.FC = () => {
             </div>
           </div>
         </motion.div>
-        <motion.div className="px-4 md:py-10 max-w-7xl mx-auto bg-white text-black font-outfit p-8 flex flex-col items-center">
-          <div className="w-full grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div className="md:py-10 max-w-7xl mx-auto bg-white text-black font-outfit py-6 flex flex-col items-center justify-center">
+          <div className="w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {items.map((item, index) => (
               <div
                 key={index}
@@ -205,18 +241,16 @@ const Home: React.FC = () => {
               >
                 <h2 className="text-2xl font-semibold mb-2">{item.title}</h2>
                 <p className="w-64 text-center">
-                  {item.description}{" "}
+                  {item.description}
                   <p>
-
                     {item.genraeLink && (
                       <a
                         href={item.genraeLink}
-                        className="text-white italic hover:underline bg-black px-2 py-1 rounded-lg "
+                        className="text-white italic hover:underline bg-black px-2 py-1 rounded-lg"
                       >
                         Genrae
                       </a>
                     )}
-                   
                   </p>
                 </p>
               </div>
@@ -239,9 +273,6 @@ const Home: React.FC = () => {
             className="absolute inset-0 w-full h-full object-cover"
             src={Video}
             controls
-            autoPlay
-            loop
-            muted
           />
         </motion.div>
       </motion.section>
@@ -261,6 +292,7 @@ const Home: React.FC = () => {
           >
             <img
               src={Book}
+              loading="lazy"
               alt="Book cover of An Introduction to Cognitive Economics"
               style={{ objectFit: "contain", width: "100%", height: "100%" }}
             />
@@ -269,10 +301,10 @@ const Home: React.FC = () => {
             <h3 className="text-4xl font-black text-[#0E0E0E] font-outfit">
               An Introduction to Cognitive Economics
             </h3>
-            <p className="text-3xl font-outfit font-light text-[#0E0E0E] ">
+            <p className="text-3xl font-outfit font-normal text-[#0E0E0E] ">
               The Science of Mistakes
             </p>
-            <p className="text-xl font-light text-[#0E0E0E] leading-relaxed max-w-2xl font-outfit">
+            <p className="text-xl text-justify font-normal text-[#0E0E0E] leading-relaxed max-w-2xl font-outfit">
               This book introduces cognitive economics, an emerging field at the
               intersection of economics, psychology, and data science. I explore
               decision-making mistakes, AI’s impact on the workforce, and
@@ -280,7 +312,7 @@ const Home: React.FC = () => {
               collaboration. I also advocate for interdisciplinary cooperation
               to advance the field.
             </p>
-            <p className="text-xl font-light text-[#0E0E0E] font-outfit">
+            <p className="text-xl text-justify font-normal text-[#0E0E0E] font-outfit">
               Whether you're a citizen, leader, scholar, or policymaker, this
               book will show you why cognitive economics matters—and how you can
               help shape its future.
@@ -301,6 +333,7 @@ const Home: React.FC = () => {
                     height={25}
                     width={25}
                     src={download}
+                    loading="lazy"
                     alt="Download icon"
                   />
                 </motion.span>
@@ -308,7 +341,7 @@ const Home: React.FC = () => {
 
               {/* ✅ View PDF in Browser */}
             </motion.div>
-            <p className="text-gray-500 text-lg font-outfit font-light ">
+            <p className="text-gray-500 text-lg text-justify font-outfit font-light ">
               Available as Open Access - Free to download and read online
             </p>
           </motion.div>

@@ -1,6 +1,7 @@
 //import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import dropdown from "../../assets/media/dropdown.svg";
+import { Helmet } from "react-helmet-async";
 //import dropup from "../../assets/media/dropup.svg";
 
 interface Paper {
@@ -793,10 +794,18 @@ export function ResearchAccordion() {
   }, [openCategory]);*/
   return (
     <div className="max-w-7xl mx-auto px-4 py-6">
+       <Helmet>
+        <title>Research Papers - Cognitive Economics & AI</title>
+        <meta name="description" content="Explore research papers on cognitive economics, AI, and decision-making." />
+        <meta property="og:title" content="Research Papers - Cognitive Economics & AI" />
+        <meta property="og:description" content="Browse research on cognitive decision-making and AI applications in economics." />
+        <meta property="og:url" content="https://andrewcaplin.com/research" />
+        <link rel="canonical" href="https://andrewcaplin.com/research" />
+      </Helmet>
       <div>
         <div className="flex items-center gap-2 mb-6">
           <h1 className="text-5xl text-[#000000] font-bold font-outfit">
-            Research: Back Story and  Research Papers
+            Research: Back Story and Research Papers
           </h1>
         </div>
         <p className="text-2xl text-[#000000] font-outfit mb-8 leading-relaxed text-justify">
@@ -811,43 +820,66 @@ export function ResearchAccordion() {
             //ref={openCategory === category.title ? activeCategoryRef : null}
           >
             <button
-            onClick={(e) => {
-              e.stopPropagation(); // Prevent button click from triggering dropdown toggle
-              navigate(
-                `/research/papers/${category.id
-                  .replace(/\s+/g, "-")
-                  .toLowerCase()}`
-              );
-            }}
-            //  onClick={() =>
+              onClick={(e) => {
+                e.stopPropagation(); // Prevent button click from triggering dropdown toggle
+                navigate(
+                  `/research/papers/${category.id
+                    .replace(/\s+/g, "-")
+                    .toLowerCase()}`
+                );
+              }}
+              //  onClick={() =>
               //  setOpenCategory(
-             //</div>     openCategory === category.title ? null : category.title
-             //   )
-            //  }
-              className="w-full px-4 py-3 flex items-center justify-between text-left font-outfit font-semibold bg-white text-black" 
+              //</div>     openCategory === category.title ? null : category.title
+              //   )
+              //  }
+              className="w-full px-4 py-3 flex items-center justify-between text-left font-outfit font-semibold bg-white text-black"
               //${
-               // openCategory === category.title
-               //</div>   ? "bg-black text-white"
-               //   : "bg-white text-black"
-             // }`}
+              // openCategory === category.title
+              //</div>   ? "bg-black text-white"
+              //   : "bg-white text-black"
+              // }`}
             >
               {/* Category Title with Separate Click Event */}
- 
-              <span
-                className="text-md font-medium font-outfit"
-                
-              >
+
+              <span className="text-md font-medium font-outfit">
                 {category.title}
-                
               </span>
-             
+
               <img
                 src={dropdown}
                 alt="toggle icon"
                 className="w-4 h-4 transition-transform duration-300"
               />
             </button>
-           
+            {/* 
+<div
+  className={`overflow-hidden transition-[max-height] duration-500 ease-in-out ${
+    openCategory === category.title ? "max-h-screen" : "max-h-0"
+  }`}
+>
+  {category.papers.length > 0 && (
+    <div className="px-4 py-2 border-t-2 border-[#000000] space-y-3 max-h-[600px] overflow-y-auto">
+      {category.papers.map((paper, paperIndex) => (
+        <a
+          key={paperIndex}
+          href={`${paper.id}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block text-sm hover:bg-gray-50 -mx-4 px-4 py-2"
+        >
+          <div className="text-sm text-[#000000] font-outfit font-light">
+            {paper.title}
+          </div>
+          <div className="text-xs text-[#000000] font-outfit font-extralight">
+            {paper.citation} - {paper.year}
+          </div>
+        </a>
+      ))}
+    </div>
+  )}
+</div>
+*/}
           </div>
         ))}
       </div>

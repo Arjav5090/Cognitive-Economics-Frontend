@@ -1,8 +1,40 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 export default function LifeCycleSavingsPage() {
   return (
     <main className="flex flex-col items-center justify-center px-4 py-6">
+      <Helmet>
+        <title>
+          Life Cycle Savings, Strategic Survey Questions, and Contingent Beliefs
+          | Andrew Caplin
+        </title>
+        <meta
+          name="description"
+          content="Explore research on life cycle savings, strategic survey questions, and contingent beliefs to understand human welfare and financial decision-making."
+        />
+        <meta
+          property="og:title"
+          content="Life Cycle Savings, Strategic Survey Questions, and Contingent Beliefs | Andrew Caplin"
+        />
+        <meta
+          property="og:description"
+          content="Discover insights into how measurement and modeling impact savings behavior, financial planning, and long-term decision-making."
+        />
+
+        <meta
+          property="og:url"
+          content="https://andrewcaplin.com/research/papers/life-cycle-savings-strategic-survey-questions"
+        />
+        <meta
+          name="keywords"
+          content="Life Cycle Savings, Strategic Survey Questions, Contingent Beliefs, Financial Planning, Economic Decision-Making, Retirement Savings, Wealth Accumulation"
+        />
+        <meta name="author" content="Andrew Caplin" />
+        <meta property="og:type" content="article" />
+        <link rel="canonical" href="https://andrewcaplin.com/research/papers/life-cycle-savings-strategic-survey-questions" />
+      </Helmet>
+
       <div className="max-w-3xl w-full">
         <Link
           to="/research"

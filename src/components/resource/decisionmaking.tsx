@@ -1,9 +1,29 @@
 import { Link } from "react-router-dom";
-import cognitiveGraph from "../../assets/media/congnitivegraph.png"; // Adjust path as needed
+import cognitiveGraph from "../../assets/media/congnitivegraph.png";
+import { Helmet } from "react-helmet-async";
 
 const DecisionMakingPage: React.FC = () => {
   return (
     <div className="p-4 sm:p-6 lg:p-8 max-w-5xl mx-auto font-outfit text-justify">
+      <Helmet>
+        <title>Decision-Making in Cognitive Economics | Andrew Caplin</title>
+        <meta
+          name="description"
+          content="Explore how cognitive economic curves enhance decision-making clarity by identifying patterns in consumer choices and reducing errors."
+        />
+        <meta
+          property="og:title"
+          content="Decision-Making in Cognitive Economics"
+        />
+        <meta
+          property="og:description"
+          content="Learn how experimental wind tunnels and cognitive economic curves help improve communication clarity in decision-making."
+        />
+        <meta
+          property="og:url"
+          content="https://andrewcaplin.com/resources/decision"
+        />
+      </Helmet>
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-left mb-6">
         Understanding Decision-Making Through Cognitive Economic Curves
       </h1>
@@ -69,6 +89,7 @@ const DecisionMakingPage: React.FC = () => {
             <div className="max-w-2xl mx-auto">
               <img
                 src={cognitiveGraph}
+                loading="lazy"
                 alt="Cognitive Economic Curves Ranked by Clarity"
                 className="w-full h-auto rounded-lg shadow-lg"
               />

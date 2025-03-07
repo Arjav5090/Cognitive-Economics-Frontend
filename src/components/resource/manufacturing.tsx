@@ -1,8 +1,29 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const ManufacturingPage: React.FC = () => {
   return (
     <div className="p-4 sm:p-6 lg:p-8 max-w-5xl mx-auto font-outfit text-justify">
+      <Helmet>
+        <title>Human-AI Decision-Making | Cognitive Economics</title>
+        <meta
+          name="description"
+          content="Discover how cognitive economics enhances human-AI decision-making, improves AI training, and optimizes medical decision-making protocols."
+        />
+        <meta
+          property="og:title"
+          content="Human-AI Decision-Making | Cognitive Economics"
+        />
+        <meta
+          property="og:description"
+          content="Explore how cognitive economics improves AI learning, medical diagnosis, and collaborative human-AI decision-making frameworks."
+        />
+        <meta
+          property="og:url"
+          content="https://andrewcaplin.com/resources/manufacturing"
+        />
+          <link rel="canonical" href="https://andrewcaplin.com/resources/manufacturing" />
+      </Helmet>
       <h1 className="text-2xl font-outfit text-justify sm:text-3xl font-bold mb-6">
         Cognitive Economics in Human-AI Decision-Making
       </h1>
@@ -51,14 +72,14 @@ const ManufacturingPage: React.FC = () => {
 
         <ul className="list-disc pl-6 space-y-2 text-sm sm:text-base lg:text-lg font-outfit text-justify">
           <li>
-            <strong>Eliciting beliefs:</strong> Instead of relying on binary labels, we collect
-            subjective probability judgments from annotators, leading to greater
-            label accuracy and improved AI performance.
+            <strong>Eliciting beliefs:</strong> Instead of relying on binary
+            labels, we collect subjective probability judgments from annotators,
+            leading to greater label accuracy and improved AI performance.
           </li>
           <li>
-          <strong>Optimizing workflows:</strong> Future research focuses on selecting
-            annotators, designing payment schemes, and optimizing crowd
-            composition for better results.
+            <strong>Optimizing workflows:</strong> Future research focuses on
+            selecting annotators, designing payment schemes, and optimizing
+            crowd composition for better results.
           </li>
         </ul>
 

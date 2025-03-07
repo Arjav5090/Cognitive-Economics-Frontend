@@ -27,7 +27,7 @@ export const ResourceCard: React.FC<Props> = ({ card }) => {
           <h3 className="text-xl font-outfit font-bold mb-2 line-clamp-2 min-h-[3.5rem]">
             {card.title}
           </h3>
-          <p className="text-sm text-gray-600 font-outfit leading-relaxed line-clamp-3">
+          <p className="text-sm text-gray-600 text-justify font-outfit leading-relaxed line-clamp-3">
             {card.description}
           </p>
         </div>

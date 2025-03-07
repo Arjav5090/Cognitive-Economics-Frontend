@@ -1,8 +1,26 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 export default function FoundationPage() {
   return (
     <div className="p-6 sm:p-8 lg:p-12 max-w-5xl mx-auto font-outfit text-justify">
+      <Helmet>
+        <title>Foundation of Cognitive Economics | Andrew Caplin</title>
+        <meta
+          name="description"
+          content="Explore the foundational principles of Cognitive Economics, including subjective beliefs, utility functions, and decision-making science."
+        />
+        <meta property="og:title" content="Foundation of Cognitive Economics" />
+        <meta
+          property="og:description"
+          content="Learn about the key distinctions between Cognitive and Behavioral Economics and the role of data in decision-making."
+        />
+        <meta
+          property="og:url"
+          content="https://andrewcaplin.com/resources/foundation"
+        />
+          <link rel="canonical" href="https://andrewcaplin.com/resources/foundation" />
+      </Helmet>
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 font-outfit">
         Foundation of Cognitive Economics
       </h1>
@@ -128,16 +146,14 @@ export default function FoundationPage() {
         </ul>
       </div>
 
-      <div className="flex flex-col sm:flex-row justify-end mt-8 gap-4">
-        <button className="w-full sm:w-auto">
-          <Link
-            to="/resources/application"
-            className="px-6 py-3 bg-white border border-[#000000] text-black font-outfit font-light rounded-lg hover:bg-black hover:text-white w-full sm:w-auto"
-          >
-            Next Topic
-          </Link>
-        </button>
-      </div>
+      <button className="flex bg-white justify-end w-full">
+        <Link
+          to="/resources/application"
+          className="px-6 py-3 overflow-hidden bg-white border border-[#000000] text-black font-outfit font-light rounded-lg hover:bg-black hover:text-white w-full sm:w-auto md:px-8 md:py-4 lg:px-10 lg:py-5"
+        >
+          Next Topic
+        </Link>
+      </button>
     </div>
   );
 }
