@@ -13,6 +13,7 @@ import ContactForm from "./pages/Contact";
 import Forum from "./pages/Forum";
 import Questionnaire from "./pages/Questionnaire";
 import Chatbot from "./pages/Chatbot";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ReactGA from "react-ga4";
 import { HelmetProvider } from "react-helmet-async";
 
@@ -51,6 +52,7 @@ const App: React.FC = () => {
             <Route path="/forum" element={<Forum />} />
             <Route path="/chatbot" element={<Chatbot />} />
             <Route path="/questionnaire" element={<Questionnaire />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>
         </MainLayout>
       </Router>

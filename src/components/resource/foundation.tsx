@@ -149,7 +149,7 @@ export default function FoundationPage() {
       <button className="flex bg-white justify-end w-full">
         <Link
           to="/resources/application"
-          className="px-6 py-3 overflow-hidden bg-white border border-[#000000] text-black font-outfit font-light rounded-lg hover:bg-black hover:text-white w-full sm:w-auto md:px-8 md:py-4 lg:px-10 lg:py-5"
+          className="px-6 py-3 bg-white border border-black text-black font-light rounded-lg hover:bg-black hover:text-white w-full sm:w-auto text-center"
         >
           Next Topic
         </Link>
